@@ -1,0 +1,33 @@
+.navegador{
+    padding: 0;
+    margin-bottom: 15%;
+    .container-fluid{
+        background-color: rgb(245, 82, 82);
+        .contenedor-nav{
+            display: flex;
+            align-items: center;
+            background-color: rgb(245, 82, 82);
+            .btn{  
+                display: flex;
+                background-color: rgb(245, 82, 82);
+                height: 50%;
+                border-color:  black;
+                border-radius: 3px;
+                svg{
+                    height: auto;
+                }
+            }
+            a{
+                img{
+                    width: 27%;
+                    height: auto;
+                    border-radius: 10px;
+                    border-color:  black;
+                }
+            }
+            .bg-css{
+                background-color: rgb(245, 82, 82);
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+header {
+  margin-bottom: 15%;
+}
+
+main .cont-h1 h1 {
+  color: rgb(243, 130, 130);
+  width: 80%;
+  font-size: 2.5em;
+}
+main .busqueda {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .busqueda form {
+  width: 80%;
+  height: 100vh;
+}
+main .busqueda form .bg-dropdown {
+  background-color: rgb(243, 130, 130);
+}
+
+.navegador {
+  padding: 0;
+  margin-bottom: 15%;
+}
+.navegador .container-fluid {
+  background-color: rgb(245, 82, 82);
+}
+.navegador .container-fluid .contenedor-nav {
+  display: flex;
+  align-items: center;
+  background-color: rgb(245, 82, 82);
+}
+.navegador .container-fluid .contenedor-nav .btn {
+  display: flex;
+  background-color: rgb(245, 82, 82);
+  height: 50%;
+  border-color: black;
+  border-radius: 3px;
+}
+.navegador .container-fluid .contenedor-nav .btn svg {
+  height: auto;
+}
+.navegador .container-fluid .contenedor-nav a img {
+  width: 27%;
+  height: auto;
+  border-radius: 10px;
+  border-color: black;
+}
+.navegador .container-fluid .contenedor-nav .bg-css {
+  background-color: rgb(245, 82, 82);
+}
+
+/*# sourceMappingURL=main.css.map */

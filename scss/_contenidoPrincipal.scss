@@ -1,0 +1,27 @@
+header{
+    margin-bottom: 15%;
+}
+
+main{
+    .cont-h1{
+        h1{
+            color: rgb(243, 130, 130);
+            width: 80%;
+            font-size: 2.5em;
+        }
+    }
+   
+    .busqueda{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        form{
+            width: 80%;
+            height: 100vh;
+            .bg-dropdown{
+                background-color:  rgb(243, 130, 130); 
+            }
+        }
+    }
+}
+
