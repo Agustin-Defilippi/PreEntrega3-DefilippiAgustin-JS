@@ -10,8 +10,6 @@ const viajes = [{nombre:"Salta",destino:"salta",duracion:"5 dias",boleto:"ida y 
 
 
 
-
-
 const renderProductosOfertas = () =>{
     const viajesOfertas = viajes.filter(item => item.categoria === "oferta");
     console.log(viajesOfertas)
@@ -40,7 +38,32 @@ const renderProductosOfertas = () =>{
    document.getElementById("productos").innerHTML = salida;
 }
 
-
-
-
 renderProductosOfertas();
+
+const formularioDestino = document.getElementById("fomularioDestino");
+
+formularioDestino.addEventListener("click",(e) => {
+    let salida = "";
+    e.preventDefault();
+    let busquedaViaje = document.getElementById("busquedaViaje").value;
+    const filtradoZona = viajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje);
+
+    filtradoZona.forEach(zonaViajes =>{salida+= `<li> ${zonaViajes.destino} \n`});
+
+    document.getElementById("lugar1").innerHTML=salida
+    
+
+
+});
+
+
+/* const entradaZonaPais = () =>{
+    let busquedaViaje = document.getElementById("busquedaViaje").value;
+    const filtradoZona = viajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje);
+
+    console.log(filtradoZona);
+    
+    document.getElementById("lugar1").innerHTML = filtradoZona
+}
+
+entradaZonaPais(); */

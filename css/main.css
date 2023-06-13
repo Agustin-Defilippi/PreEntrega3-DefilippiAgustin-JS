@@ -94,13 +94,6 @@ main .bg-card .bg-btn-render {
   color: white;
   text-align: center;
 }
-.navegador .container-fluid .contenedor-nav .btn {
-  display: flex;
-  background-color: rgb(243, 130, 130);
-  height: 50%;
-  border-color: black;
-  border-radius: 3px;
-}
 .navegador .container-fluid .contenedor-nav .btn svg {
   height: auto;
 }
