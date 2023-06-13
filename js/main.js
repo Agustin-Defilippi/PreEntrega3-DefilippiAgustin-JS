@@ -41,7 +41,11 @@ const renderProductosOfertas = () =>{
 renderProductosOfertas();
 
 
+
+
+
 const filtradoZona = () =>{
+    
     let salida = "";
     let busquedaViaje = document.getElementById("busquedaViaje").value;
     const filtradoZona = viajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje);
@@ -50,31 +54,10 @@ const filtradoZona = () =>{
     return salida;
 }
 
-let pepo = filtradoZona();
+let botonDesplegable = document.getElementById("lugar1");
 
-const desplegable = () =>{
-    let desplegable = document.getElementById("lugar1");
-    desplegable.innerHTML =filtradoZona()
-
-    desplegable.addEventListener("click", desplegable)
-
-}
-
-
-
-
-const formularioDestino = document.getElementById("fomularioDestino");
-
-formularioDestino.addEventListener("click",(e) => {
-    let salida = "";
-    e.preventDefault();
-    let busquedaViaje = document.getElementById("busquedaViaje").value;
-    const filtradoZona = viajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje);
-
-    filtradoZona.forEach(zonaViajes =>{salida+= `<li> ${zonaViajes.destino} \n`});
-
-    document.getElementById("lugar1").innerHTML=salida
-
+botonDesplegable.addEventListener("click",() =>{
+    botonDesplegable.innerHTML=filtradoZona();
 });
 
 
