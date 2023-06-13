@@ -14,9 +14,64 @@ main .busqueda {
 }
 main .busqueda form {
   width: 80%;
-  height: 100vh;
+  height: auto;
 }
 main .busqueda form .bg-dropdown {
+  background-color: rgb(243, 130, 130);
+}
+main .render-Productos {
+  width: 100%;
+  height: auto;
+}
+main footer {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(243, 130, 130);
+  display: flex;
+  flex-wrap: wrap;
+}
+main footer .container-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main footer .container-wrap svg {
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+}
+main footer .container-wrap .svg-fb {
+  color: black;
+  padding: 8px 8px;
+}
+main footer .container-wrap .svg-fb:hover {
+  color: white;
+}
+main footer .container-wrap .svg-insta {
+  color: black;
+  padding: 8px 8px;
+}
+main footer .container-wrap .svg-insta:hover {
+  color: white;
+}
+main footer .container-wrap .svg-twitter {
+  padding: 8px 8px;
+  color: black;
+}
+main footer .container-wrap .svg-twitter:hover {
+  color: white;
+}
+main footer .container-wrap .css-text {
+  display: flex;
+  color: white;
+  font-size: 1.2em;
+  justify-content: center;
+  text-align: center;
+}
+main .bg-card {
+  border-radius: 7px;
+}
+main .bg-card .bg-btn-render {
   background-color: rgb(243, 130, 130);
 }
 
@@ -25,16 +80,23 @@ main .busqueda form .bg-dropdown {
   margin-bottom: 15%;
 }
 .navegador .container-fluid {
-  background-color: rgb(245, 82, 82);
+  background-color: rgb(243, 130, 130);
 }
 .navegador .container-fluid .contenedor-nav {
   display: flex;
   align-items: center;
-  background-color: rgb(245, 82, 82);
+  background-color: rgb(243, 130, 130);
+}
+.navegador .container-fluid .contenedor-nav .bord {
+  border: solid 10px rgb(243, 130, 130);
+}
+.navegador .container-fluid .contenedor-nav h5 p {
+  color: white;
+  text-align: center;
 }
 .navegador .container-fluid .contenedor-nav .btn {
   display: flex;
-  background-color: rgb(245, 82, 82);
+  background-color: rgb(243, 130, 130);
   height: 50%;
   border-color: black;
   border-radius: 3px;
@@ -49,7 +111,7 @@ main .busqueda form .bg-dropdown {
   border-color: black;
 }
 .navegador .container-fluid .contenedor-nav .bg-css {
-  background-color: rgb(245, 82, 82);
+  background-color: rgb(243, 130, 130);
 }
 
 /*# sourceMappingURL=main.css.map */

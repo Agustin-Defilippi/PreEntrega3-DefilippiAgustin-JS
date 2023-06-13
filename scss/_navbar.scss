@@ -2,14 +2,24 @@
     padding: 0;
     margin-bottom: 15%;
     .container-fluid{
-        background-color: rgb(245, 82, 82);
+        background-color:  rgb(243, 130, 130);
         .contenedor-nav{
             display: flex;
             align-items: center;
-            background-color: rgb(245, 82, 82);
+            background-color: rgb(243, 130, 130);
+            .bord{
+                border: solid 10px rgb(243, 130, 130);
+            }
+            h5{
+                p{
+                    color: white;
+                    text-align: center;
+                }
+            }
+            
             .btn{  
                 display: flex;
-                background-color: rgb(245, 82, 82);
+                background-color:rgb(243, 130, 130);
                 height: 50%;
                 border-color:  black;
                 border-radius: 3px;
@@ -26,7 +36,7 @@
                 }
             }
             .bg-css{
-                background-color: rgb(245, 82, 82);
+                background-color: rgb(243, 130, 130);
             }
         }
     }
