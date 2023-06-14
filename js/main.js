@@ -41,61 +41,27 @@ const renderProductosOfertas = () =>{
 renderProductosOfertas();
 
 
-/* const filtradoZona = () =>{
+
+
+
+const filtrado = () => {
     let salida = "";
     let busquedaViaje = document.getElementById("busquedaViaje").value;
-    const filtradoZona = viajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje);
-    filtradoZona.forEach(zonaViajes =>{salida+= `<li> ${zonaViajes.destino} \n`});
+    const filtradoZona = viajes.filter(zonaViajes => zonaViajes.destino == busquedaViaje);
+    filtradoZona.forEach((zonaViajes) => {
+        salida += `<option value="${zonaViajes.destino}">${zonaViajes.destino}</option>\n`;
+    });
 
-    return salida;
+    document.getElementById("destinoFiltrado").innerHTML = salida;
 }
 
-let pepo = filtradoZona();
+let busquedaViajee = document.getElementById("busquedaViaje");
 
-const desplegable = () =>{
-    let desplegable = document.getElementById("lugar1");
-    desplegable.innerHTML =filtradoZona()
-
-    desplegable.addEventListener("click", desplegable)
-
-} */
-
-
-
-const filtradoZona = () =>{
-    
-    let salida = "";
-    let busquedaViaje = document.getElementById("busquedaViaje").value;
-    const filtradoZona = viajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje);
-    filtradoZona.forEach(zonaViajes =>{salida+= `<li> ${zonaViajes.destino} \n`});
-
-    return salida;
-}
-
-let botonDesplegable = document.getElementById("lugar1");
-
-botonDesplegable.addEventListener("click",() =>{
-    botonDesplegable.innerHTML=filtradoZona();
+busquedaViajee.addEventListener("input", () => {
+    filtrado();
 });
 
 
- const formularioDestino = document.getElementById("fomularioDestino");
 
-formularioDestino.addEventListener("click",(e) => {
-    let salida = "";
-    e.preventDefault();
-    let busquedaViaje = document.getElementById("busquedaViaje").value;
-    const filtradoZona = viajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje);
-
-    filtradoZona.forEach(zonaViajes =>{salida+= `<li> ${zonaViajes.destino} \n`});
-
-    document.getElementById("lugar1").innerHTML=salida
-
-});
-
-const pepa = document.getElementById("lugar1");
-
-pepa.addEventListener("click",() =>{})
- 
 
 

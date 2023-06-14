@@ -91,6 +91,9 @@ main .bg-card .bg-btn-render {
   width: 35%;
   height: 30%;
 }
+.navegador .container-fluid .contenedor-nav .bg-css {
+  background-color: rgb(248, 151, 151);
+}
 .navegador .container-fluid .contenedor-nav .bord {
   display: flex;
   flex-direction: column;
@@ -109,9 +112,6 @@ main .bg-card .bg-btn-render {
   height: auto;
   border-radius: 10px;
   border-color: black;
-}
-.navegador .container-fluid .contenedor-nav .bord .cont .bg-css {
-  background-color: rgb(248, 151, 151);
 }
 .navegador .container-fluid .contenedor-nav .gian {
   height: auto;
