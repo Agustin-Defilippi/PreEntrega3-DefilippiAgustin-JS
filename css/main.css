@@ -15,6 +15,8 @@ main .busqueda {
 main .busqueda form {
   width: 80%;
   height: auto;
+  border: solid 2px black;
+  padding: 10px;
 }
 main .busqueda form .bg-dropdown {
   background-color: rgb(243, 130, 130);
@@ -80,29 +82,33 @@ main .bg-card .bg-btn-render {
   margin-bottom: 15%;
 }
 .navegador .container-fluid {
-  background-color: rgb(248, 151, 151);
+  background-color: black;
 }
 .navegador .container-fluid .contenedor-nav {
   display: flex;
   align-items: center;
-  background-color: rgb(248, 151, 151);
+  background-color: black;
 }
 .navegador .container-fluid .contenedor-nav img {
-  width: 35%;
+  width: 30%;
   height: 30%;
 }
 .navegador .container-fluid .contenedor-nav .bg-css {
-  background-color: rgb(248, 151, 151);
+  background-color: black;
+}
+.navegador .container-fluid .contenedor-nav h5 p {
+  color: rgb(248, 151, 151);
+  text-align: center;
 }
 .navegador .container-fluid .contenedor-nav .bord {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: solid 10px rgb(248, 151, 151);
+  border: solid 10px black;
 }
-.navegador .container-fluid .contenedor-nav .bord .cont h5 p {
-  color: white;
-  text-align: center;
+.navegador .container-fluid .contenedor-nav .bord .cont .btn {
+  background-color: black;
+  color: rgb(248, 151, 151);
 }
 .navegador .container-fluid .contenedor-nav .bord .cont .btn svg {
   height: auto;
@@ -121,9 +127,9 @@ main .bg-card .bg-btn-render {
   justify-content: flex-end;
 }
 .navegador .container-fluid .contenedor-nav .gian .contactanos {
-  background-color: rgb(0, 0, 0);
+  background-color: black;
+  color: rgb(248, 151, 151);
   border-radius: 5px;
-  color: white;
   width: 100%;
 }
 .navegador .container-fluid .contenedor-nav .gian .container-svg {
