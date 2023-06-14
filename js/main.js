@@ -47,7 +47,7 @@ renderProductosOfertas();
 const filtrado = () => {
     let salida = "";
     let busquedaViaje = document.getElementById("busquedaViaje").value;
-    const filtradoZona = viajes.filter(zonaViajes => zonaViajes.destino == busquedaViaje);
+    const filtradoZona = viajes.filter((zonaViajes) => zonaViajes.zona == busquedaViaje);
     filtradoZona.forEach((zonaViajes) => {
         salida += `<option value="${zonaViajes.destino}">${zonaViajes.destino}</option>\n`;
     });
