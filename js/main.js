@@ -93,12 +93,15 @@ formularioDestino.addEventListener("submit",(e) =>{
     errorCamposFormulario();
 
     const formularioInput = paqueteViajes.filter(zonaViajes => zonaViajes == busquedaViaje.value.toLowerCase());
-    const fomularioSelect = select.value;
+    const fomularioSelect = formularioInput.find(destino => destino.destino == select.value);
 
-    localStorage.setItem("paqueteViajeBusqueda" , )
+    localStorage.setItem("paqueteViajeBusqueda", JSON.stringify(fomularioSelect));
     
     
 });
 
 
 
+let papa = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"))
+
+console.log(papa);
