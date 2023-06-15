@@ -7,33 +7,41 @@ const viajes = [{nombre:"Salta",destino:"salta",duracion:"5 dias",boleto:"ida y 
 {destino:"santa cruz",duracion:"4 dias",boleto:"ida y vuelta",hospedaje:"Cabañas el Arriero",precio:100000,categoria:"alta",zona:"sur"},
 {nombre:"Calafate",destino:"calafate",duracion:"5 dias",boleto:"ida y vuelta",hospedaje:"Suites la Ferrere",precio:185300,categoria:"oferta",zona:"sur",imagen:"https://i.ytimg.com/vi/54DgAZHTAEI/maxresdefault.jpg"}];
 
+const guardadoPaquetesViajesLs = () =>{
+    localStorage.setItem("viajess",JSON.stringify(viajes));
+}
+
+guardadoPaquetesViajesLs();
+
+
+const paqueteViajeLs = () =>{
+    return JSON.parse(localStorage.getItem("viajess"));
+}
+
+const paqueteViajes = paqueteViajeLs();
 
 
 
 const renderProductosOfertas = () =>{
-    const viajesOfertas = viajes.filter(item => item.categoria === "oferta");
-
-   let salida = ""; 
-
-   viajesOfertas.forEach(item => {
-    salida+=`<div class= "mb-3 d-flex justify-content-center">
-
-    <div class="card bg-card" style="width: 18rem;">
-        <img src="${item.imagen}" class="card-img-top" alt="${item.nombre}">
-        <div class="card-body ">
-        <h5 class="card-title"><p>${item.destino}</p></h5>
-        <p class="card-text text-center">Tu paquete de viaje soñado, ${item.nombre} 2023.\n Es posbile con DEFILIPPI TOURLINES.</p>
-        <div class= "d-flex justify-content-center">
-        <a href="#" class="btn bg-btn-render text-light">Conoce más</a>
-        </div>
-        
-        </div>
-    </div>
-
-    </div>`
     
+    const ofertas = paqueteViajes.filter(item => item.categoria === "oferta");
+    let salida = ""; 
+    ofertas.forEach(item => {
+    salida+=
+    `<div class= "mb-3 d-flex justify-content-center">
+        <div class="card bg-card" style="width: 18rem;">
+            <img src="${item.imagen}" class="card-img-top" alt="${item.nombre}">
+            <div class="card-body ">
+            <h5 class="card-title"><p>${item.destino}</p></h5>
+            <p class="card-text text-center">Tu paquete de viaje soñado, ${item.nombre} 2023.\n Es posbile con DEFILIPPI TOURLINES.</p>
+            <div class= "d-flex justify-content-center">
+            <a href="#" class="btn bg-btn-render text-light">Conoce más</a>
+            </div>
+            
+            </div>
+        </div>
+    </div>`
    });
-
    document.getElementById("productos").innerHTML = salida;
 }
 
@@ -48,7 +56,7 @@ const select =  document.getElementById("destinoFiltrado");
 const filtrado = () => {
     let salida = "";
     let busquedaInput = busquedaViaje.value;
-    const filtradoZona = viajes.filter((zonaViajes) => zonaViajes.zona == busquedaInput.toLowerCase());
+    const filtradoZona = paqueteViajes.filter((zonaViajes) => zonaViajes.zona == busquedaInput.toLowerCase());
     filtradoZona.forEach((zonaViajes) => {
         salida += `<option value="${zonaViajes.destino}">${zonaViajes.destino}</option>\n`;
     });
@@ -59,32 +67,36 @@ busquedaViaje.addEventListener("change", () => {
     filtrado();
 });
 
-formularioDestino.addEventListener("submit",(e) =>{
 
-    e.preventDefault();
+const errorCamposFormulario = () =>{
 
     const errorEmail = document.getElementById("errorEmail");
-    if((busquedaViaje.value === "") || ((busquedaViaje.value.toLowerCase() !== "norte") && (busquedaViaje.value.toLowerCase() !== "centro") && (busquedaViaje.value.toLowerCase() !== "sur"))){
-        errorEmail.innerHTML = "Error!, Complete el campo zona, antes de avanzar con la búsqueda.";
+    if((busquedaViaje.value === "") ){
+        errorEmail.innerHTML = "Error!, complete el campo (zona) antes de avanzar en la busqueda"
         errorEmail.className = "text-danger";
-        
+    }else if((busquedaViaje.value.toLowerCase() !=="norte") && (busquedaViaje.value.toLowerCase() !=="centro") && (busquedaViaje.value.toLowerCase() !== "sur")){
+
+        errorEmail.innerHTML = "Error!, ingrese una zona (norte,centro,sur), correcta para avanzar con la busqueda."
+        errorEmail.className = "text-danger";
+
     }else{
         errorEmail.innerHTML = "";
     }
-    
-    const destinoSeleccionado = {
-        zona: busquedaViaje.value,
-        destino: select.value
-    }
-    
-    
+       
+}
 
-   let destino= localStorage.setItem("paqueteViaje",JSON.stringify(destinoSeleccionado));
 
-  /*  let destinooo = JSON.parse(localStorage.getItem("paqueteViaje"));
 
-   console.log(destinooo);
- */
+formularioDestino.addEventListener("submit",(e) =>{
+
+    e.preventDefault();
+    errorCamposFormulario();
+
+    const formularioInput = paqueteViajes.filter(zonaViajes => zonaViajes == busquedaViaje.value.toLowerCase());
+    const fomularioSelect = select.value;
+
+    localStorage.setItem("paqueteViajeBusqueda" , )
+    
     
 });
 
