@@ -29,13 +29,13 @@ const renderProductosOfertas = () =>{
     ofertas.forEach(item => {
     salida+=
     `<div class= "mb-3 d-flex justify-content-center">
-        <div class="card bg-card css-card" style="width: 18rem;">
-            <img src="${item.imagen}" class="card-img-top img-fluid" alt="${item.nombre}">
+        <div class="card bg-card css-card border-dark" style="width: 18rem;">
+            <img src="${item.imagen}" class=" alt="${item.nombre}">
             <div class="card-body ">
             <h5 class="card-title text-center"><p>${item.destino}</p></h5>
             <p class="card-text text-center">Tu paquete de viaje soñado, ${item.nombre} 2023.\n Es posbile con DEFILIPPI TOURLINES.</p>
-            <div class= "d-flex justify-content-center">
-            <a href="#" class="btn bg-btn-render text-light">Conoce más</a>
+            <div class= "d-flex justify-content-center css-div">
+            <a href="#" class="btn bg-btn-render border-dark css-button text-light">Conoce más</a>
             </div>
             
             </div>
@@ -89,7 +89,7 @@ const errorCamposFormulario = () =>{
 
 formularioDestino.addEventListener("submit",(e) =>{
 
-   /*  e.preventDefault(); */
+    e.preventDefault();
     errorCamposFormulario();
 
     const formularioInput = paqueteViajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje.value.toLowerCase());
