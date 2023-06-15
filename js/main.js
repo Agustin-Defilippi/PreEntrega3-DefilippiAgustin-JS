@@ -12,7 +12,6 @@ const viajes = [{nombre:"Salta",destino:"salta",duracion:"5 dias",boleto:"ida y 
 
 const renderProductosOfertas = () =>{
     const viajesOfertas = viajes.filter(item => item.categoria === "oferta");
-    console.log(viajesOfertas)
 
    let salida = ""; 
 
@@ -42,25 +41,52 @@ renderProductosOfertas();
 
 
 
+const formularioDestino = document.getElementById("fomularioDestino");
+const busquedaViaje = document.getElementById("busquedaViaje");
+const select =  document.getElementById("destinoFiltrado");
 
 const filtrado = () => {
     let salida = "";
-    let busquedaViaje = document.getElementById("busquedaViaje").value;
-    const filtradoZona = viajes.filter((zonaViajes) => zonaViajes.zona == busquedaViaje.toLowerCase());
+    let busquedaInput = busquedaViaje.value;
+    const filtradoZona = viajes.filter((zonaViajes) => zonaViajes.zona == busquedaInput.toLowerCase());
     filtradoZona.forEach((zonaViajes) => {
         salida += `<option value="${zonaViajes.destino}">${zonaViajes.destino}</option>\n`;
     });
-
-    document.getElementById("destinoFiltrado").innerHTML = salida;
+    select.innerHTML = salida;
 }
 
-let busquedaViajee = document.getElementById("busquedaViaje");
-
-busquedaViajee.addEventListener("input", () => {
+busquedaViaje.addEventListener("change", () => {
     filtrado();
 });
 
+formularioDestino.addEventListener("submit",(e) =>{
 
+    e.preventDefault();
+
+    const errorEmail = document.getElementById("errorEmail");
+    if((busquedaViaje.value === "") || ((busquedaViaje.value.toLowerCase() !== "norte") && (busquedaViaje.value.toLowerCase() !== "centro") && (busquedaViaje.value.toLowerCase() !== "sur"))){
+        errorEmail.innerHTML = "Error!, Complete el campo zona, antes de avanzar con la búsqueda.";
+        errorEmail.className = "text-danger";
+        
+    }else{
+        errorEmail.innerHTML = "";
+    }
+    
+    const destinoSeleccionado = {
+        zona: busquedaViaje.value,
+        destino: select.value
+    }
+    
+    
+
+   let destino= localStorage.setItem("paqueteViaje",JSON.stringify(destinoSeleccionado));
+
+  /*  let destinooo = JSON.parse(localStorage.getItem("paqueteViaje"));
+
+   console.log(destinooo);
+ */
+    
+});
 
 
 

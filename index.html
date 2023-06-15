@@ -149,7 +149,9 @@
           <div class="mb-4">
             <label for="exampleInputEmail1" class="form-label text-center">INGRESE UNA ZONA ESPECÍFICA DEL PAÍS.</label>
             <input type="text" class="form-control" id="busquedaViaje" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">Error!, Complete el campo zona, antes de avanzar con la búsqueda.</div>
+            <div id="errorEmail" class="form-text">
+
+            </div>
           </div>
           <div class="mb-5 w-100">
            <select  class="w-100 text-center"  id="destinoFiltrado">
@@ -158,24 +160,19 @@
           </div>
          
           <div class="w-100 d-flex justify-content-center">
-            <button type="button" class="btn bg-dropdown w-50 text-dark"> <b>Buscar</b></button>
+            <button type="submit" class="btn bg-dropdown"> <b>Buscar</b></button>
           </div>
         </form>
 
 
       </div>
 
-
-
-      <div class="containerd-cards container-fluid w-100">
+      <section class="containerd-cards container-fluid w-100">
         <h2 class="text-center my-5">TENEMOS ESTOS INCREÍBLES PAQUETES EN OFERTA PARA VOS!</h2>
-          <div  id="productos" class="render-Productos">
-
-          </div>
-      </div>
-
-
-
+        <article  id="productos" class="render-Productos">
+                        
+        </article>
+      </section>
 
       <footer >
         <div>
