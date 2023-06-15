@@ -78,6 +78,20 @@ main .bg-card {
 main .bg-card .bg-btn-render {
   background-color: rgb(243, 130, 130);
 }
+main section article .css-card {
+  border-radius: 15px;
+  background: linear-gradient(to bottom, white, rgb(250, 203, 203));
+}
+main section article .css-card:hover {
+  transform: scale(1.08);
+  transition: all 1s;
+  cursor: pointer;
+  margin: 20px;
+}
+main section article .css-card img {
+  height: auto;
+  width: auto;
+}
 
 .navegador {
   padding: 0;

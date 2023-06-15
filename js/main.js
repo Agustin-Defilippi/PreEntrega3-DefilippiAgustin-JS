@@ -29,10 +29,10 @@ const renderProductosOfertas = () =>{
     ofertas.forEach(item => {
     salida+=
     `<div class= "mb-3 d-flex justify-content-center">
-        <div class="card bg-card" style="width: 18rem;">
-            <img src="${item.imagen}" class="card-img-top" alt="${item.nombre}">
+        <div class="card bg-card css-card" style="width: 18rem;">
+            <img src="${item.imagen}" class="card-img-top img-fluid" alt="${item.nombre}">
             <div class="card-body ">
-            <h5 class="card-title"><p>${item.destino}</p></h5>
+            <h5 class="card-title text-center"><p>${item.destino}</p></h5>
             <p class="card-text text-center">Tu paquete de viaje soñado, ${item.nombre} 2023.\n Es posbile con DEFILIPPI TOURLINES.</p>
             <div class= "d-flex justify-content-center">
             <a href="#" class="btn bg-btn-render text-light">Conoce más</a>
@@ -89,10 +89,10 @@ const errorCamposFormulario = () =>{
 
 formularioDestino.addEventListener("submit",(e) =>{
 
-    e.preventDefault();
+   /*  e.preventDefault(); */
     errorCamposFormulario();
 
-    const formularioInput = paqueteViajes.filter(zonaViajes => zonaViajes == busquedaViaje.value.toLowerCase());
+    const formularioInput = paqueteViajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje.value.toLowerCase());
     const fomularioSelect = formularioInput.find(destino => destino.destino == select.value);
 
     localStorage.setItem("paqueteViajeBusqueda", JSON.stringify(fomularioSelect));
@@ -102,6 +102,6 @@ formularioDestino.addEventListener("submit",(e) =>{
 
 
 
-let papa = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"))
+let papa = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
 
 console.log(papa);

@@ -83,9 +83,30 @@ main{
     }
     .bg-card{
     border-radius: 7px;
-    .bg-btn-render{
-        background-color:  rgb(243, 130, 130);
+        .bg-btn-render{
+            background-color:  rgb(243, 130, 130);
+        }
     }
+    section{
+        article{
+            .css-card{
+                border-radius: 15px;
+                background: linear-gradient(to bottom,white, rgb(250, 203, 203) );
+
+                &:hover{
+                    transform: scale(1.08);
+                    transition: all 1s;
+                    cursor: pointer;
+                    margin: 20px;
+                }
+                img{
+                    height: auto;
+                    width: auto;
+                }
+            }
+            
+            
+        }
     }
 }
 
