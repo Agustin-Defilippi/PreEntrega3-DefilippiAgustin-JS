@@ -30,7 +30,7 @@ main .render-Productos {
 main footer {
   width: 100%;
   height: 100%;
-  background-color: rgb(243, 130, 130);
+  background-color: black;
   display: flex;
   flex-wrap: wrap;
 }
@@ -45,14 +45,14 @@ main footer .container-wrap svg {
   margin-top: 10px;
 }
 main footer .container-wrap .svg-fb {
-  color: black;
+  color: rgb(243, 130, 130);
   padding: 8px 8px;
 }
 main footer .container-wrap .svg-fb:hover {
   color: white;
 }
 main footer .container-wrap .svg-insta {
-  color: black;
+  color: rgb(243, 130, 130);
   padding: 8px 8px;
 }
 main footer .container-wrap .svg-insta:hover {
@@ -60,23 +60,28 @@ main footer .container-wrap .svg-insta:hover {
 }
 main footer .container-wrap .svg-twitter {
   padding: 8px 8px;
-  color: black;
+  color: rgb(243, 130, 130);
 }
 main footer .container-wrap .svg-twitter:hover {
   color: white;
 }
 main footer .container-wrap .css-text {
   display: flex;
-  color: white-;
   font-size: 1.2em;
   justify-content: center;
   text-align: center;
+  color: white;
 }
 main .bg-card {
   border-radius: 7px;
 }
 main .bg-card .bg-btn-render {
   background-color: rgb(243, 130, 130);
+}
+main section article .css-infoViaje {
+  background-color: black;
+  color: rgb(243, 130, 130);
+  border-radius: 5px;
 }
 main section article .css-card:hover {
   transform: scale(1.08);
