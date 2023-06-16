@@ -74,13 +74,16 @@ const errorCamposFormulario = () =>{
     if((busquedaViaje.value === "") ){
         errorEmail.innerHTML = "Error!, complete el campo (zona) antes de avanzar en la busqueda"
         errorEmail.className = "text-danger";
+        return false;
     }else if((busquedaViaje.value.toLowerCase() !=="norte") && (busquedaViaje.value.toLowerCase() !=="centro") && (busquedaViaje.value.toLowerCase() !== "sur")){
 
         errorEmail.innerHTML = "Error!, ingrese una zona (norte,centro,sur), correcta para avanzar con la busqueda."
         errorEmail.className = "text-danger";
+        return false;
 
     }else{
         errorEmail.innerHTML = "";
+        return true;
     }
        
 }
@@ -90,14 +93,19 @@ const errorCamposFormulario = () =>{
 formularioDestino.addEventListener("submit",(e) =>{
 
     e.preventDefault();
-    errorCamposFormulario();
+    let seguirPrograma=  errorCamposFormulario();
+    if(seguirPrograma == true){
 
-    const formularioInput = paqueteViajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje.value.toLowerCase());
-    const fomularioSelect = formularioInput.find(destino => destino.destino == select.value);
+        const formularioInput = paqueteViajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje.value.toLowerCase());
+        const fomularioSelect = formularioInput.find(destino => destino.destino == select.value);
 
-    localStorage.setItem("paqueteViajeBusqueda", JSON.stringify(fomularioSelect));
+        localStorage.setItem("paqueteViajeBusqueda", JSON.stringify(fomularioSelect));
     
-    setTimeout(() => location.href = "pages/paqueteViaje.html", 1500);
+        setTimeout(() => location.href = "pages/paqueteViaje.html", 1500);
+    }else{
+        return false
+    }
+    
     
 });
 
