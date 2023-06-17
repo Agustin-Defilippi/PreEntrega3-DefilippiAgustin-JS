@@ -117,6 +117,9 @@ main section article .css-card img {
 .navegador .container-fluid .contenedor-nav .bg-css {
   background-color: black;
 }
+.navegador .container-fluid .contenedor-nav .bg-css button {
+  background-color: white;
+}
 .navegador .container-fluid .contenedor-nav h5 p {
   color: rgb(248, 151, 151);
   text-align: center;
@@ -128,7 +131,6 @@ main section article .css-card img {
   border: solid 10px black;
 }
 .navegador .container-fluid .contenedor-nav .bord .cont .btn {
-  background-color: black;
   color: rgb(248, 151, 151);
 }
 .navegador .container-fluid .contenedor-nav .bord .cont .btn svg {

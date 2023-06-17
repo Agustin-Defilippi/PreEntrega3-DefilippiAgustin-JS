@@ -28,32 +28,14 @@ const btnConoceMas = document.getElementById("btn-conoceMas");
 btnConoceMas.addEventListener("click",() =>{
     const InfoAdicional = document.getElementById("informacionAdicional");
     const  infoDestino = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
-    
+
     let informacion = `
         <div class="card mb-4 w-100 css-infoViaje" style="width: 18rem;">
-    
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="${infoDestino.imagen}" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="${infoDestino.imagen2}" class="d-block w-100" alt="...">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-          
+            <img src="${infoDestino.imagen2}" class="w-100" alt="...">
+               
             <div class="card-body">
                 <h5 class="card-title text-center">${infoDestino.nombre}</h5>
-                <p class="card-text my-2">${infoDestino.slogan}</p>
+                <p class="card-text text-center my-2">${infoDestino.slogan}</p>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><b>Fecha de salida</b>: ${infoDestino.salida}.</li>

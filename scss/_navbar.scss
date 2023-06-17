@@ -10,9 +10,14 @@
             img{
                 width: 30%;
                 height: 30%;
+                
+                
             }
             .bg-css{
                 background-color:  black;
+                button{
+                    background-color: white;
+                }
             }
             h5{
                 p{
@@ -27,8 +32,9 @@
                 border: solid 10px black;
                 .cont{
                     .btn{
-                        background-color: black;
-                        color: rgb(248, 151, 151);    
+                        
+                        color: rgb(248, 151, 151);
+                           
                         svg{
                             height: auto;
                         }
