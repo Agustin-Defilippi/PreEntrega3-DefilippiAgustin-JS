@@ -9,7 +9,7 @@ const viajeFiltrado = () =>{
                     <h4>${viajeFiltrado.nombre} 2023 te está esperando!<br></h4>
                     <p class="card-text">
                     Con Defilippi Tourlines esto es posible, aprovecha con nosotros la posibilidad de poder hacer tu  sueño realidad.<br><br>
-                    <b>Precio<b>: $${viajeFiltrado.precio}
+                    <b>Precio</b>: $${viajeFiltrado.precio}
                     </p>
                 </div>
                 <div class= "d-flex justify-content-center css-div mb-2">

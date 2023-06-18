@@ -121,10 +121,10 @@ const viajes = [
     zona:"sur",
     imagen:"https://i.ytimg.com/vi/54DgAZHTAEI/maxresdefault.jpg",
     imagen2:"https://www.serargentino.com/public/images/2019/12/Calafate-773x458.jpeg",
-    excursiones: "<br><b>City tour completo</b>: Disfrutando de los hermosos paisaje, lagos y bosques que te ofrece la ciudad y sus alrededores.<br><b>Travesia en Barco: en esta excursión desde El Calafate contemplaremos las imponentes montañas de hielo del Parque Nacional de los Glaciares. Además, completaremos la experiencia dando un paseo en barco",
+    excursiones: "<br><b>City tour completo</b>: Disfrutando de los hermosos paisaje, lagos y bosques que te ofrece la ciudad y sus alrededores.<br><b>Travesia en Barco</b>: en esta excursión desde El Calafate contemplaremos las imponentes montañas de hielo del Parque Nacional de los Glaciares. Además, completaremos la experiencia dando un paseo en barco.<br><b>Glaciar Perito Moreno</b>: en esta excursión  visitaremos el glaciar más famoso del mundo. Caminaremos entre la naturaleza de la Patagonia argentina y podrás cruzar las pasarelas de observación.",
     coordinador: "Alicia Espinoza",
     salida: "4 de abril",
-    slogan : "No te pierdas de la diversidad cultural y geográfica de San Carlos de Bariloche.",
+    slogan : "No te pierdas de la diversidad cultural y geográfica de Santa Cruz (CALAFATE).",
     }
 ];
 
@@ -193,13 +193,13 @@ const errorCamposFormulario = () =>{
 
     const errorEmail = document.getElementById("errorEmail");
     if((busquedaViaje.value === "") ){
-        errorEmail.innerHTML = "Error!, complete el campo (zona) antes de avanzar en la busqueda"
-        errorEmail.className = "text-danger";
+        errorEmail.innerHTML = "Error! complete el campo (zona) antes de avanzar en la busqueda"
+        errorEmail.className = "text-danger mt-1";
         return false;
     }else if((busquedaViaje.value.toLowerCase() !=="norte") && (busquedaViaje.value.toLowerCase() !=="centro") && (busquedaViaje.value.toLowerCase() !== "sur")){
 
-        errorEmail.innerHTML = "Error!, ingrese una zona (norte,centro,sur), correcta para avanzar con la busqueda."
-        errorEmail.className = "text-danger";
+        errorEmail.innerHTML = "Error! ingrese (norte, centro o sur), correcta para avanzar con la busqueda."
+        errorEmail.className = "text-danger mt-1";
         return false;
 
     }else{

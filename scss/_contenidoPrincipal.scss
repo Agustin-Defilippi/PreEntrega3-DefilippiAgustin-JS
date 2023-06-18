@@ -16,14 +16,16 @@ main{
         display: flex;
         justify-content: center;
         
+        
         form{
             width: 80%;
             height: auto;
-            border: solid 2px black;
+            border-radius: 10px;
             padding: 10px;
+            background-color:black ;
             .bg-dropdown{
-                background-color: black ;
-                color:rgb(248, 151, 151);
+                background-color: rgb(243, 130, 130) ;
+                color:white;
                 width: 35%;
             }
         }
