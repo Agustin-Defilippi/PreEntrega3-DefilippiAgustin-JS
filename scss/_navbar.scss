@@ -9,9 +9,7 @@
             background-color:  black;
             img{
                 width: 30%;
-                height: 30%;
-                
-                
+                height: 30%;                
             }
             .bg-css{
                 background-color:  black;
@@ -32,9 +30,7 @@
                 border: solid 10px black;
                 .cont{
                     .btn{
-                        
                         color: rgb(248, 151, 151);
-                           
                         svg{
                             height: auto;
                         }
@@ -55,7 +51,6 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
-                    
                 .contactanos{
                     background-color: black ;
                     color:rgb(248, 151, 151);
@@ -80,10 +75,6 @@
                     }
                 }
             }
-               
-            
-            
-            
         }
     }
 }

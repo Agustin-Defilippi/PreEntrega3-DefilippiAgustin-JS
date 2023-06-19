@@ -98,6 +98,24 @@ main section article .css-card img {
   border: solid 1px black;
   object-fit: contain;
 }
+main .btn-contratar {
+  background-color: rgb(243, 130, 130);
+}
+main .btn-contratar:hover {
+  background-color: black;
+  color: rgb(243, 130, 130);
+  border: solid 1px white;
+  transform: scale(1.1);
+  transition: 1s;
+}
+main .cont-Viaje form {
+  width: 80%;
+  background-color: black;
+  border-radius: 5px;
+}
+main .cont-Viaje form .text-color {
+  color: rgb(243, 130, 130);
+}
 
 .navegador {
   padding: 0;

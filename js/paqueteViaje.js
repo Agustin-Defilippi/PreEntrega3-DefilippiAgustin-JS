@@ -12,8 +12,8 @@ const viajeFiltrado = () =>{
                     <b>Precio</b>: $${viajeFiltrado.precio}
                     </p>
                 </div>
-                <div class= "d-flex justify-content-center css-div mb-2">
-                <button id="btn-conoceMas" class="btn bg-btn-render border-dark css-button text-light">Más Información</button>
+                <div class= "d-flex justify-content-center mb-2">
+                <button id="btn-conoceMas" class="btn bg-btn-render border-dark  text-light">Más Información</button>
                 </div>
             </div>
       </div>`;
@@ -24,13 +24,13 @@ const viajeFiltrado = () =>{
 viajeFiltrado();
 
 const btnConoceMas = document.getElementById("btn-conoceMas");
-
+const InfoAdicional = document.getElementById("informacionAdicional");
 btnConoceMas.addEventListener("click",() =>{
-    const InfoAdicional = document.getElementById("informacionAdicional");
+    let containerInfoAdicional = document.getElementById("informacionAdicional");
     const  infoDestino = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
 
     let informacion = `
-        <div class="card mb-4 w-100 css-infoViaje" style="width: 18rem;">
+        <div class="card mb-4 w-100 css-infoViaje " style="width: 18rem;">
             <img src="${infoDestino.imagen2}" class="w-100" alt="...">
                
             <div class="card-body">
@@ -42,7 +42,17 @@ btnConoceMas.addEventListener("click",() =>{
                 <li class="list-group-item"><b>Excursiones</b>: ${infoDestino.excursiones}.</li>
                 <li class="list-group-item"><b>Coordinador</b>: ${infoDestino.coordinador}.</li>
             </ul>
+            <div class="card-body d-flex justify-content-center">
+                <button id="btn-contratar" type="button" class="btn btn-contratar">Contratar</button>
+            </div>
         </div>
+        
     `
-    InfoAdicional.innerHTML = informacion;
+    containerInfoAdicional.innerHTML = informacion;
 });
+
+
+informacionAdicional.addEventListener("click", (e) => {
+    (e.target.id === "btn-contratar") && setTimeout(() => location.href = "contratarViaje.html", 1500);
+});
+
