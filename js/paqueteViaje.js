@@ -1,5 +1,7 @@
+const viajeBusqueda =  JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
+
 const viajeFiltrado = () =>{
-    const viajeFiltrado = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
+    const viajeFiltrado = viajeBusqueda
 
     let cardViajeFiltrado =
     `<div class="d-flex justify-content-center mb-5">
@@ -25,9 +27,10 @@ viajeFiltrado();
 
 const btnConoceMas = document.getElementById("btn-conoceMas");
 const InfoAdicional = document.getElementById("informacionAdicional");
+
 btnConoceMas.addEventListener("click",() =>{
     let containerInfoAdicional = document.getElementById("informacionAdicional");
-    const  infoDestino = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
+    const  infoDestino = viajeBusqueda;
 
     let informacion = `
         <div class="card mb-4 w-100 css-infoViaje " style="width: 18rem;">
@@ -48,11 +51,13 @@ btnConoceMas.addEventListener("click",() =>{
         </div>
         
     `
+    
     containerInfoAdicional.innerHTML = informacion;
 });
 
 
 informacionAdicional.addEventListener("click", (e) => {
+    const  Destino = viajeBusqueda;
     (e.target.id === "btn-contratar") && setTimeout(() => location.href = "contratarViaje.html", 1500);
 });
 

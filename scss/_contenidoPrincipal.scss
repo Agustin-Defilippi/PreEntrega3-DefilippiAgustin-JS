@@ -118,6 +118,15 @@ main{
             transition: 1s;
         }
     }
+    .bg-viajeElegido{
+        background-color: rgb(253, 191, 191);
+        border-radius: 5px;
+       
+        p{
+            color: black;
+            border: solid 2px black;
+        }   
+    }
     .cont-Viaje{
        
         form{

@@ -108,6 +108,14 @@ main .btn-contratar:hover {
   transform: scale(1.1);
   transition: 1s;
 }
+main .bg-viajeElegido {
+  background-color: rgb(253, 191, 191);
+  border-radius: 5px;
+}
+main .bg-viajeElegido p {
+  color: black;
+  border: solid 2px black;
+}
 main .cont-Viaje form {
   width: 80%;
   background-color: black;

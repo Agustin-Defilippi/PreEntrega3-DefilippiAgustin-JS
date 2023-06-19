@@ -117,57 +117,58 @@
       <h2>Con nosotros tus sueños son Posibles!</h2>
 
 
-      <div class="bg-dark">
-        <p  class="my-5 text-center text-light">Complete el formulario para contratar el viaje y generar el pago.</p>
+      <div class="bg-viajeElegido">
+        <p id="comprarViaje" class="my-5 text-center"></p>
       </div>
       
         
         <div class="w-100 d-flex justify-content-center cont-Viaje w-100 my-5">
-          <form class="row g-3">
+          <form  id="fomularioUsuario" class="row g-3">
             <div class="col-md-4 text-center text-color">
               <label for="validationDefault01" class="form-label">Nombre completo</label>
-              <input type="text" class="form-control" id="validationDefault01" placeholder="Ingrese su nombre" required>
+              <input type="text" class="form-control" id="nombreUsuario" placeholder="Ingrese su nombre">
             </div>
             <div class="col-md-4 text-center text-color">
               <label for="validationDefault02" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="validationDefault02" placeholder="Ingrese su Apellido" required>
+              <input type="text" class="form-control" id="apellidoUsuario" placeholder="Ingrese su Apellido">
             </div>
             <div class="col-md-4 text-center text-color">
               <label for="validationDefault02" class="form-label">Edad</label>
-              <input type="text" class="form-control" id="validationDefault02" placeholder="Ingrese su Edad" required>
+              <input type="text" class="form-control" id="edadUsuario" placeholder="Ingrese su Edad">
+            </div>
+            <div class="col-md-4 text-center text-color">
+              <label for="validationDefault02" class="form-label">Documento Nacional Identidad</label>
+              <input type="text" class="form-control" id="dniUsuario" placeholder="Ingrese su Dni">
             </div>
             <div class="col-md-4 text-center text-color">
               <label for="validationDefaultUsername" class="form-label">Correo Electrónico</label>                
-              <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" placeholder="Ingrese su Corre Electrónico" required>
+              <input type="text" class="form-control" id="correoElectronico"  aria-describedby="inputGroupPrepend2" placeholder="Ingrese su Corre Electrónico">
             </div>
             <div class="col-md-6 text-center text-color">
               <label for="validationDefault03" class="form-label">Provincia</label>
-              <input type="text" class="form-control" id="validationDefault03" placeholder="Ingrese su provincia" required>
+              <input type="text" class="form-control" id="provinciaUsuario" placeholder="Ingrese su provincia">
             </div>
             <div class="col-md-3 text-center text-color">
               <label for="validationDefault04" class="form-label">Ciudad</label>
-              <input type="text" class="form-control" id="validationDefault03" placeholder="Ingrese su Ciudad" required>
+              <input type="text" class="form-control" id="ciudadUsuario" placeholder="Ingrese su Ciudad">
             </div>
             <div class="col-md-3 text-center text-color">
-              <label for="validationDefault05" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="validationDefault05" required>
+              <label for="validationDefault05" class="form-label">Nacionalidad</label>
+              <input type="text" class="form-control" id="nacionalidadUsuario" placeholder="Ingrese su Nacionalidad">
             </div>
             <div class="col-12 text-center">
             </div>
-            <div class="col-12 text-center mb-4">
-              <button class="btn btn-contratar" type="submit">COMPRAR</button>
+            <div id="completarCampos" class="form-text">
+
             </div>
+            <div class="col-12 text-center mb-4">
+              <button  id="btn-ingresoUsuario" class="btn btn-contratar" type="submit">COMPRAR</button>
+            </div>
+          
           </form>
   
         </div>
         
-
-
-
-
-
-
-
         <footer >
             <div>
             <article class="container-wrap">
