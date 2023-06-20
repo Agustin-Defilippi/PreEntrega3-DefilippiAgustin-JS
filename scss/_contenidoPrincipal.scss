@@ -31,52 +31,7 @@ main{
         width: 100%;
         height: auto;
     }
-    footer{
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        display: flex;
-        flex-wrap: wrap;
-        .container-wrap{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            svg{
-                width: 50px;
-                height: 50px;
-                margin-top: 10px;
-            }
-            .svg-fb{
-                color:rgb(243, 130, 130);
-                padding: 8px 8px;
-                
-                &:hover{
-                    color: white;
-                }
-            }
-            .svg-insta{
-                color:rgb(243, 130, 130);
-                padding: 8px 8px;
-                &:hover{
-                    color: white;
-                }
-            }
-            .svg-twitter{
-                padding: 8px 8px;
-                color:rgb(243, 130, 130);
-                &:hover{
-                    color: white;
-                }
-            }
-            .css-text{
-                display: flex;
-                font-size: 1.2em;
-                justify-content: center;
-                text-align: center;
-                color: white;
-            }
-        }
-    }
+   
     .bg-card{
         border-radius: 7px;
         .bg-btn-render{
@@ -189,7 +144,52 @@ main{
     
 }
 
-
+footer{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    .container-wrap{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        svg{
+            width: 50px;
+            height: 50px;
+            margin-top: 10px;
+        }
+        .svg-fb{
+            color:rgb(243, 130, 130);
+            padding: 8px 8px;
+            
+            &:hover{
+                color: white;
+            }
+        }
+        .svg-insta{
+            color:rgb(243, 130, 130);
+            padding: 8px 8px;
+            &:hover{
+                color: white;
+            }
+        }
+        .svg-twitter{
+            padding: 8px 8px;
+            color:rgb(243, 130, 130);
+            &:hover{
+                color: white;
+            }
+        }
+        .css-text{
+            display: flex;
+            font-size: 1.2em;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+    }
+}
 
 
 

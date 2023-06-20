@@ -5,13 +5,7 @@ console.log(destinoFinal);
 const comprarViaje= document.getElementById("comprarViaje");
 comprarViaje.innerHTML=`Complete el formulario para contratar  <b>${destinoFinal.nombre}</b> a su paquete de viajes y así poder generar el pago del mismo.`
 
-
-
-
-
-
 class PasajeCliente{
-
     constructor(nombre,apellido,edad,dni,correo,provincia,ciudad,nacionalidad){
         this.nombrePasajero = nombre;
         this.apellidoPasajero = apellido;
@@ -23,8 +17,6 @@ class PasajeCliente{
         this.ciudad = ciudad;
         this.nacionalidad = nacionalidad;
     }
-
-    
       mayorEdad(numero){
         if (this.edad < numero) {
           return "Usted es menor de edad. Deberá presentar autorización de padre, madre y/o tutor y presentarse en la agencia de turismo.";
@@ -32,8 +24,6 @@ class PasajeCliente{
           return `Usted es mayor de edad. Deberá presentar fotocopia a color de su DNI número ${this.dni} de ambos lados y su identificación en forma física en la agencia.`;
         }
       } 
-
-
     nacionalidadPasajero(){
       if(this.nacionalidad === "ARGENTINO"){
         return"Usted es argentino, ingrese a MI ARGENTINA y descargue el certificado de vacunacion contra COVID-19.";
@@ -44,13 +34,6 @@ class PasajeCliente{
       }
     }
 }
-
-
-
-
-
-
-
 const formularioUsuario = () =>{
   const nombreUsuario = document.getElementById("nombreUsuario").value.toUpperCase();
   const apellidoUsuario = document.getElementById("apellidoUsuario").value.toUpperCase();
@@ -62,7 +45,6 @@ const formularioUsuario = () =>{
   const nacionalidadUsuario = document.getElementById("nacionalidadUsuario").value.toUpperCase();
 
   let completarCampos = document.getElementById("completarCampos");
-
   if((nombreUsuario == "") || (apellidoUsuario == "") || (edadUsuario == "") || (dniUsuario == "") || (correoUsuario == "") || (provinciaUsuario == "") || (ciudadUsuario == "") || (nacionalidadUsuario == "")){
 
     completarCampos.innerHTML= "Error!, por favor complete todos los campos de ingreso, para avanzar.";
@@ -72,15 +54,9 @@ const formularioUsuario = () =>{
     completarCampos.innerHTML = "";
     return true;
   }
-
-
 }
 
-
-
 const fomularioIngresoUsuario = document.getElementById("fomularioUsuario")
-
-
 fomularioIngresoUsuario.addEventListener("submit",(e) =>{
   e.preventDefault();
 
@@ -93,12 +69,7 @@ fomularioIngresoUsuario.addEventListener("submit",(e) =>{
   const ciudadUsuario = document.getElementById("ciudadUsuario").value.toUpperCase();
   const nacionalidadUsuario = document.getElementById("nacionalidadUsuario").value.toUpperCase();
 
-  
-
   const usuario = new PasajeCliente(nombreUsuario,apellidoUsuario,edadUsuario,dniUsuario,correoUsuario,provinciaUsuario,ciudadUsuario,nacionalidadUsuario)
-
-
- 
   if (formularioUsuario() == true) {
     const menorEdad = document.getElementById("menorEdad");
     const nacionalidad = document.getElementById("nacionalidad");
@@ -107,16 +78,10 @@ fomularioIngresoUsuario.addEventListener("submit",(e) =>{
     if (usuario.edad < edadMinima) {
       return (menorEdad.innerHTML = "Debes tener al menos 18 años para contratar el paquete de viaje.");
     }
-      
-    
-
     menorEdad.innerHTML = usuario.mayorEdad(edadMinima);
     nacionalidad.innerHTML= usuario.nacionalidadPasajero();
     const pasaporteDestino = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
     localStorage.setItem("datosUsuario", JSON.stringify(usuario));
     setTimeout(() => (location.href = "pasajeUsuario.html"), 5000);
   }
-
-  
-
 });

@@ -51,13 +51,10 @@ btnConoceMas.addEventListener("click",() =>{
         </div>
         
     `
-    
     containerInfoAdicional.innerHTML = informacion;
 });
-
 
 informacionAdicional.addEventListener("click", (e) => {
     const  Destino = viajeBusqueda;
     (e.target.id === "btn-contratar") && setTimeout(() => location.href = "contratarViaje.html", 1500);
 });
-

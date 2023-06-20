@@ -80,6 +80,3 @@ formularioDestino.addEventListener("submit",(e) =>{
         return false
     }
 });
-
-
-
