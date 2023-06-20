@@ -114,7 +114,7 @@ fomularioIngresoUsuario.addEventListener("submit",(e) =>{
     nacionalidad.innerHTML= usuario.nacionalidadPasajero();
     const pasaporteDestino = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
     localStorage.setItem("datosUsuario", JSON.stringify(usuario));
-    setTimeout(() => (location.href = "pasajeUsuario.html"), 3000);
+    setTimeout(() => (location.href = "pasajeUsuario.html"), 5000);
   }
 
   
