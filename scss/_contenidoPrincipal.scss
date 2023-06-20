@@ -136,7 +136,54 @@ main{
             .text-color{
                 color: rgb(243, 130, 130);
             }
+            .edad{
+                p{
+                    background-color: white;
+                    color: black;
+                    font-size: 1em;
+                }
+            }
         }
+    }
+
+    .contenedorBoleto{
+        
+        
+        .bg-boleto{
+            background-color: black;
+            border: solid 4px black;
+            .borde-superior{
+               
+                h3{
+                    color: white;
+                }
+                .text-p{
+                    color: white;
+                }
+            }
+            .borde-slogan{
+                background-color: rgb(243, 130, 130);
+                color: black;
+                font-size: 1em;
+            }
+            .contenedorDatos{
+                border: solid 2px white;
+                .datos-pasajeros{
+                    
+                    ul{
+                        li{
+                            list-style: none;
+                            color: white;
+                        }
+                    }
+                }
+                .css-white{
+                    color: white;
+                }
+            }
+           
+        }
+        
         
     }
     

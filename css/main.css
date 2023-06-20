@@ -124,6 +124,36 @@ main .cont-Viaje form {
 main .cont-Viaje form .text-color {
   color: rgb(243, 130, 130);
 }
+main .cont-Viaje form .edad p {
+  background-color: white;
+  color: black;
+  font-size: 1em;
+}
+main .contenedorBoleto .bg-boleto {
+  background-color: black;
+  border: solid 4px black;
+}
+main .contenedorBoleto .bg-boleto .borde-superior h3 {
+  color: white;
+}
+main .contenedorBoleto .bg-boleto .borde-superior .text-p {
+  color: white;
+}
+main .contenedorBoleto .bg-boleto .borde-slogan {
+  background-color: rgb(243, 130, 130);
+  color: black;
+  font-size: 1em;
+}
+main .contenedorBoleto .bg-boleto .contenedorDatos {
+  border: solid 2px white;
+}
+main .contenedorBoleto .bg-boleto .contenedorDatos .datos-pasajeros ul li {
+  list-style: none;
+  color: white;
+}
+main .contenedorBoleto .bg-boleto .contenedorDatos .css-white {
+  color: white;
+}
 
 .navegador {
   padding: 0;
@@ -197,6 +227,15 @@ main .cont-Viaje form .text-color {
 }
 .navegador .container-fluid .contenedor-nav .gian .container-svg .color-fb {
   color: rgb(27, 24, 216);
+}
+
+@media (min-width: 1024px) {
+  .navegador .contenedor-fluid {
+    background-color: red;
+  }
+  .navegador .contenedor-fluid .contendor-nav {
+    background-color: red;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
