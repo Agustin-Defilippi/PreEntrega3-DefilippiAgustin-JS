@@ -1,17 +1,16 @@
 {
-  "dependencies": {
-    "sass": "^1.63.3"
-  },
-  "name": "prototipo-entrega3-js",
+  "name": "c",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass",
-		"sass:watch": "sass --watch scss/main.scss  css/main.css"
+    "sass:watch": "sass --watch scss/main.scss  css/main.css"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "sass": "^1.63.6"
+  }
 }

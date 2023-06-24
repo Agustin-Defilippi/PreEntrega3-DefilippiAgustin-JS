@@ -23,6 +23,9 @@ const renderProductosOfertas = () =>{
             <h5 class="card-title text-center"><p>${item.nombre}</p></h5>
             <p class="card-text text-center">Tu paquete de viaje soñado, ${item.nombre} 2023.\n Es posbile con DEFILIPPI TOURLINES.</p>
             </div>
+            <div class="w-100 d-flex justify-content-center">
+                <button type="submit" class="btn bg-btn">MÁS INFO</button>
+            </div>
         </div>
     </div>`
    });

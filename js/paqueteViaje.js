@@ -4,7 +4,7 @@ const viajeFiltrado = () =>{
     const viajeFiltrado = viajeBusqueda
 
     let cardViajeFiltrado =
-    `<div class="d-flex justify-content-center mb-5">
+    `<div class="d-flex justify-content-center mb-5 bg-paqueteFiltrado">
             <div class="card bg-card css-card border-dark " style="width: 18rem;">
                 <img src="${viajeFiltrado.imagen}" class="card-img-top" alt="${viajeFiltrado.destino}">
                 <div class="card-body">
@@ -15,7 +15,7 @@ const viajeFiltrado = () =>{
                     </p>
                 </div>
                 <div class= "d-flex justify-content-center mb-2">
-                <button id="btn-conoceMas" class="btn bg-btn-render border-dark  text-light">Más Información</button>
+                <button id="btn-conoceMas" class="btn bg-btn border-dark  text-light">Más Información</button>
                 </div>
             </div>
       </div>`;

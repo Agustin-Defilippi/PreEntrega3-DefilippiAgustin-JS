@@ -1,9 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Saira:wght@300;400;500&display=swap" rel="stylesheet');
+@import url("https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500&display=swap");
+@media (width > 1024px) {
+  .navegador {
+    width: 500vw;
+    height: 100vh;
+  }
+  header .lll {
+    display: none;
+  }
+}
+* {
+  font-family: "Belanosima", sans-serif;
+}
+
 header {
   margin-bottom: 15%;
 }
 
 main .cont-h1 h1 {
-  color: rgb(243, 130, 130);
+  color: black;
   width: 80%;
   font-size: 2.5em;
 }
@@ -11,47 +26,65 @@ main .busqueda {
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: rgb(47, 78, 99);
 }
 main .busqueda form {
   width: 80%;
   height: auto;
   border-radius: 10px;
   padding: 10px;
-  background-color: black;
 }
 main .busqueda form .bg-dropdown {
-  background-color: rgb(243, 130, 130);
   color: white;
   width: 35%;
+  background-color: rgb(112, 179, 243);
+}
+main .busqueda form .text-form {
+  color: rgb(248, 248, 68);
+}
+main .bg-btn {
+  color: white;
+  width: 35%;
+  background-color: rgb(112, 179, 243);
+  margin-bottom: 5px;
 }
 main .render-Productos {
   width: 100%;
   height: auto;
 }
 main .bg-card {
-  border-radius: 7px;
-}
-main .bg-card .bg-btn-render {
-  background-color: rgb(243, 130, 130);
+  border-radius: 5px;
 }
 main section article .css-infoViaje {
   background-color: black;
-  color: rgb(243, 130, 130);
   border-radius: 5px;
 }
-main section article .css-card:hover {
+main section article .bg-paqueteFiltrado {
+  width: 100%;
+  padding: 20px;
+}
+main section article .bg-paqueteFiltrado .css-card {
+  padding: 5px;
+}
+main section article .bg-paqueteFiltrado .css-card:hover {
   transform: scale(1.08);
   transition: all 1s;
   cursor: pointer;
   margin: 20px;
   box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
 }
-main section article .css-card img {
+main section article .bg-paqueteFiltrado .css-card img {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   height: 100%;
   border: solid 1px black;
   object-fit: contain;
+}
+main section article .bg-paqueteFiltrado .css-card .bg-btn {
+  color: white;
+  width: 50%;
+  background-color: rgb(112, 179, 243);
+  margin-bottom: 5px;
 }
 main .btn-contratar {
   background-color: rgb(243, 130, 130);
@@ -113,47 +146,51 @@ main .contenedorBoleto .bg-boleto .contenedorDatos .css-white {
 footer {
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: rgb(248, 248, 68);
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
-footer .container-wrap {
-  width: 100%;
+footer .pos-svg {
+  display: flex;
+}
+footer .pos-svg .container-wrap {
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
+  width: 100%;
 }
-footer .container-wrap svg {
+footer .pos-svg .container-wrap svg {
   width: 50px;
   height: 50px;
   margin-top: 10px;
 }
-footer .container-wrap .svg-fb {
-  color: rgb(243, 130, 130);
+footer .pos-svg .container-wrap .svg-fb {
+  color: black;
   padding: 8px 8px;
 }
-footer .container-wrap .svg-fb:hover {
+footer .pos-svg .container-wrap .svg-fb:hover {
   color: white;
 }
-footer .container-wrap .svg-insta {
-  color: rgb(243, 130, 130);
+footer .pos-svg .container-wrap .svg-insta {
+  color: black;
   padding: 8px 8px;
 }
-footer .container-wrap .svg-insta:hover {
+footer .pos-svg .container-wrap .svg-insta:hover {
   color: white;
 }
-footer .container-wrap .svg-twitter {
+footer .pos-svg .container-wrap .svg-twitter {
   padding: 8px 8px;
-  color: rgb(243, 130, 130);
+  color: black;
 }
-footer .container-wrap .svg-twitter:hover {
+footer .pos-svg .container-wrap .svg-twitter:hover {
   color: white;
 }
-footer .container-wrap .css-text {
+footer .pos-svg .container-wrap .css-text {
   display: flex;
   font-size: 1.2em;
-  justify-content: center;
-  text-align: center;
-  color: white;
+  /*   justify-content: center;
+    text-align: center; */
+  color: black;
 }
 
 .navegador {
@@ -161,44 +198,32 @@ footer .container-wrap .css-text {
   margin-bottom: 15%;
 }
 .navegador .container-fluid {
-  background-color: black;
+  background-color: rgb(248, 248, 68);
 }
 .navegador .container-fluid .contenedor-nav {
   display: flex;
   align-items: center;
-  background-color: black;
+  justify-content: space-between;
+  background-color: rgb(248, 248, 68);
 }
-.navegador .container-fluid .contenedor-nav img {
-  width: 30%;
-  height: 30%;
+.navegador .container-fluid .contenedor-nav a {
+  width: 25%;
+}
+.navegador .container-fluid .contenedor-nav a img {
+  width: 100%;
+  height: 100%;
 }
 .navegador .container-fluid .contenedor-nav .bg-css {
-  background-color: black;
-}
-.navegador .container-fluid .contenedor-nav .bg-css button {
-  background-color: white;
+  background-color: rgb(248, 248, 68);
 }
 .navegador .container-fluid .contenedor-nav h5 p {
-  color: rgb(248, 151, 151);
+  color: black;
   text-align: center;
 }
 .navegador .container-fluid .contenedor-nav .bord {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: solid 10px black;
-}
-.navegador .container-fluid .contenedor-nav .bord .cont .btn {
-  color: rgb(248, 151, 151);
-}
-.navegador .container-fluid .contenedor-nav .bord .cont .btn svg {
-  height: auto;
-}
-.navegador .container-fluid .contenedor-nav .bord .cont a img {
-  width: 27%;
-  height: auto;
-  border-radius: 10px;
-  border-color: black;
 }
 .navegador .container-fluid .contenedor-nav .gian {
   height: auto;
@@ -208,10 +233,13 @@ footer .container-wrap .css-text {
   justify-content: flex-end;
 }
 .navegador .container-fluid .contenedor-nav .gian .contactanos {
-  background-color: black;
-  color: rgb(248, 151, 151);
+  color: black;
   border-radius: 5px;
   width: 100%;
+}
+.navegador .container-fluid .contenedor-nav .gian .contactanos p {
+  background-color: black;
+  color: rgb(248, 248, 68);
 }
 .navegador .container-fluid .contenedor-nav .gian .container-svg {
   margin-top: 50px;
@@ -221,22 +249,13 @@ footer .container-wrap .css-text {
   align-items: flex-end;
 }
 .navegador .container-fluid .contenedor-nav .gian .container-svg .color-insta {
-  color: violet;
+  color: rgb(230, 93, 230);
 }
 .navegador .container-fluid .contenedor-nav .gian .container-svg .color-wsp {
   color: rgb(88, 250, 102);
 }
 .navegador .container-fluid .contenedor-nav .gian .container-svg .color-fb {
   color: rgb(27, 24, 216);
-}
-
-@media (min-width: 1024px) {
-  .navegador .contenedor-fluid {
-    background-color: red;
-  }
-  .navegador .contenedor-fluid .contendor-nav {
-    background-color: red;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */

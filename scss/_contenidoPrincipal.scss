@@ -1,3 +1,6 @@
+*{
+    font-family: 'Belanosima', sans-serif;
+}
 header{
     margin-bottom: 15%;
 }
@@ -5,7 +8,7 @@ header{
 main{
     .cont-h1{
         h1{
-            color: rgb(243, 130, 130);
+            color: black;
             width: 80%;
             font-size: 2.5em;
         }
@@ -14,53 +17,75 @@ main{
         width: 100%;
         display: flex;
         justify-content: center;
+        background-color: rgb(47, 78, 99);
         form{
             width: 80%;
             height: auto;
             border-radius: 10px;
             padding: 10px;
-            background-color:black ;
+           
             .bg-dropdown{
-                background-color: rgb(243, 130, 130) ;
                 color:white;
                 width: 35%;
+                background-color: rgb(112, 179, 243);
+            }
+           
+            .text-form{
+                color: rgb(248, 248, 68);
             }
         }
     }
+    .bg-btn{
+        color:white;
+        width: 35%;
+        background-color: rgb(112, 179, 243);
+        margin-bottom: 5px;
+    }
+
     .render-Productos{
         width: 100%;
         height: auto;
     }
    
     .bg-card{
-        border-radius: 7px;
-        .bg-btn-render{
-            background-color:  rgb(243, 130, 130);
-        }
+        border-radius: 5px;
+       
     }
     section{
         article{
             .css-infoViaje{
                 background-color: black;
-                color:  rgb(243, 130, 130);
                 border-radius: 5px;
             }
-            .css-card{
-                &:hover{
-                    transform: scale(1.08);
-                    transition: all 1s;
-                    cursor: pointer;
-                    margin: 20px;
-                    box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5)
-                }
-                img{
-                    border-top-left-radius: 6px;
-                    border-top-right-radius: 6px;
-                    height: 100%;
-                    border: solid 1px black;
-                    object-fit: contain;
+            .bg-paqueteFiltrado{
+                
+                width: 100%;
+                padding: 20px;
+                .css-card{
+                    padding: 5px;
+                    &:hover{
+                        transform: scale(1.08);
+                        transition: all 1s;
+                        cursor: pointer;
+                        margin: 20px;
+                        box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5)
+                    }
+                    img{
+                        border-top-left-radius: 6px;
+                        border-top-right-radius: 6px;
+                        height: 100%;
+                        border: solid 1px black;
+                        object-fit: contain;
+                    }
+                    .bg-btn{
+                        color:white;
+                        width: 50%;
+                        background-color: rgb(112, 179, 243);
+                        margin-bottom: 5px;
+                    }
                 }
             }
+           
         }
     }
     .btn-contratar{
@@ -147,48 +172,54 @@ main{
 footer{
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: rgb(248, 248, 68);
     display: flex;
-    flex-wrap: wrap;
-    .container-wrap{
-        width: 100%;
+    flex-direction: column;
+    .pos-svg{
         display: flex;
-        justify-content: center;
-        svg{
-            width: 50px;
-            height: 50px;
-            margin-top: 10px;
-        }
-        .svg-fb{
-            color:rgb(243, 130, 130);
-            padding: 8px 8px;
-            
-            &:hover{
-                color: white;
-            }
-        }
-        .svg-insta{
-            color:rgb(243, 130, 130);
-            padding: 8px 8px;
-            &:hover{
-                color: white;
-            }
-        }
-        .svg-twitter{
-            padding: 8px 8px;
-            color:rgb(243, 130, 130);
-            &:hover{
-                color: white;
-            }
-        }
-        .css-text{
+        
+        .container-wrap{
             display: flex;
-            font-size: 1.2em;
             justify-content: center;
-            text-align: center;
-            color: white;
+            margin-bottom: 10px;
+            width: 100%;
+            svg{
+                width: 50px;
+                height: 50px;
+                margin-top: 10px;
+            }
+            .svg-fb{
+                color:black;
+                padding: 8px 8px;
+                
+                &:hover{
+                    color: white;
+                }
+            }
+            .svg-insta{
+                color:black;
+                padding: 8px 8px;
+                &:hover{
+                    color: white;
+                }
+            }
+            .svg-twitter{
+                padding: 8px 8px;
+                color:black;
+                &:hover{
+                    color: white;
+                }
+            }
+            .css-text{
+                display: flex;
+                font-size: 1.2em;
+              /*   justify-content: center;
+                text-align: center; */
+                color:black;
+            }
         }
     }
+    
 }
 
 
