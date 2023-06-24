@@ -1,16 +1,193 @@
 @media (width > 1024px ) {
-
     .navegador{
+        height: 20%;
+        margin-bottom: 30px;
+        width: 100%;
         
-        width: 500vw;
-        height: 100vh;
-       
-
+       .container-fluid{
+           width: 100%;
+           
+            .contenedor-nav{
+                height: 10%;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                
+                .container-logo{
+                    a{
+                  
+                        img{
+                            width: 150px ;
+                        }
+                    }
+                    
+                }
+                .true{
+                    display: none;
+                } 
+             
+                .container-ul{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    
+                    .navegacion{
+                        width: 40%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-evenly;
+                        align-items: center;
+                        a{
+                            list-style: none;
+                            font-family: 'Roboto Slab', serif;
+                            font-weight: 600;
+                            font-size: 1.1em;
+                            text-decoration: none;
+                            color: black;
+                            &:hover{
+                               color: rgb(54, 201, 238);
+                                
+                            }
+                        }
+                        li{
+                            list-style: none;
+                            font-family: 'Roboto Slab', serif;
+                            font-weight: 600;
+                            font-size: 1.2em;
+                            a{
+                                text-decoration: none;
+                                color: black;
+                                &:hover{
+                                    color: rgb(54, 201, 238);
+                                }
+                            }
+                        }
+                    }                    
+                }
+            }
+       }
     }
     
     header{
-        .lll{
-            display: none;
+        margin-bottom: 20px;
+        .container-carrousel{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80%;
+            .w-65{
+                width: 80%;
+                height: 50%;
+            }
         }
     }
+
+    main{
+        .cont-h1{
+            margin-top: 100px;
+          h1{
+            background:linear-gradient(to left,white,rgb(248, 248, 68));
+          }     
+        }
+        .busqueda{
+            background-color: white;
+            form{
+               width: 50%;
+               background-color: rgb(47, 78, 99);
+               
+               .bg-dropdown{
+                 width: 20%;
+              }
+            }
+           
+        }
+        .turismo{
+            width: 100%;
+            height: 400px;
+            background-color: rgb(47, 78, 99);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 80px 0 80px 0;
+            section{
+                width: 90%;
+                display: flex;
+                justify-content: space-between;
+                article{
+                    p{
+                        color: rgb(248, 248, 68);
+                        font-size: 4em;
+                        text-align: center;
+                    }
+                    .ley{
+                        color:rgb(112, 179, 243);
+                    }
+                }
+            }
+        }
+        .containerd-cards{
+            article{
+                display: flex;
+                justify-content: space-around;
+                .css-card{
+                    padding: 5px;
+                    background-color: rgb(47, 78, 99);
+                    color:white;
+                    &:hover{
+                        transform: scale(1.15);
+                        transition: all 1s;
+                        cursor: pointer;
+                        margin: 20px;
+                        box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5)
+                    }
+                }
+            }
+            
+        }
+        .bg-btn{
+            width: 40%;
+        }
+    }
+    footer{
+        font-family: 'Roboto Slab', serif;
+        font-weight: 600;
+        font-size: 1.5em;
+        margin-top: 30px;
+        .pos-svg{
+            
+            .container-wrap{
+                display: flex;
+                justify-content: center;
+                
+                .svg-fb{
+                    &:hover{
+                        color: rgb(54, 201, 238);
+                    }
+                }
+                .svg-insta{
+                    &:hover{
+                        color: rgb(54, 201, 238);
+                    }
+                }
+                .svg-twitter{
+                    &:hover{
+                        color: rgb(54, 201, 238);
+                    }
+                }
+               
+            }
+          
+        }
+        
+        .css-text{
+            display: flex;
+            justify-content: center;
+            color: rgb(54, 201, 238);
+        }
+    }
+   
 }
