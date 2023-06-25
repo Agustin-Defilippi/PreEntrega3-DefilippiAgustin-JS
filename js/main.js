@@ -1,3 +1,8 @@
+const formularioDestino = document.getElementById("fomularioDestino");
+const busquedaViaje = document.getElementById("busquedaViaje");
+const select =  document.getElementById("destinoFiltrado");
+
+
 const guardadoPaquetesViajesLs = () =>{
     localStorage.setItem("viajes",JSON.stringify(viajes));
 }
@@ -10,9 +15,9 @@ const paqueteViajeLs = () =>{
 
 const paqueteViajes = paqueteViajeLs();
 
-const renderProductosOfertas = () =>{
+const renderProductosOfertas = (filtrado) =>{
     
-    const ofertas = paqueteViajes.filter(item => item.categoria === "oferta");
+    const ofertas = filtrado.filter(item => item.categoria === "oferta");
     let salida = ""; 
     ofertas.forEach(item => {
     salida+=
@@ -32,16 +37,12 @@ const renderProductosOfertas = () =>{
    document.getElementById("productos").innerHTML = salida;
 }
 
-renderProductosOfertas();
+renderProductosOfertas(paqueteViajes);
 
-const formularioDestino = document.getElementById("fomularioDestino");
-const busquedaViaje = document.getElementById("busquedaViaje");
-const select =  document.getElementById("destinoFiltrado");
 
-const filtrado = () => {
+const filtradoPorZona = (valorInPut) => {
     let salida = "";
-    let busquedaInput = busquedaViaje.value;
-    const filtradoZona = paqueteViajes.filter((zonaViajes) => zonaViajes.zona == busquedaInput.toLowerCase());
+    const filtradoZona = paqueteViajes.filter((zonaViajes) => zonaViajes.zona == valorInPut.toLowerCase());
     filtradoZona.forEach((zonaViajes) => {
         salida += `<option value="${zonaViajes.destino}">${zonaViajes.destino}</option>\n`;
     });
@@ -49,18 +50,19 @@ const filtrado = () => {
 }
 
 busquedaViaje.addEventListener("change", () => {
-    filtrado();
+    let busquedaInput = busquedaViaje.value;
+    filtradoPorZona(busquedaInput);
 });
 
-const errorCamposFormulario = () =>{
+const validarFormulario = () =>{
 
     const errorEmail = document.getElementById("errorEmail");
     if((busquedaViaje.value === "") ){
-        errorEmail.innerHTML = "Error! complete el campo (zona) antes de avanzar en la busqueda."
+        errorEmail.innerHTML = "Error! complete el campo (zona) antes de avanzar en la busqueda.";
         errorEmail.className = "text-danger bg-dark mt-1";
         return false;
     }else if((busquedaViaje.value.toLowerCase() !=="norte") && (busquedaViaje.value.toLowerCase() !=="centro") && (busquedaViaje.value.toLowerCase() !== "sur")){
-        errorEmail.innerHTML = "Error! ingrese (norte, centro o sur), para avanzar con la busqueda."
+        errorEmail.innerHTML = "Error! ingrese (norte, centro o sur), para avanzar con la busqueda.";
         errorEmail.className = "text-danger bg-dark mt-1";
         return false;
     }else{
@@ -69,17 +71,29 @@ const errorCamposFormulario = () =>{
     }
 }
 
+
+const busquedaSelect = (valor) =>{
+    let inputZona = filtradoPorZona(paqueteViajes);
+    const selectOptions = inputZona.find(opciones => opciones.destino == valor);
+
+    return selectOptions;
+}
+
+
 formularioDestino.addEventListener("submit",(e) =>{
 
     e.preventDefault();
-    let seguirPrograma=  errorCamposFormulario();
-    if(seguirPrograma == true){
+    let validacionFormulario =  validarFormulario();
+    if(validacionFormulario == true){
 
-        const formularioInput = paqueteViajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje.value.toLowerCase());
-        const fomularioSelect = formularioInput.find(destino => destino.destino == select.value);
-        localStorage.setItem("paqueteViajeBusqueda", JSON.stringify(fomularioSelect));
+       /*  const formularioInput = paqueteViajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje.value.toLowerCase());
+        const fomularioSelect = formularioInput.find(destino => destino.destino == select.value); */
+
+        let opcionesLugares = busquedaSelect(select.value);
+        
+        localStorage.setItem("paqueteViajeBusqueda", JSON.stringify(opcionesLugares));
         setTimeout(() => location.href = "pages/paqueteViaje.html", 1500);
     }else{
-        return false
+        return false;
     }
 });

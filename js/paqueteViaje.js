@@ -1,4 +1,4 @@
-const viajeBusqueda =  JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
+const viajeBusqueda =  JSON.parse(localStorage.getItem("paqueteViajeBusqueda")) || [];
 
 const viajeFiltrado = () =>{
     const viajeFiltrado = viajeBusqueda

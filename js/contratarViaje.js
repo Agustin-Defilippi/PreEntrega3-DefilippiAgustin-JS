@@ -85,7 +85,7 @@ fomularioIngresoUsuario.addEventListener("submit",(e) =>{
     }
     menorEdad.innerHTML = usuario.mayorEdad(edadMinima);
     nacionalidad.innerHTML= usuario.nacionalidadPasajero();
-    const pasaporteDestino = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
+    JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
     localStorage.setItem("datosUsuario", JSON.stringify(usuario));
     setTimeout(() => (location.href = "pasajeUsuario.html"), 5000);
   }

@@ -1,5 +1,5 @@
-const destinoPasajero = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
-const datosPasajero = JSON.parse(localStorage.getItem("datosUsuario"));
+const destinoPasajero = JSON.parse(localStorage.getItem("paqueteViajeBusqueda")) || [];
+const datosPasajero = JSON.parse(localStorage.getItem("datosUsuario")) || [];
 
 const compraRealizada= document.getElementById("compraRealizada");
 compraRealizada.innerHTML=`<b>${datosPasajero.apellidoPasajero} ${datosPasajero.nombrePasajero}</b>, su compra se ha realizado con exito!`
