@@ -2,10 +2,10 @@ const destinoFinal = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
 
 console.log(destinoFinal);
 const h1 = document.getElementById("defilippi-destino");
-h1.innerHTML=`Defilippi Tourlines Y <b>${destinoFinal.nombre.toUpperCase()}</b> te están esperando!`
+h1.innerHTML=`Defilippi Tourlines Y <b>${destinoFinal.nombre.toUpperCase()}</b> te están esperando!`;
 
 const comprarViaje= document.getElementById("comprarViaje");
-comprarViaje.innerHTML=`Complete el formulario para contratar  <b>${destinoFinal.nombre}</b> a su paquete de viajes y así poder generar el pago del mismo.`
+comprarViaje.innerHTML=`Complete el formulario para contratar  <b>${destinoFinal.nombre}</b> a su paquete de viajes y así poder generar el pago del mismo.`;
 
 class PasajeCliente{
     constructor(nombre,apellido,edad,dni,correo,provincia,ciudad,nacionalidad){
@@ -50,7 +50,7 @@ const formularioUsuario = () =>{
   if(((nombreUsuario == "") || (!isNaN(nombreUsuario))) || ((apellidoUsuario == "") || (!isNaN(apellidoUsuario))) || ((edadUsuario == "") ||(isNaN(edadUsuario))) || ((dniUsuario == "") ||(isNaN(dniUsuario))) || (correoUsuario == "") || ((provinciaUsuario == "")|| (!isNaN(provinciaUsuario))) || ((ciudadUsuario == "")|| (!isNaN(ciudadUsuario))) || ((nacionalidadUsuario == "")|| (!isNaN(nacionalidadUsuario)))){
 
     completarCampos.innerHTML= "Error, por favor complete todos los campos de ingreso y revise si los datos son correspondientes hacia cada campo. Para poder avanzar.";
-    completarCampos.className= "text-danger bg-dark text-center mb-1"
+    completarCampos.className= "text-danger bg-dark text-center mb-1";
     return false;
   }else{
     completarCampos.innerHTML = "";

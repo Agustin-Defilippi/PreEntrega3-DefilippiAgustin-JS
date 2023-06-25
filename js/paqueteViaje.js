@@ -1,7 +1,7 @@
 const viajeBusqueda =  JSON.parse(localStorage.getItem("paqueteViajeBusqueda")) || [];
 
 const viajeFiltrado = () =>{
-    const viajeFiltrado = viajeBusqueda
+    const viajeFiltrado = viajeBusqueda;
 
     let cardViajeFiltrado =
     `<div class="d-flex justify-content-center mb-5 bg-paqueteFiltrado">
@@ -20,7 +20,7 @@ const viajeFiltrado = () =>{
             </div>
       </div>`;
     
-    document.getElementById("paqueteViajeFiltrado").innerHTML=cardViajeFiltrado
+    document.getElementById("paqueteViajeFiltrado").innerHTML=cardViajeFiltrado;
 }
 
 viajeFiltrado();
@@ -57,6 +57,6 @@ btnConoceMas.addEventListener("click",() =>{
 });
 
 informacionAdicional.addEventListener("click", (e) => {
-    const  Destino = viajeBusqueda;
+    JSON.parse(localStorage.getItem("paqueteViajeBusqueda")) || [];
     (e.target.id === "btn-contratar") && setTimeout(() => location.href = "contratarViaje.html", 1500);
 });

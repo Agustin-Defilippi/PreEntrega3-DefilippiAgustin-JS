@@ -2,7 +2,6 @@ const formularioDestino = document.getElementById("fomularioDestino");
 const busquedaViaje = document.getElementById("busquedaViaje");
 const select =  document.getElementById("destinoFiltrado");
 
-
 const guardadoPaquetesViajesLs = () =>{
     localStorage.setItem("viajes",JSON.stringify(viajes));
 }
@@ -39,7 +38,6 @@ const renderProductosOfertas = (filtrado) =>{
 
 renderProductosOfertas(paqueteViajes);
 
-
 const filtradoPorZona = (valorInPut) => {
     let salida = "";
     const filtradoZona = paqueteViajes.filter((zonaViajes) => zonaViajes.zona == valorInPut.toLowerCase());
@@ -71,26 +69,19 @@ const validarFormulario = () =>{
     }
 }
 
-
 const busquedaSelect = (valor) =>{
-    let inputZona = filtradoPorZona(busquedaViaje.value);
-    const selectOptions = inputZona.find(opciones => opciones.destino == valor);
-
+    let inputZona = paqueteViajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje.value.toLowerCase());
+    const selectOptions = inputZona.find(opciones => opciones.destino == valor.value);
     return selectOptions;
 }
-
 
 formularioDestino.addEventListener("submit",(e) =>{
 
     e.preventDefault();
     let validacionFormulario =  validarFormulario();
-    if(validacionFormulario == true){
+    if(validacionFormulario == true){      
 
-       /*const formularioInput = paqueteViajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje.value.toLowerCase());
-        const fomularioSelect = formularioInput.find(destino => destino.destino == select.value); */
-
-        let opcionesLugares = busquedaSelect(select.value);
-        
+        let opcionesLugares = busquedaSelect(select);
         localStorage.setItem("paqueteViajeBusqueda", JSON.stringify(opcionesLugares));
         setTimeout(() => location.href = "pages/paqueteViaje.html", 1500);
     }else{
