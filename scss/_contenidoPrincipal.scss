@@ -50,72 +50,134 @@ main{
    
     .bg-card{
         border-radius: 5px;
-       
     }
-    section{
+
+    .turismo{
+        background-color: rgb(47, 78, 99);
+        display: flex;
+        justify-content: center;
+        margin: 80px 0 80px 0;
+        section{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            article{
+                display: flex;
+                flex-direction: column;
+                p{
+                    color: rgb(248, 248, 68);
+                    font-size: 1.5em;
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+                .ley{
+                    color:rgb(112, 179, 243);
+                }
+            }
+        }
+    }
+    //index
+    .containerd-cards{
+        margin: 40px 0;
         article{
+            .css-card{
+                padding: 5px;
+                background-color: rgb(47, 78, 99);
+                color:white;
+                &:hover{
+                    transform: scale(1.08);
+                    transition: all 1s;
+                    cursor: pointer;
+                    margin: 20px;
+                    box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5)
+                }
+            }
             .css-infoViaje{
-                background-color: black;
                 border-radius: 5px;
             }
             .bg-paqueteFiltrado{
-                
                 width: 100%;
                 padding: 20px;
-                .css-card{
-                    padding: 5px;
-                    &:hover{
-                        transform: scale(1.08);
-                        transition: all 1s;
-                        cursor: pointer;
-                        margin: 20px;
-                        box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5)
-                    }
-                    img{
-                        border-top-left-radius: 6px;
-                        border-top-right-radius: 6px;
-                        height: 100%;
-                        border: solid 1px black;
-                        object-fit: contain;
-                    }
-                    .bg-btn{
-                        color:white;
-                        width: 50%;
-                        background-color: rgb(112, 179, 243);
-                        margin-bottom: 5px;
-                    }
-                }
             }
            
         }
     }
-    .btn-contratar{
-        background-color:  rgb(243, 130, 130);
-        &:hover{
-            background-color: black;
-            color: rgb(243, 130, 130);
-            border: solid 1px white;
-            transform:scale(1.1);
-            transition: 1s;
+
+    //pagina filtrada
+    section{
+        width: 100%;
+        article{
+           width: 100%;
+          
+           .css-pFiltrado {
+            padding: 5px;
+            &:hover{
+                transform: scale(1.08);
+                transition: all 1s;
+                cursor: pointer;
+                margin: 20px;
+                box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5)
+            }
+           }
+           .bg-btn{
+            width: 45%;
+            &:hover{
+                background-color: black; 
+
+            }
+            }
+        }
+        .css-infoViaje{
+           .bord-card-info{
+            border: solid 2px black;
+            .color-slogan{
+                background:linear-gradient(to top,rgba(202, 202, 202, 0.582),white);
+            }
+            .btn-contratar{
+                background-color:  rgb(112, 179, 243);
+                color: white;
+                &:hover{
+                    background-color: black;
+                    color: white;
+                    border: solid 1px white;
+                    transform:scale(1.1);
+                    transition: 1s;
+                }
+              
+            }
+           }
+            
+        }
+        
+    }
+   
+    .h1-div{
+        margin: 50px 0;
+        h1{
+            background-color:rgb(47, 78, 99);
+            color: white;
+            border-radius: 3px;
+            text-align: center;
         }
     }
+
     .bg-viajeElegido{
-        background-color: rgb(253, 191, 191);
+        background-color:  rgb(112, 179, 243);
         border-radius: 5px;
-       
         p{
             color: black;
             border: solid 2px black;
         }   
     }
     .cont-Viaje{
-       
+      
         form{
+            margin-top:30px;
             width: 80%;
-            background-color: black;
+            background-color:rgb(47, 78, 99);
             border-radius: 5px;
             .text-color{
-                color: rgb(243, 130, 130);
+                color: white;
             }
             .edad{
                 p{
@@ -125,16 +187,26 @@ main{
                 }
             }
         }
+        .btn-contratar{
+            background-color:  rgb(112, 179, 243);
+            color: white;
+            &:hover{
+                background-color: black;
+                color: white;
+                border: solid 1px white;
+                transform:scale(1.1);
+                transition: 1s;
+            }
+          
+        }
     }
 
     .contenedorBoleto{
-        
-        
+       
         .bg-boleto{
-            background-color: black;
-            border: solid 4px black;
+           background-color: black;
+           border-radius: 5px solid;
             .borde-superior{
-               
                 h3{
                     color: white;
                 }
@@ -143,8 +215,8 @@ main{
                 }
             }
             .borde-slogan{
-                background-color: rgb(243, 130, 130);
-                color: black;
+                background-color:  rgb(112, 179, 243);
+                color: white;
                 font-size: 1em;
             }
             .contenedorDatos{

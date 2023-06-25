@@ -57,11 +57,11 @@ const errorCamposFormulario = () =>{
     const errorEmail = document.getElementById("errorEmail");
     if((busquedaViaje.value === "") ){
         errorEmail.innerHTML = "Error! complete el campo (zona) antes de avanzar en la busqueda."
-        errorEmail.className = "text-danger mt-1";
+        errorEmail.className = "text-danger bg-dark mt-1";
         return false;
     }else if((busquedaViaje.value.toLowerCase() !=="norte") && (busquedaViaje.value.toLowerCase() !=="centro") && (busquedaViaje.value.toLowerCase() !== "sur")){
         errorEmail.innerHTML = "Error! ingrese (norte, centro o sur), para avanzar con la busqueda."
-        errorEmail.className = "text-danger mt-1";
+        errorEmail.className = "text-danger bg-dark mt-1";
         return false;
     }else{
         errorEmail.innerHTML = "";

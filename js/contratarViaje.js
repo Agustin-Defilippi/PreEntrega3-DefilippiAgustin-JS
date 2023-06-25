@@ -1,6 +1,8 @@
 const destinoFinal = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
 
 console.log(destinoFinal);
+const h1 = document.getElementById("defilippi-destino");
+h1.innerHTML=`Defilippi Tourlines Y <b>${destinoFinal.nombre.toUpperCase()}</b> te están esperando!`
 
 const comprarViaje= document.getElementById("comprarViaje");
 comprarViaje.innerHTML=`Complete el formulario para contratar  <b>${destinoFinal.nombre}</b> a su paquete de viajes y así poder generar el pago del mismo.`
@@ -45,10 +47,10 @@ const formularioUsuario = () =>{
   const nacionalidadUsuario = document.getElementById("nacionalidadUsuario").value.toUpperCase();
 
   let completarCampos = document.getElementById("completarCampos");
-  if((nombreUsuario == "") || (apellidoUsuario == "") || (edadUsuario == "") || (dniUsuario == "") || (correoUsuario == "") || (provinciaUsuario == "") || (ciudadUsuario == "") || (nacionalidadUsuario == "")){
+  if(((nombreUsuario == "") || (!isNaN(nombreUsuario))) || ((apellidoUsuario == "") || (!isNaN(apellidoUsuario))) || ((edadUsuario == "") ||(isNaN(edadUsuario))) || ((dniUsuario == "") ||(isNaN(dniUsuario))) || (correoUsuario == "") || ((provinciaUsuario == "")|| (!isNaN(provinciaUsuario))) || ((ciudadUsuario == "")|| (!isNaN(ciudadUsuario))) || ((nacionalidadUsuario == "")|| (!isNaN(nacionalidadUsuario)))){
 
-    completarCampos.innerHTML= "Error!, por favor complete todos los campos de ingreso, para avanzar.";
-    completarCampos.className= "text-danger text-center mb-1"
+    completarCampos.innerHTML= "Error, por favor complete todos los campos de ingreso y revise si los datos son correspondientes hacia cada campo. Para poder avanzar.";
+    completarCampos.className= "text-danger bg-dark text-center mb-1"
     return false;
   }else{
     completarCampos.innerHTML = "";
@@ -75,8 +77,11 @@ fomularioIngresoUsuario.addEventListener("submit",(e) =>{
     const nacionalidad = document.getElementById("nacionalidad");
     const edadMinima = 18;
 
+    menorEdad.className="text-dark bg-warning";
+    nacionalidad.className="text-dark bg-warning";
+
     if (usuario.edad < edadMinima) {
-      return (menorEdad.innerHTML = "Debes tener al menos 18 años para contratar el paquete de viaje.");
+      return (menorEdad.innerHTML = "<b>Debes tener al menos 18 años para contratar el paquete de viaje</b>.");
     }
     menorEdad.innerHTML = usuario.mayorEdad(edadMinima);
     nacionalidad.innerHTML= usuario.nacionalidadPasajero();

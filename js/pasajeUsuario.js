@@ -1,6 +1,9 @@
 const destinoPasajero = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
 const datosPasajero = JSON.parse(localStorage.getItem("datosUsuario"));
 
+const compraRealizada= document.getElementById("compraRealizada");
+compraRealizada.innerHTML=`<b>${datosPasajero.apellidoPasajero} ${datosPasajero.nombrePasajero}</b>, su compra se ha realizado con exito!`
+
 const renderPasaje = () =>{
     const destino = destinoPasajero;
     const datosPersonales = datosPasajero;
@@ -27,21 +30,22 @@ const renderPasaje = () =>{
                     <li class="dni-pasajero my-1">Ciudad: ${datosPersonales.ciudad}.</li>
                     <li class="dni-pasajero my-1">Nacionalidad: ${datosPersonales.nacionalidad}.</li>
                 </ul>
-            </div>
-            <div class="destino">
-                <p class="css-white">Destino: ${destino.nombre}.</p>
-            </div>
-            <div class="duracion">
-                <p class="css-white">Duracion: ${destino.duracion}.</p>
-            </div>
-            <div class="tipo-boleto">
-                <p class="css-white">Tipo de viaje: ${destino.categoria}.</p>
-            </div>
-            <div class="hospedaje">
-                <p class="css-white">Hospedaje: ${destino.hospedaje}.</p>
-            </div>
-            <div class="salida">
-                <p class="css-white">Salida: ${destino.salida}.</p>
+            
+                <div class="destino">
+                    <p class="css-white">Destino: ${destino.nombre}.</p>
+                </div>
+                <div class="duracion">
+                    <p class="css-white">Duracion: ${destino.duracion}.</p>
+                </div>
+                <div class="tipo-boleto">
+                    <p class="css-white">Tipo de viaje: ${destino.categoria}.</p>
+                </div>
+                <div class="hospedaje">
+                    <p class="css-white">Hospedaje: ${destino.hospedaje}.</p>
+                </div>
+                <div class="salida">
+                    <p class="css-white">Salida: ${destino.salida}.</p>
+                </div>
             </div>
         </div>
     </div>`    

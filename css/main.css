@@ -47,49 +47,102 @@ main .render-Productos {
 main .bg-card {
   border-radius: 5px;
 }
-main section article .css-infoViaje {
-  background-color: black;
-  border-radius: 5px;
+main .turismo {
+  background-color: rgb(47, 78, 99);
+  display: flex;
+  justify-content: center;
+  margin: 80px 0 80px 0;
 }
-main section article .bg-paqueteFiltrado {
+main .turismo section {
   width: 100%;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
-main section article .bg-paqueteFiltrado .css-card {
+main .turismo section article {
+  display: flex;
+  flex-direction: column;
+}
+main .turismo section article p {
+  color: rgb(248, 248, 68);
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+main .turismo section article .ley {
+  color: rgb(112, 179, 243);
+}
+main .containerd-cards {
+  margin: 40px 0;
+}
+main .containerd-cards article .css-card {
   padding: 5px;
+  background-color: rgb(47, 78, 99);
+  color: white;
 }
-main section article .bg-paqueteFiltrado .css-card:hover {
+main .containerd-cards article .css-card:hover {
   transform: scale(1.08);
   transition: all 1s;
   cursor: pointer;
   margin: 20px;
   box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
 }
-main section article .bg-paqueteFiltrado .css-card img {
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  height: 100%;
-  border: solid 1px black;
-  object-fit: contain;
+main .containerd-cards article .css-infoViaje {
+  border-radius: 5px;
 }
-main section article .bg-paqueteFiltrado .css-card .bg-btn {
-  color: white;
-  width: 50%;
-  background-color: rgb(112, 179, 243);
-  margin-bottom: 5px;
+main .containerd-cards article .bg-paqueteFiltrado {
+  width: 100%;
+  padding: 20px;
 }
-main .btn-contratar {
-  background-color: rgb(243, 130, 130);
+main section {
+  width: 100%;
 }
-main .btn-contratar:hover {
+main section article {
+  width: 100%;
+}
+main section article .css-pFiltrado {
+  padding: 5px;
+}
+main section article .css-pFiltrado:hover {
+  transform: scale(1.08);
+  transition: all 1s;
+  cursor: pointer;
+  margin: 20px;
+  box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
+}
+main section article .bg-btn {
+  width: 45%;
+}
+main section article .bg-btn:hover {
   background-color: black;
-  color: rgb(243, 130, 130);
+}
+main section .css-infoViaje .bord-card-info {
+  border: solid 2px black;
+}
+main section .css-infoViaje .bord-card-info .color-slogan {
+  background: linear-gradient(to top, rgba(202, 202, 202, 0.582), white);
+}
+main section .css-infoViaje .bord-card-info .btn-contratar {
+  background-color: rgb(112, 179, 243);
+  color: white;
+}
+main section .css-infoViaje .bord-card-info .btn-contratar:hover {
+  background-color: black;
+  color: white;
   border: solid 1px white;
   transform: scale(1.1);
   transition: 1s;
 }
+main .h1-div {
+  margin: 50px 0;
+}
+main .h1-div h1 {
+  background-color: rgb(47, 78, 99);
+  color: white;
+  border-radius: 3px;
+  text-align: center;
+}
 main .bg-viajeElegido {
-  background-color: rgb(253, 191, 191);
+  background-color: rgb(112, 179, 243);
   border-radius: 5px;
 }
 main .bg-viajeElegido p {
@@ -97,21 +150,33 @@ main .bg-viajeElegido p {
   border: solid 2px black;
 }
 main .cont-Viaje form {
+  margin-top: 30px;
   width: 80%;
-  background-color: black;
+  background-color: rgb(47, 78, 99);
   border-radius: 5px;
 }
 main .cont-Viaje form .text-color {
-  color: rgb(243, 130, 130);
+  color: white;
 }
 main .cont-Viaje form .edad p {
   background-color: white;
   color: black;
   font-size: 1em;
 }
+main .cont-Viaje .btn-contratar {
+  background-color: rgb(112, 179, 243);
+  color: white;
+}
+main .cont-Viaje .btn-contratar:hover {
+  background-color: black;
+  color: white;
+  border: solid 1px white;
+  transform: scale(1.1);
+  transition: 1s;
+}
 main .contenedorBoleto .bg-boleto {
   background-color: black;
-  border: solid 4px black;
+  border-radius: 5px solid;
 }
 main .contenedorBoleto .bg-boleto .borde-superior h3 {
   color: white;
@@ -120,8 +185,8 @@ main .contenedorBoleto .bg-boleto .borde-superior .text-p {
   color: white;
 }
 main .contenedorBoleto .bg-boleto .borde-slogan {
-  background-color: rgb(243, 130, 130);
-  color: black;
+  background-color: rgb(112, 179, 243);
+  color: white;
   font-size: 1em;
 }
 main .contenedorBoleto .bg-boleto .contenedorDatos {
@@ -186,6 +251,7 @@ footer .pos-svg .container-wrap .css-text {
 .navegador {
   padding: 0;
   margin-bottom: 15%;
+  background-color: rgb(248, 248, 68);
 }
 .navegador .container-fluid {
   background-color: rgb(248, 248, 68);
@@ -254,6 +320,7 @@ footer .pos-svg .container-wrap .css-text {
 @media (width > 1024px) {
   .navegador {
     height: 20%;
+    padding: 0;
     margin-bottom: 30px;
     width: 100%;
   }
@@ -329,7 +396,7 @@ footer .pos-svg .container-wrap .css-text {
     margin-top: 100px;
   }
   main .cont-h1 h1 {
-    background: linear-gradient(to left, white, rgb(248, 248, 68));
+    background: linear-gradient(to bottom, white, rgb(248, 248, 68));
   }
   main .busqueda {
     background-color: white;
@@ -344,7 +411,7 @@ footer .pos-svg .container-wrap .css-text {
   main .turismo {
     width: 100%;
     height: 400px;
-    background-color: rgb(47, 78, 99);
+    background: linear-gradient(to top, rgb(112, 179, 243), black, rgb(47, 78, 99));
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -361,7 +428,10 @@ footer .pos-svg .container-wrap .css-text {
     text-align: center;
   }
   main .turismo section article .ley {
-    color: rgb(112, 179, 243);
+    color: rgb(255, 255, 255);
+  }
+  main .containerd-cards {
+    background-color: rgb(47, 78, 99);
   }
   main .containerd-cards article {
     display: flex;
@@ -369,8 +439,8 @@ footer .pos-svg .container-wrap .css-text {
   }
   main .containerd-cards article .css-card {
     padding: 5px;
-    background-color: rgb(47, 78, 99);
-    color: white;
+    background-color: white;
+    color: black;
   }
   main .containerd-cards article .css-card:hover {
     transform: scale(1.15);
@@ -381,6 +451,58 @@ footer .pos-svg .container-wrap .css-text {
   }
   main .bg-btn {
     width: 40%;
+  }
+  main .bg-btn:hover {
+    background-color: black;
+  }
+  main .viaje {
+    width: 100%;
+    background: linear-gradient(to bottom, rgb(218, 217, 217), white, rgb(218, 217, 217));
+  }
+  main .viaje .viajeElegido {
+    width: 60%;
+  }
+  main .viaje .viajeElegido .css-pFiltrado {
+    padding: 5px;
+  }
+  main .viaje .viajeElegido .css-pFiltrado:hover {
+    transform: scale(1.08);
+    transition: all 1s;
+    cursor: pointer;
+    margin: 20px;
+    box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
+  }
+  main .viaje .viajeElegido .bg-btn {
+    width: 60%;
+  }
+  main .viaje .viajeElegido .bg-btn:hover {
+    background-color: black;
+  }
+  main .h1-div {
+    margin: 50px 0;
+  }
+  main .h1-div h1 {
+    background-color: rgb(47, 78, 99);
+    color: white;
+    border-radius: 3px;
+  }
+  main .bg-viajeElegido {
+    height: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    font-size: 1.5em;
+  }
+  main .bg-viajeElegido p {
+    border: 0;
+  }
+  main .cont-Viaje {
+    display: flex;
+  }
+  main .contenedorBoleto {
+    width: 30%;
   }
   footer {
     font-family: "Roboto Slab", serif;
