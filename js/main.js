@@ -73,7 +73,7 @@ const validarFormulario = () =>{
 
 
 const busquedaSelect = (valor) =>{
-    let inputZona = filtradoPorZona(paqueteViajes);
+    let inputZona = filtradoPorZona(busquedaViaje.value);
     const selectOptions = inputZona.find(opciones => opciones.destino == valor);
 
     return selectOptions;
@@ -86,7 +86,7 @@ formularioDestino.addEventListener("submit",(e) =>{
     let validacionFormulario =  validarFormulario();
     if(validacionFormulario == true){
 
-       /*  const formularioInput = paqueteViajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje.value.toLowerCase());
+       /*const formularioInput = paqueteViajes.filter(zonaViajes => zonaViajes.zona == busquedaViaje.value.toLowerCase());
         const fomularioSelect = formularioInput.find(destino => destino.destino == select.value); */
 
         let opcionesLugares = busquedaSelect(select.value);
