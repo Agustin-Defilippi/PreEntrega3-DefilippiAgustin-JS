@@ -53,7 +53,7 @@ main{
     }
 
     .turismo{
-        background-color: rgb(47, 78, 99);
+        background:linear-gradient(to top,rgb(112, 179, 243),black,rgb(47, 78, 99));
         display: flex;
         justify-content: center;
         margin: 80px 0 80px 0;
@@ -71,7 +71,7 @@ main{
                     margin-bottom: 20px;
                 }
                 .ley{
-                    color:rgb(112, 179, 243);
+                    color:rgb(255, 255, 255);
                 }
             }
         }
