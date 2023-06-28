@@ -4,7 +4,7 @@
         padding: 0;
         margin-bottom: 30px;
         width: 100%;
-       .container-fluid{
+        .container-fluid{
            width: 100%;
             .contenedor-nav{
                 height: 10%;
@@ -123,35 +123,35 @@
 
         .containerd-cards{
             background-color: rgb(47, 78, 99);
-                article{
-                    display: flex;
-                    justify-content: space-around;
-                    .css-card{
-                        padding: 5px;
-                        background-color: white;
-                        color:black;
-                        &:hover{
-                            transform: scale(1.15);
-                            transition: all 1s;
-                            cursor: pointer;
-                            margin: 20px;
-                            box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5)
-                        }
+            article{
+                display: flex;
+                justify-content: space-around;
+                .css-card{
+                    padding: 5px;
+                    background-color: white;
+                    color:black;
+                    &:hover{
+                        transform: scale(1.08);
+                        transition: all 1s;
+                        box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
+                        cursor: pointer;
+
+                    }
+                }
+                .bg-btn{
+                    width: 40%;
+                    &:hover{
+                    background-color: black;
+                    color: white;
                     }
                 }
             }
-            .bg-btn{
-                width: 40%;
-                &:hover{
-                    background-color: black; 
-    
-                }
-            }
-            
-            
+        }
+      
         .viaje{
             width: 100%;
             background:linear-gradient(to bottom,rgb(218, 217, 217),white,rgb(218, 217, 217));
+          
             .viajeElegido{
                 width: 60%;
                 .css-pFiltrado {
@@ -166,9 +166,10 @@
                 }
                 .bg-btn{
                     width: 60%;
+                    
                     &:hover{
                         background-color: black; 
-     
+                        color: white;
                     }
                 }
             }
@@ -199,9 +200,62 @@
         .contenedorBoleto{
             width: 30%;
         }
+
+        .tienda-h1{
+            h1{
+                font-size: 5em;
+                color: rgb(0, 0, 0);
+            }
+        }
+        .tienda-h2{
+            h2{
+                color: rgb(116, 115, 115);
+                font-size: 3em;
+            }
+            p{
+                color: rgb(165, 165, 165);
+                font-size: 2em;
+            }
+        } 
+        
+        .contenedorTienda{
+            background:linear-gradient(to bottom,rgb(218, 217, 217),white,rgb(218, 217, 217));
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            flex-wrap:wrap;
+            .excursionesTienda{
+                margin: 50px 50px;
+                padding: 30px 10px;
+                .card-excursiones{
+                    background:linear-gradient(to bottom,rgb(0, 0, 0),white,rgb(47, 78, 99));
+                    border-radius: 15px;
+                    img{
+                        padding: 10px;
+                        border-radius: 15px;
+                    }
+                    button{
+                        width: 50%;
+                        color: white;
+                    }
+                    &:hover{
+                        transform: scale(1.08);
+                        transition: all 1s;
+                        box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
+                        cursor: pointer;
+                    }
+                }
+            
+            }
+        }  
     }
 
-
+   .swalBtnColor{
+        background-color: white !important;
+        color: black !important;
+    }
+    
 
     footer{
         font-family: 'Roboto Slab', serif;

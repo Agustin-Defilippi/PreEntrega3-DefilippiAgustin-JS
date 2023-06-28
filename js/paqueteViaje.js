@@ -4,7 +4,7 @@ const viajeFiltrado = () =>{
     const viajeFiltrado = viajeBusqueda;
 
     let cardViajeFiltrado =
-    `<div class="d-flex justify-content-center mb-5 bg-paqueteFiltrado">
+    `<div class="d-flex justify-content-center align-items-center my-5 bg-paqueteFiltrado">
             <div class="card  css-pFiltrado text-ligth border-dark " style="width: 18rem;">
                 <img src="${viajeFiltrado.imagen}" class="card-img-top" alt="${viajeFiltrado.destino}">
                 <div class="card-body">

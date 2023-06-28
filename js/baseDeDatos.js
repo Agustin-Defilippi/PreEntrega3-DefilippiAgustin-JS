@@ -127,3 +127,113 @@ const viajes = [
     slogan : "No te pierdas de la diversidad cultural y geográfica de Santa Cruz (CALAFATE).",
     }
 ];
+
+const tiendaExcursiones = [
+
+    {id:1,
+    nombre:"Tren del fin del mundo",
+    destino:"ushuaia",
+    precio:31583,
+    img:"../img/trenFindelMundo.jpg",
+    descripcion:"Partiendo desde el hotel, tomamos camino para el lado oeste de Ushuaia camino al Parque Nacional Tierra del Fuego, unos kilometros antes del ingreso se encuentra el Tren del Fin del Mundo, el mismo realiza un recorrido de unos 40/50 minutos finalizando el circuito dentro del Parque Nacional donde los esperaran el bus y guia, desde alli comenzaran el recorrido dentro de la reserva natural, visitando turbales, diques de castores, lagunas y el centro interpretativo Alakush. Finalizando la excursion en Bahia Lapataia, el fin de la RN3.",
+    fichaTecnica:`Opera: Todo el Año.
+    Duración: Medio Dia. 4/5 Horas. 
+    Horario: De 8.00 a 13.30Hs.  Aproximadamente.
+    Dificultad: No tiene; apta para todas las edades.
+    Incluye: Ingreso al Tren del Fin del Mundo clase turista. Traslados: Se busca al/los pasajeros donde se encuentran alojados. Guía de Parque Nacional.
+    No incluye: Ingreso al parque Nacional; las entradas al Parque se pagan al ingreso del mismo, solo en pesos argentinos en efectivo. Almuerzo ni vianda. 
+    Qué llevar: Ropa de abrigo y calzado comodo, gorro, protector solar, equipo fotográfico y baterías recargables.`
+    },
+
+    {   id:2,
+        nombre:"Ushuaia City Tour",
+        destino:"ushuaia",
+        precio:47200,
+        img:"../img/ushuaia.png",
+        descripcion:"El City Tour por Ushuaia es la primera excursión que realizan los turistas en la capital de la provincia de Tierra del Fuego. Consiste en un paseo en el que los visitantes pueden conocer los rincones más emblemáticos de la Ciudad del Fin del Mundo.  Regreso al hotel por cuenta de los pax o con costo adicional.",
+        fichaTecnica:`Opera: Todo el año.
+        Duración:  1 horas aproximadamente.
+        Horario: 10.30Hs / 15.30Hs. / 17.30Hs.
+        Dificultad: No tiene, apta para todas las edades.
+        Incluye: Traslado en excursión con Guia.
+        No incluye: El ingreso al Museo del Fin del Mundo. Extras de ningun tipo.
+        Qué llevar: Ropa de abrigo y calzado comodo, gorro, equipo fotográfico y baterías recargables.`
+    },
+
+    {id:3,
+        nombre:"Salinas Grandes",
+        destino:"jujuy",
+        precio:39750,
+        img:"../img/Salinas.webp",
+        descripcion:"Pasaran por las afueras de la Ciudad de San Salvador de Jujuy para comenzar a transitar por el extremo sur de la Quebrada de Humahuaca, hasta Purmamarca, desde allí ascenderemos por la Cuesta de Lipan, importante carretera que nos une a Chile. Arribo a las imponentes Salinas Grandes, allí podremos contemplar la grandeza del paisaje blanquecino, con sus piletones donde veremos el proceso de la extracción de sal de los lugareños también sus artesanías que hacen con este valioso producto de la puna.",
+        fichaTecnica:`Partiendo desde Salta( los pasan a buscar por su hospedaje centrico de Salta) Duración: 12 horas. Hora de salida: 07:00 hrs. Recorrido ida y vuelta: 460 km.<br>Duración: 12 horas.`
+    },
+    {id:4,
+        nombre:"Humahuaca",
+        destino:"Jujuy",
+        precio:28225,
+        img:"../img/humahuaca.png",
+        descripcion:"Visitaremos los pueblos de Purmamarca donde tendremos una vista privilegiada del Cerro de los Siete Colores, las Ferias de Artesanos; Tilcara con la visita a las Ruinas del Pucara de Tilcara; siguiendo el recorrido por Ruta Nacional 9, arribaremos a Humahuaca, recorriendo sus angostas calles con su casa de particular arquitectura, de paredes de adobe y techos de caña y barro.",
+        fichaTecnica:`Excursión de día completo. Partiendo desde Salta( los pasan a buscar por su hospedaje centrico de Salta). La Quebrada de Humahuaca, en la Provincia de Jujuy, declarada por la UNESCO Patrimonio Natural y Cultural de la Humanidad. Excursión que, a lo largo del recorrido a través del paisaje, los pobladores, las costumbres y tradiciones nos invita a disfrutar de uno de los atractivos más importantes de la región.<br> Hora de salida: 07:00 hrs. Recorrido ida y vuelta: 520 km.`
+    },
+    {id:5,
+        nombre:"Tren de las Nubes",
+        destino:"salta",
+        precio:19750,
+        img:"../img/trendelasnubes.jpg",
+        descripcion:"El Tren de alta montaña que asciende a 4.200 metros de altura, uno de los tres ferrocarriles más altos del mundo, que atraviesa vertiginosas montañas de la Cordillera de los Andes entre una asombrosa naturaleza escondida.",
+        fichaTecnica:`Salida a  10:30 am.<br>Recorremos la precordillera de los Andes hasta el imperdible Viaducto La Polvorilla a 4.220 msnm. En este lugar cerca del cielo sacaremos fotos inolvidables que harán de este viaje un recuerdo único. Más tarde retornaremos con el TREN a San Antonio de los Cobres donde podremos recorrer este emblemático y pintoresco pueblo salteño y podremos almorzar (almuerzo no incluido). Después de las 15:00 hs. emprenderemos el retorno a Salta, y en el camino los invitaremos con una rica merienda (incluida). Arribo a Salta 20:00 hs.`
+    },
+    {id:6,
+        nombre:"Trekking Laguna de los 3",
+        destino:"Santa Cruz",
+        precio:47500,
+        img:"../img/chaltten.jpg",
+        descripcion:`Daremos inicio a nuestra actividad con la recogida por los hoteles a partir de las 06:00 AM.( En los meses de Junio y Julio la salida sera a las 07:00 AM.) Seguidamente tomaremos la mítica Ruta 40 bordeando el Lago Argentino y emprenderemos viaje hacia el pueblo de El Chaltén a 220 km de El Calafate. Una vez en el Chaltén.<br>
+        Durante la época invernal, el principal paisaje es la nieve. Te facilitamos crampones y bastones para que puedas caminar con seguridad.
+        El transfer los esperará para que puedan realizar el Sendero del Fitz Roy desde El Chaltén, un recorrido de 20 kilómetros que se hace en aproximadamente 9/10 horas de trekking, con 1200 metros de altimetría acumulada.`,
+        fichaTecnica:`Una botella de agua fría.<br>
+        Snack (turrones o barritas de cereal).<br>
+        Un termo con un té caliente.<br>
+        Un par de medias de repuesto, guantes y gorro.<br>
+        Linterna o celu con batería por si oscurece.<br>
+        Mochila liviana.<br>
+        Zapatillas de trekking si son a los tobillos mejor y que ajusten bien para no perder crampones y ropa impermeable.<br>
+        Celular con batería para usar la linterna por las dudas..`
+    },
+    {id:7,
+        nombre:"Paseo en barco Iguazu",
+        destino:"Misiones",
+        precio:27000,
+        img:"../img/iguazu.jpg",
+        descripcion:`Disfrute de un emocionante día de aventuras en las cataratas del Iguazú y la selva tropical.<br>
+        Mucha variedad (disfrute de un trayecto en tren, un camión de safari y un paseo en barco).<br>
+        No hay planificación de transporte (se incluye la recogida y el traslado de vuelta al hotel).<br>
+        Descubra la flora y fauna local a través de la narración del guía`,
+        fichaTecnica:`Incluye recogida en el hotel en el centro de Puerto Iguazú. La hora de recogida será entre las 7.20 h y las 8.30 h. Si su hotel NO aparece en la lista, indique su nombre al realizar la reserva en la casilla "Requisitos especiales".`
+    },
+    {id:8,
+        nombre:"City Tour ",
+        destino:"Buenos Aires",
+        precio:12500,
+        img:"../img/buenosAires.jpg",
+        descripcion:"En este tour panorámico recorreremos Buenos Aires al completo disfrutando de los principales barrios, avenidas y monumentos de la ciudad. ¡La forma ideal de comenzar a conocer la capital del tango!.",
+        fichaTecnica:`Recogida en el hotel.<br>
+        Transporte en minibús.<br>
+        Guía en español.<br>
+        Traslado de regreso al hotel.<br>
+        Entrada al cementerio de La Recoleta: 2.030 ARS (8 US$) por adulto extranjero, 700 ARS (2,80 US$) por adulto argentino.`
+    },
+]
+
+const guardarTiendaExcursionesLS = () =>{
+    localStorage.setItem("tiendaExcursiones",JSON.stringify(tiendaExcursiones));
+}
+
+
+
+const recuperarTiendaExcursionesLS = () =>{
+    return JSON.parse(localStorage.getItem("tiendaExcursiones"));
+}
+
+guardarTiendaExcursionesLS();

@@ -58,6 +58,23 @@ const formularioUsuario = () =>{
   }
 }
 
+
+
+const generandoPasaje = () =>{
+  const btnPasaje = document.getElementById("btn-ingresoUsuario");
+  btnPasaje.addEventListener("click", () =>{
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 6000
+    })
+  })
+  setTimeout(() => (location.href = "pasajeUsuario.html"), 5000);
+}
+
+
 const fomularioIngresoUsuario = document.getElementById("fomularioUsuario")
 fomularioIngresoUsuario.addEventListener("submit",(e) =>{
   e.preventDefault();
@@ -87,6 +104,9 @@ fomularioIngresoUsuario.addEventListener("submit",(e) =>{
     nacionalidad.innerHTML= usuario.nacionalidadPasajero();
     JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
     localStorage.setItem("datosUsuario", JSON.stringify(usuario));
-    setTimeout(() => (location.href = "pasajeUsuario.html"), 5000);
+    generandoPasaje();
+    
+    
+   
   }
 });
