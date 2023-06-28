@@ -36,10 +36,7 @@ const renderTiendaExcursiones = () =>{
             imageHeight: 400,
             imageAlt:`${items.nombre}`,
             showCancelButton: true,
-            confirmButtonText: 'Agregar al carrito',
-            customClass:{
-                confirmButton:'swalBtnColor'
-            },
+            confirmButtonText: 'Agregar (+)',
             denyButtonText:"Cancelar",
             cancelButtonText: `cancelar`,
             }).then((result) => {

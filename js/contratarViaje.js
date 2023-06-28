@@ -61,17 +61,19 @@ const formularioUsuario = () =>{
 
 
 const generandoPasaje = () =>{
-  const btnPasaje = document.getElementById("btn-ingresoUsuario");
-  btnPasaje.addEventListener("click", () =>{
+ 
     Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Your work has been saved',
+      position: 'center',
+      imageUrl: `../img/world.jpg`,
+      imageWidth: 200,
+      imageHeight: 200,
+      title:"Defilippi Tourlines Company",
+      text: 'Aguarde unos intantes, se esta generando el pasaje.',
+      color:"black",
       showConfirmButton: false,
-      timer: 6000
     })
-  })
-  setTimeout(() => (location.href = "pasajeUsuario.html"), 5000);
+  
+  setTimeout(() => (location.href = "pasajeUsuario.html"), 10000);
 }
 
 
@@ -99,12 +101,15 @@ fomularioIngresoUsuario.addEventListener("submit",(e) =>{
 
     if (usuario.edad < edadMinima) {
       return (menorEdad.innerHTML = "<b>Debes tener al menos 18 años para contratar el paquete de viaje</b>.");
+    }else if (usuario.edad > edadMinima){
+       generandoPasaje()
     }
+    
+    
     menorEdad.innerHTML = usuario.mayorEdad(edadMinima);
     nacionalidad.innerHTML= usuario.nacionalidadPasajero();
     JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
     localStorage.setItem("datosUsuario", JSON.stringify(usuario));
-    generandoPasaje();
     
     
    
