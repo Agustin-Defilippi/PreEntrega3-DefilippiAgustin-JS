@@ -84,13 +84,6 @@ main{
                 padding: 5px;
                 background-color: rgb(47, 78, 99);
                 color:white;
-                &:hover{
-                    transform: scale(1.08);
-                    transition: all 1s;
-                    cursor: pointer;
-                    margin: 20px;
-                    box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5)
-                }
             }
             .css-infoViaje{
                 border-radius: 5px;

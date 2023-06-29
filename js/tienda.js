@@ -3,8 +3,12 @@ const excursiones = document.getElementById("excursiones");
 
 let carrito = [];
 
-const agregarProducto = (a,b) =>{
-   return a.push(b);
+const agregarProducto = (array,elemento) =>{
+   array.push(elemento);
+   return array;
+}
+const agregarProductoLS = (nombre,elemento) =>{
+    localStorage.setItem(nombre,JSON.stringify(elemento));
 }
 
 const renderTiendaExcursiones = () =>{
@@ -48,13 +52,12 @@ const renderTiendaExcursiones = () =>{
             cancelButtonText: `cancelar`,
             }).then((result) => {
             
-            if (result.isConfirmed) {
-                Swal.fire('Agregado al carrito!', '', 'success');
-                const pepe = agregarProducto(carrito,items)
-         /*        carrito.push(items);
-                console.log(carrito); */
-                console.log(pepe);
-            }
+                if (result.isConfirmed) {
+                    Swal.fire('Agregado al carrito!', '', 'success');
+                    const productoAgregado = agregarProducto(carrito,items);
+                    console.log(productoAgregado);
+                    agregarProductoLS("prodCarrito",productoAgregado) || [];
+                }
             })
        })
 
@@ -62,3 +65,9 @@ const renderTiendaExcursiones = () =>{
 }
 
 renderTiendaExcursiones();
+
+const prodAgregados = document.getElementById("carritoProducto");
+
+prodAgregados.addEventListener("click", () =>{
+    location.href = "carrito.html";
+})

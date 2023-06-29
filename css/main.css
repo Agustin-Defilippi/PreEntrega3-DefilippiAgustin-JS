@@ -79,13 +79,6 @@ main .containerd-cards article .css-card {
   background-color: rgb(47, 78, 99);
   color: white;
 }
-main .containerd-cards article .css-card:hover {
-  transform: scale(1.08);
-  transition: all 1s;
-  cursor: pointer;
-  margin: 20px;
-  box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
-}
 main .containerd-cards article .css-infoViaje {
   border-radius: 5px;
 }
@@ -440,12 +433,6 @@ footer .pos-svg .container-wrap .css-text {
     background-color: white;
     color: black;
   }
-  main .containerd-cards article .css-card:hover {
-    transform: scale(1.08);
-    transition: all 1s;
-    box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-  }
   main .containerd-cards article .bg-btn {
     width: 40%;
   }
@@ -536,6 +523,7 @@ footer .pos-svg .container-wrap .css-text {
   main .contenedorTienda .contenedor-carrito img {
     width: 50px;
     height: 40px;
+    cursor: pointer;
   }
   main .contenedorTienda .excursionesTienda {
     margin: 50px 50px;
