@@ -1,6 +1,14 @@
 const PaqueteExcursion =  recuperarTiendaExcursionesLS();
 const excursiones = document.getElementById("excursiones");
 
+/* const agregarProductoCarrito = (id) =>{
+    const carritoProducto = PaqueteExcursion;
+    carritoProducto.find(producto => producto.id === id);
+    console.log(carritoProducto);
+}
+ */
+
+
 const renderTiendaExcursiones = () =>{
     const PaqueteExcursiones = PaqueteExcursion;
     
@@ -22,9 +30,10 @@ const renderTiendaExcursiones = () =>{
                 </div>
         </div>`;
 
-       excursiones.appendChild(cardExcursiones); 
-       const btnMasInfo = document.getElementById(`${items.id}`);
-       btnMasInfo.addEventListener("click",() =>{
+        excursiones.appendChild(cardExcursiones); 
+        const btnMasInfo = document.getElementById(`${items.id}`);
+        console.log(btnMasInfo);
+        btnMasInfo.addEventListener("click",() =>{
             Swal.fire({
             title: `${items.nombre}`,
             text: `(${items.destino})`,
@@ -43,6 +52,9 @@ const renderTiendaExcursiones = () =>{
             
             if (result.isConfirmed) {
                 Swal.fire('Agregado al carrito!', '', 'success');
+                /* agregarProductoCarrito(items.id) */
+                const papa = localStorage.setItem("prod",JSON.parse(`${items.id}`));
+                console.log(papa);
             }
             })
        })
@@ -51,91 +63,3 @@ const renderTiendaExcursiones = () =>{
 }
 
 renderTiendaExcursiones();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* const mensaje = () =>{
-    const excursioneslala = PaqueteExcursion;
-    let salida = "";
-
-    excursioneslala.forEach(item => {
-        
-
-
-
-        Swal.fire({
-            title: `excursion ${item.nombre}`,
-            icon: 'info',
-            html:
-              `${item.destino}`,
-            showCloseButton: true,
-            showCancelButton: true,
-            focusConfirm: false,
-            confirmButtonText:
-              '<i class="fa fa-thumbs-up"></i> Great!',
-            confirmButtonAriaLabel: 'Thumbs up, great!',
-            cancelButtonText:
-              '<i class="fa fa-thumbs-down"></i>',
-            cancelButtonAriaLabel: 'Thumbs down'
-          })
-
-
-    });
-
-
-    
-} */
-
-/* const mostrarProductos = () => {
-	const contenedor = document.getElementById("contenedor");
-	productos.forEach((producto) => {
-		contenedor.innerHTML += `
-        <button id="${producto.id}">Enviar</button>  
-    `;
-	});
-	productos.forEach((producto) => {
-		const boton = getElementById(producto.id);
-		boton.addEventListener("click", () => {
-			console.log("Evento");
-		});
-	});
-};
-
-const boton = document.getElementById("informacion");
-
-boton.addEventListener("click",(e) =>{
-    e.preventDefault();
-    mensaje();
-    console.log(boton);
-}) */
