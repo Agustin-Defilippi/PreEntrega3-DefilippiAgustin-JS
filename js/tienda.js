@@ -1,13 +1,11 @@
 const PaqueteExcursion =  recuperarTiendaExcursionesLS();
 const excursiones = document.getElementById("excursiones");
 
-/* const agregarProductoCarrito = (id) =>{
-    const carritoProducto = PaqueteExcursion;
-    carritoProducto.find(producto => producto.id === id);
-    console.log(carritoProducto);
-}
- */
+let carrito = [];
 
+const agregarProducto = (a,b) =>{
+   return a.push(b);
+}
 
 const renderTiendaExcursiones = () =>{
     const PaqueteExcursiones = PaqueteExcursion;
@@ -32,7 +30,7 @@ const renderTiendaExcursiones = () =>{
 
         excursiones.appendChild(cardExcursiones); 
         const btnMasInfo = document.getElementById(`${items.id}`);
-        console.log(btnMasInfo);
+       
         btnMasInfo.addEventListener("click",() =>{
             Swal.fire({
             title: `${items.nombre}`,
@@ -52,9 +50,10 @@ const renderTiendaExcursiones = () =>{
             
             if (result.isConfirmed) {
                 Swal.fire('Agregado al carrito!', '', 'success');
-                /* agregarProductoCarrito(items.id) */
-                const papa = localStorage.setItem("prod",JSON.parse(`${items.id}`));
-                console.log(papa);
+                const pepe = agregarProducto(carrito,items)
+         /*        carrito.push(items);
+                console.log(carrito); */
+                console.log(pepe);
             }
             })
        })
