@@ -1,4 +1,4 @@
-const productos = JSON.parse(localStorage.getItem("prodCarrito"));
+const productos = JSON.parse(localStorage.getItem("prodCarrito") || []);
 const excursionesCarrito = document.getElementById("carrito");
 
 const renderProdCarrito = () =>{

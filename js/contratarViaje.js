@@ -60,7 +60,7 @@ const formularioUsuario = () =>{
 
 
 
-const generandoPasaje = () =>{
+const generandoPasaje = (nombre) =>{
  
     Swal.fire({
       position: 'center',
@@ -71,11 +71,25 @@ const generandoPasaje = () =>{
       text: 'Aguarde unos intantes, se esta generando el pasaje.',
       color:"black",
       showConfirmButton: false,
+      
     })
-  
-  setTimeout(() => (location.href = "pasajeUsuario.html"), 10000);
-}
 
+    setTimeout(() =>{
+      Swal.fire({
+        position: 'center',
+        icon: "success",
+        imageWidth: 200,
+        imageHeight: 200,
+        title:"La compra se ha realizado con EXITO!",
+        text: `Muchas gracias por elegirnos ${nombre}`,
+        color:"black",
+        showConfirmButton: false,
+        
+      })
+    },8000)
+
+    setTimeout(() => (location.href = "pasajeUsuario.html"), 10000);
+}
 
 const fomularioIngresoUsuario = document.getElementById("fomularioUsuario")
 fomularioIngresoUsuario.addEventListener("submit",(e) =>{
@@ -102,9 +116,9 @@ fomularioIngresoUsuario.addEventListener("submit",(e) =>{
     if (usuario.edad < edadMinima) {
       return (menorEdad.innerHTML = "<b>Debes tener al menos 18 años para contratar el paquete de viaje</b>.");
     }else if (usuario.edad > edadMinima){
-       generandoPasaje()
+       generandoPasaje(nombreUsuario);
     }
-    
+   
     
     menorEdad.innerHTML = usuario.mayorEdad(edadMinima);
     nacionalidad.innerHTML= usuario.nacionalidadPasajero();
