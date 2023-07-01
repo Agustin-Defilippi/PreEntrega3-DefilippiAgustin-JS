@@ -160,12 +160,12 @@
 
 
 
-        <div class="d-flex justify-content-center my-5">
+        <div class="d-flex justify-content-center my-5 container-formaPago">
           <div class=" d-flex justify-content-center bg-select-pagos">
             <h4>Formas de pago</h4>
             <div class="cont-select-pagos text-center">
-              <select  id="formaPago" class="text-center pepe">
-                <option>Formas de pago</option>
+              <select  id="formaPago" class="text-center select-option">
+                <option id="Abone su viaje">Abone su viaje</option>
                 <option value="debito">Debito</option>
                 <option value="1 pago">1 pago</option>
                 <option value="3 pagos">3 pagos</option>
@@ -173,13 +173,23 @@
                 <option value="12 pagos">12 pagos</option>
               </select>
               <div id="pagosDefinidos" class="pagos">
-              
-              
+                
               </div>
-             
+
+           
             </div>
             
-           
+            <div class="svg-credito m-2">
+
+              <div class="input-tarjeta">
+                <button class="button-svg">
+                 <img src="../img/credit-card-2-front.svg" alt="">
+                </button>
+                <input id="tarjeta" type="text" placeholder="numeros de tarjeta">
+              </div>
+              
+            </div>
+
           </div>
         </div>
 

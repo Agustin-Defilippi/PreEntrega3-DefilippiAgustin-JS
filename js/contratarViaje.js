@@ -7,7 +7,7 @@ h1.innerHTML=`Defilippi Tourlines Y <b>${destinoFinal.nombre.toUpperCase()}</b> 
 const comprarViaje= document.getElementById("comprarViaje");
 comprarViaje.innerHTML=`Complete el formulario para contratar  <b>${destinoFinal.nombre}</b> a su paquete de viajes y así poder generar el pago del mismo.`;
 
-const formaPagos = (valor) =>{
+const abonarViaje = (valor) =>{
   const viajePago = destinoFinal;
 
   if(valor === "debito"){
@@ -28,14 +28,11 @@ const formaPagos = (valor) =>{
 
 const formaPago = document.getElementById("formaPago");
 
-
-
 formaPago.addEventListener("input", (e) =>{
   e.preventDefault()
   const pagosDefinidos = document.getElementById("pagosDefinidos");
-  pagosDefinidos.innerHTML=`<p> ${formaPago.value} = $${formaPagos(formaPago.value).toFixed(2)} pesos.</p>`;
-  console.log(formaPago(formaPago.value));
-  pagosDefinidos.className="text-light pagos"
+  pagosDefinidos.innerHTML=`<p> ${formaPago.value} = $${abonarViaje(formaPago.value).toFixed(2)} pesos.</p>`;
+  pagosDefinidos.className="pagos"
 })
 
 
@@ -78,9 +75,11 @@ const formularioUsuario = () =>{
   const provinciaUsuario = document.getElementById("provinciaUsuario").value.toUpperCase();
   const ciudadUsuario = document.getElementById("ciudadUsuario").value.toUpperCase();
   const nacionalidadUsuario = document.getElementById("nacionalidadUsuario").value.toUpperCase();
+  const tarjeta = document.getElementById("tarjeta").value;
+  const formaDePago = document.getElementById("formaPago").value;
   
   let completarCampos = document.getElementById("completarCampos");
-  if(((nombreUsuario == "") || (!isNaN(nombreUsuario))) || ((apellidoUsuario == "") || (!isNaN(apellidoUsuario))) || ((edadUsuario == "") ||(isNaN(edadUsuario))) || ((dniUsuario == "") ||(isNaN(dniUsuario))) || (correoUsuario == "") || ((provinciaUsuario == "")|| (!isNaN(provinciaUsuario))) || ((ciudadUsuario == "")|| (!isNaN(ciudadUsuario))) || ((nacionalidadUsuario == "")|| (!isNaN(nacionalidadUsuario)))){
+  if(((nombreUsuario == "") || (!isNaN(nombreUsuario))) || ((apellidoUsuario == "") || (!isNaN(apellidoUsuario))) || ((edadUsuario == "") ||(isNaN(edadUsuario))) || ((dniUsuario == "") ||(isNaN(dniUsuario))) || (correoUsuario == "") || ((provinciaUsuario == "")|| (!isNaN(provinciaUsuario))) || ((ciudadUsuario == "")|| (!isNaN(ciudadUsuario))) || ((nacionalidadUsuario == "")|| (!isNaN(nacionalidadUsuario))) || ((tarjeta == "") ||(isNaN(tarjeta))) || (formaDePago === "Abone su viaje")){
 
     completarCampos.innerHTML= "Error, por favor complete todos los campos de ingreso y revise si los datos son correspondientes hacia cada campo. Para poder avanzar.";
     completarCampos.className= "text-danger bg-dark text-center mb-1";
