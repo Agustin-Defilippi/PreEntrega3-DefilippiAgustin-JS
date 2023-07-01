@@ -12,12 +12,12 @@ const renderProdCarrito = () =>{
                 <div class="cont-h2-button">
                     <h2 class="accordion-header button-acordeon" id="panelsStayOpen-heading${productos.posicion}">
                     ${productos.nombre}
+                    </h2>
                     <div class="container-button">
                         <button class="accordion-button" type="button"              data-bs-toggle="collapse"           data-bs-target="#panelsStayOpen-collapse${productos.posicion}" aria-expanded="true" aria-controls="panelsStayOpen-collapse${productos.posicion}">
-                           click
+                           Excursiones
                         </button>
                     </div>
-                    </h2>
                 </div>
                 <div id="panelsStayOpen-collapse${productos.posicion}" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-heading${productos.posicion}">
                     <div class="accordion-body">

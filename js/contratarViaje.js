@@ -1,11 +1,44 @@
 const destinoFinal = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
-
 console.log(destinoFinal);
+
 const h1 = document.getElementById("defilippi-destino");
 h1.innerHTML=`Defilippi Tourlines Y <b>${destinoFinal.nombre.toUpperCase()}</b> te están esperando!`;
 
 const comprarViaje= document.getElementById("comprarViaje");
 comprarViaje.innerHTML=`Complete el formulario para contratar  <b>${destinoFinal.nombre}</b> a su paquete de viajes y así poder generar el pago del mismo.`;
+
+const formaPagos = (valor) =>{
+  const viajePago = destinoFinal;
+
+  if(valor === "debito"){
+    return (viajePago.precio * 0.8);
+  }else if(valor === "1 pago"){
+    return (viajePago.precio * 0.9);
+  }else if(valor === "3 pagos"){
+    return viajePago.precio;
+  }else if(valor === "6 pagos"){
+    return (viajePago.precio * 1.10);
+  }else if(valor === "12 pagos"){
+    return (viajePago.precio * 1.20);
+  }else{
+    return "";
+  }
+  
+}
+
+const formaPago = document.getElementById("formaPago");
+
+
+
+formaPago.addEventListener("input", (e) =>{
+  e.preventDefault()
+  const pagosDefinidos = document.getElementById("pagosDefinidos");
+  pagosDefinidos.innerHTML=`<p> ${formaPago.value} = $${formaPagos(formaPago.value).toFixed(2)} pesos.</p>`;
+  console.log(formaPago(formaPago.value));
+  pagosDefinidos.className="text-light pagos"
+})
+
+
 
 class PasajeCliente{
     constructor(nombre,apellido,edad,dni,correo,provincia,ciudad,nacionalidad){
@@ -45,7 +78,7 @@ const formularioUsuario = () =>{
   const provinciaUsuario = document.getElementById("provinciaUsuario").value.toUpperCase();
   const ciudadUsuario = document.getElementById("ciudadUsuario").value.toUpperCase();
   const nacionalidadUsuario = document.getElementById("nacionalidadUsuario").value.toUpperCase();
-
+  
   let completarCampos = document.getElementById("completarCampos");
   if(((nombreUsuario == "") || (!isNaN(nombreUsuario))) || ((apellidoUsuario == "") || (!isNaN(apellidoUsuario))) || ((edadUsuario == "") ||(isNaN(edadUsuario))) || ((dniUsuario == "") ||(isNaN(dniUsuario))) || (correoUsuario == "") || ((provinciaUsuario == "")|| (!isNaN(provinciaUsuario))) || ((ciudadUsuario == "")|| (!isNaN(ciudadUsuario))) || ((nacionalidadUsuario == "")|| (!isNaN(nacionalidadUsuario)))){
 
