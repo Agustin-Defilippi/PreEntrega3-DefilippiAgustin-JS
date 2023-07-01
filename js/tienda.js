@@ -1,7 +1,7 @@
 const PaqueteExcursion =  recuperarTiendaExcursionesLS();
 const excursiones = document.getElementById("excursiones");
 
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("prodCarrito")) || [];
 
 const agregarProducto = (array,elemento) =>{
    array.push(elemento);

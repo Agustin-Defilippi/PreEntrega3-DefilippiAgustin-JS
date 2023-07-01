@@ -41,9 +41,6 @@
                             font-size: 1.1em;
                             text-decoration: none;
                             color: black;
-                            &:hover{
-                               color: rgb(54, 201, 238);
-                            }
                         }
                         li{
                             list-style: none;
@@ -264,7 +261,30 @@
              color: black !important;
             }
         }
-           
+        .carrito{
+            width: 40%;
+            .acordeon{
+               .contenido-carrito{
+                background:linear-gradient((to left,rgb(247, 247, 157),rgb(98, 133, 156),rgb(247, 247, 157)));
+             /*    display: flex;
+                justify-content: center; */
+                .cont-h2-button{
+                  
+                    .container-button{
+                        width: 100%;
+                        height: auto;
+                        padding: 10px;
+                        .accordion-button{
+                            width: 15%;
+                        }
+                    }
+                    
+                }
+              
+               
+               }
+            }
+        }   
     }
 
    
@@ -279,18 +299,21 @@
                 display: flex;
                 justify-content: center;
                 .svg-fb{
+                    color: rgb(54, 201, 238);
                     &:hover{
-                        color: rgb(54, 201, 238);
+                       color:black;
                     }
                 }
                 .svg-insta{
+                    color: rgb(54, 201, 238);
                     &:hover{
-                        color: rgb(54, 201, 238);
+                        color:black;
                     }
                 }
                 .svg-twitter{
+                    color: rgb(54, 201, 238);
                     &:hover{
-                        color: rgb(54, 201, 238);
+                        color:black;
                     }
                 }
             }
@@ -298,7 +321,7 @@
         .css-text{
             display: flex;
             justify-content: center;
-            color: rgb(54, 201, 238);
+            color:black;
         }
     }
 }

@@ -131,6 +131,7 @@ const viajes = [
 const tiendaExcursiones = [
 
     {id:1,
+    posicion:"One",
     nombre:"Tren del fin del mundo",
     destino:"ushuaia",
     precio:31583,
@@ -146,6 +147,7 @@ const tiendaExcursiones = [
     },
 
     {   id:2,
+        posicion:"Two",
         nombre:"Ushuaia City Tour",
         destino:"ushuaia",
         precio:47200,
@@ -161,6 +163,7 @@ const tiendaExcursiones = [
     },
 
     {id:3,
+        posicion:"Three",
         nombre:"Salinas Grandes",
         destino:"jujuy",
         precio:39750,
@@ -169,6 +172,7 @@ const tiendaExcursiones = [
         fichaTecnica:`Partiendo desde Salta( los pasan a buscar por su hospedaje centrico de Salta) Duración: 12 horas. Hora de salida: 07:00 hrs. Recorrido ida y vuelta: 460 km.<br>Duración: 12 horas.`
     },
     {id:4,
+        posicion:"Four",
         nombre:"Humahuaca",
         destino:"Jujuy",
         precio:28225,
@@ -177,6 +181,7 @@ const tiendaExcursiones = [
         fichaTecnica:`Excursión de día completo. Partiendo desde Salta( los pasan a buscar por su hospedaje centrico de Salta). La Quebrada de Humahuaca, en la Provincia de Jujuy, declarada por la UNESCO Patrimonio Natural y Cultural de la Humanidad. Excursión que, a lo largo del recorrido a través del paisaje, los pobladores, las costumbres y tradiciones nos invita a disfrutar de uno de los atractivos más importantes de la región.<br> Hora de salida: 07:00 hrs. Recorrido ida y vuelta: 520 km.`
     },
     {id:5,
+        posicion:"Five",
         nombre:"Tren de las Nubes",
         destino:"salta",
         precio:19750,
@@ -185,6 +190,7 @@ const tiendaExcursiones = [
         fichaTecnica:`Salida a  10:30 am.<br>Recorremos la precordillera de los Andes hasta el imperdible Viaducto La Polvorilla a 4.220 msnm. En este lugar cerca del cielo sacaremos fotos inolvidables que harán de este viaje un recuerdo único. Más tarde retornaremos con el TREN a San Antonio de los Cobres donde podremos recorrer este emblemático y pintoresco pueblo salteño y podremos almorzar (almuerzo no incluido). Después de las 15:00 hs. emprenderemos el retorno a Salta, y en el camino los invitaremos con una rica merienda (incluida). Arribo a Salta 20:00 hs.`
     },
     {id:6,
+        posicion:"Six",
         nombre:"Trekking Laguna de los 3",
         destino:"Santa Cruz",
         precio:47500,
@@ -202,6 +208,7 @@ const tiendaExcursiones = [
         Celular con batería para usar la linterna por las dudas..`
     },
     {id:7,
+        posicion:"Seven",
         nombre:"Paseo en barco Iguazu",
         destino:"Misiones",
         precio:27000,
@@ -213,6 +220,7 @@ const tiendaExcursiones = [
         fichaTecnica:`Incluye recogida en el hotel en el centro de Puerto Iguazú. La hora de recogida será entre las 7.20 h y las 8.30 h. Si su hotel NO aparece en la lista, indique su nombre al realizar la reserva en la casilla "Requisitos especiales".`
     },
     {id:8,
+        posicion:"Eight",
         nombre:"City Tour ",
         destino:"Buenos Aires",
         precio:12500,
