@@ -79,15 +79,21 @@ const formularioUsuario = () =>{
   const formaDePago = document.getElementById("formaPago").value;
   
   let completarCampos = document.getElementById("completarCampos");
-  if(((nombreUsuario == "") || (!isNaN(nombreUsuario))) || ((apellidoUsuario == "") || (!isNaN(apellidoUsuario))) || ((edadUsuario == "") ||(isNaN(edadUsuario))) || ((dniUsuario == "") ||(isNaN(dniUsuario))) || (correoUsuario == "") || ((provinciaUsuario == "")|| (!isNaN(provinciaUsuario))) || ((ciudadUsuario == "")|| (!isNaN(ciudadUsuario))) || ((nacionalidadUsuario == "")|| (!isNaN(nacionalidadUsuario))) || ((tarjeta == "") ||(isNaN(tarjeta))) || (formaDePago === "Abone su viaje")){
+  if(((nombreUsuario == "") || (!isNaN(nombreUsuario))) || ((apellidoUsuario == "") || (!isNaN(apellidoUsuario))) || ((edadUsuario == "") ||(isNaN(edadUsuario))) || ((dniUsuario == "") ||(isNaN(dniUsuario))) || (correoUsuario == "") || ((provinciaUsuario == "")|| (!isNaN(provinciaUsuario))) || ((ciudadUsuario == "")|| (!isNaN(ciudadUsuario))) || ((nacionalidadUsuario == "")|| (!isNaN(nacionalidadUsuario))) || ((tarjeta == "") || ((tarjeta.toString().length !== 16)) ||(isNaN(tarjeta))) || (formaDePago === "Abone su viaje")){
 
     completarCampos.innerHTML= "Error, por favor complete todos los campos de ingreso y revise si los datos son correspondientes hacia cada campo. Para poder avanzar.";
     completarCampos.className= "text-danger bg-dark text-center mb-1";
+/*     if(((tarjeta == "") || ((tarjeta.toString().length !== 16)) ||(isNaN(tarjeta)))){
+      const errorIngresoTarjeta = document.getElementById("errorIngreso");
+      errorIngresoTarjeta.innerHTML="<Ingrese los 16 digitos de su tarjeta"
+      errorIngresoTarjeta.className= "text-danger"
+    } */
     return false;
   }else{
     completarCampos.innerHTML = "";
     return true;
   }
+  
 }
 
 

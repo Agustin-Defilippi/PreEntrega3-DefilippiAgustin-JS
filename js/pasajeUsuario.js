@@ -2,7 +2,7 @@ const destinoPasajero = JSON.parse(localStorage.getItem("paqueteViajeBusqueda"))
 const datosPasajero = JSON.parse(localStorage.getItem("datosUsuario")) || [];
 
 const compraRealizada= document.getElementById("compraRealizada");
-compraRealizada.innerHTML=`<b>${datosPasajero.apellidoPasajero} ${datosPasajero.nombrePasajero}</b>, su compra se ha realizado con exito!`;
+compraRealizada.innerHTML=`<b>${datosPasajero.apellidoPasajero} ${datosPasajero.nombrePasajero}</b>, su pasaporte se ha generado con exito!`;
 
 const renderPasaje = () =>{
     const destino = destinoPasajero;
