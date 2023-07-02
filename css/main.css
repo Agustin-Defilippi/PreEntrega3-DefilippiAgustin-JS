@@ -486,6 +486,7 @@ footer .pos-svg .container-wrap .css-text {
   }
   main .cont-Viaje .container-formaPago {
     background-color: rgb(79, 124, 155);
+    padding: 10px 0;
   }
   main .cont-Viaje .container-formaPago .bg-select-pagos {
     height: 250px;

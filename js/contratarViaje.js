@@ -9,7 +9,7 @@ comprarViaje.innerHTML=`Complete el formulario para contratar  <b>${destinoFinal
 
 const abonarViaje = (valor) =>{
   const viajePago = destinoFinal;
-
+  
   if(valor === "debito"){
     return (viajePago.precio * 0.8);
   }else if(valor === "1 pago"){
@@ -23,7 +23,6 @@ const abonarViaje = (valor) =>{
   }else{
     return "";
   }
-  
 }
 
 const formaPago = document.getElementById("formaPago");
@@ -34,8 +33,6 @@ formaPago.addEventListener("input", (e) =>{
   pagosDefinidos.innerHTML=`<p> ${formaPago.value} = $${abonarViaje(formaPago.value).toFixed(2)} pesos.</p>`;
   pagosDefinidos.className="pagos"
 })
-
-
 
 class PasajeCliente{
     constructor(nombre,apellido,edad,dni,correo,provincia,ciudad,nacionalidad){
@@ -66,6 +63,7 @@ class PasajeCliente{
       }
     }
 }
+
 const formularioUsuario = () =>{
   const nombreUsuario = document.getElementById("nombreUsuario").value.toUpperCase();
   const apellidoUsuario = document.getElementById("apellidoUsuario").value.toUpperCase();
@@ -83,11 +81,6 @@ const formularioUsuario = () =>{
 
     completarCampos.innerHTML= "Error, por favor complete todos los campos de ingreso y revise si los datos son correspondientes hacia cada campo. Para poder avanzar.";
     completarCampos.className= "text-danger bg-dark text-center mb-1";
-/*     if(((tarjeta == "") || ((tarjeta.toString().length !== 16)) ||(isNaN(tarjeta)))){
-      const errorIngresoTarjeta = document.getElementById("errorIngreso");
-      errorIngresoTarjeta.innerHTML="<Ingrese los 16 digitos de su tarjeta"
-      errorIngresoTarjeta.className= "text-danger"
-    } */
     return false;
   }else{
     completarCampos.innerHTML = "";
@@ -95,8 +88,6 @@ const formularioUsuario = () =>{
   }
   
 }
-
-
 
 const generandoPasaje = (nombre) =>{
  
@@ -157,13 +148,10 @@ fomularioIngresoUsuario.addEventListener("submit",(e) =>{
        generandoPasaje(nombreUsuario);
     }
    
-    
     menorEdad.innerHTML = usuario.mayorEdad(edadMinima);
     nacionalidad.innerHTML= usuario.nacionalidadPasajero();
     JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
     localStorage.setItem("datosUsuario", JSON.stringify(usuario));
     
-    
-   
   }
 });

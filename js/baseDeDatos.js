@@ -1,4 +1,4 @@
-const viajes = [
+const viajes =[
     {nombre:"Salta la linda",
     destino:"salta",
     duracion:"5 dias",

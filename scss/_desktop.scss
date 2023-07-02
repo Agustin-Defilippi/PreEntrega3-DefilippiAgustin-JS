@@ -189,6 +189,7 @@
             display: flex;
             .container-formaPago{
                 background-color: rgb(79, 124, 155);
+                padding: 10px 0;
                 .bg-select-pagos{
                     height: 250px;
                     width: 40%;
@@ -227,7 +228,6 @@
                                 width: 100%;
                             }
                         }
-
                     }
                     .svg-credito{
                         width: 100%;
