@@ -74,6 +74,16 @@ main .turismo section article .ley {
 main .containerd-cards {
   margin: 40px 0;
 }
+main .containerd-cards article .cont-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 100px;
+  background-color: rgb(112, 179, 243);
+  font-size: 1.2em;
+  margin-bottom: 25px;
+}
 main .containerd-cards article .css-card {
   padding: 5px;
   background-color: rgb(47, 78, 99);

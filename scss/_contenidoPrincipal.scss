@@ -80,6 +80,16 @@ main{
     .containerd-cards{
         margin: 40px 0;
         article{
+            .cont-spinner{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 30%;
+                height: 100px;
+                background-color:rgb(112, 179, 243);
+                font-size: 1.2em;
+                margin-bottom: 25px;
+            }
             .css-card{
                 padding: 5px;
                 background-color: rgb(47, 78, 99);
