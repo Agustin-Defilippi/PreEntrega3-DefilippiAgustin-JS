@@ -56,6 +56,13 @@ informacionAdicional.addEventListener("click", (e) => {
 });
 
 
+
+const temperatura = (x) => {
+    if (x > 5){
+        return `<div><p class="text-warning"> esta haciendo calor </p></div>`
+    }
+}
+
 const obtenerDatosApi = (ciudad) =>{
     let apiKey = "eda6c39ba9765814f39e9badb0dc9aed";
     const api =`https://api.openweathermap.org/data/2.5/weather?q=${ciudad},Argentina&appid=${apiKey}`;
@@ -80,6 +87,7 @@ const obtenerDatosApi = (ciudad) =>{
                             <p class="card-text text-light">HUMEDAD: ${data.main.humidity}%</p>
                         </div>
                     </div>
+                    ${temperatura(data.main.temp)}
                 </div>
             </div>`
         })
