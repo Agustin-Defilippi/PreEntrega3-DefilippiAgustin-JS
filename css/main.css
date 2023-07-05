@@ -120,22 +120,20 @@ main .viaje article .bg-btn:hover {
   background-color: black;
   color: white;
 }
-main .viaje .css-infoViaje .bord-card-info {
-  border: solid 2px black;
+main .conoceMas {
+  width: 100%;
 }
-main .viaje .css-infoViaje .bord-card-info .color-slogan {
-  background: linear-gradient(to top, rgba(202, 202, 202, 0.582), white);
+main .conoceMas .contenedorClima {
+  width: 100%;
 }
-main .viaje .css-infoViaje .bord-card-info .btn-contratar {
-  background-color: rgb(112, 179, 243);
-  color: white;
+main .conoceMas .contenedorClima .cont-spinner {
+  width: 100%;
 }
-main .viaje .css-infoViaje .bord-card-info .btn-contratar:hover {
-  background-color: black;
-  color: white;
-  border: solid 1px white;
-  transform: scale(1.1);
-  transition: 1s;
+main .conoceMas .contenedorClima .climaCiudad {
+  width: 100%;
+}
+main .conoceMas .contenedorClima .climaCiudad .card-clima {
+  width: 100% !important;
 }
 main .h1-div {
   margin: 50px 0;
@@ -673,7 +671,7 @@ footer .pos-svg .container-wrap .css-text {
     padding: 20px 0;
   }
   main .conoceMas .contenedorClima .climaCiudad .card-clima {
-    width: 100%;
+    width: 50% !important;
     height: 65%;
   }
   footer {

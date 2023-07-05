@@ -112,7 +112,6 @@ main{
         background:linear-gradient(to bottom,rgb(218, 217, 217),white,rgb(218, 217, 217));
         article{
            width: 100%;
-          
            .css-pFiltrado {
             padding: 5px;
             &:hover{
@@ -132,28 +131,23 @@ main{
             }
             }
         }
-        .css-infoViaje{
-           .bord-card-info{
-            border: solid 2px black;
-            .color-slogan{
-                background:linear-gradient(to top,rgba(202, 202, 202, 0.582),white);
-            }
-            .btn-contratar{
-                background-color:  rgb(112, 179, 243);
-                color: white;
-                &:hover{
-                    background-color: black;
-                    color: white;
-                    border: solid 1px white;
-                    transform:scale(1.1);
-                    transition: 1s;
-                }
-              
-            }
-           }
-            
-        }
         
+        
+    }
+    .conoceMas{
+        width: 100%;
+        .contenedorClima{
+             width: 100%;
+            .cont-spinner{
+                width: 100%;
+            }
+            .climaCiudad{
+                width: 100%;
+                .card-clima{
+                    width: 100% !important
+                }
+            }
+        } 
     }
    
     .h1-div{

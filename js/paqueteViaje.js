@@ -66,7 +66,7 @@ const obtenerDatosApi = (ciudad) =>{
             console.log(data);
             return `
             <div id="climaCiudad" class="climaCiudad">
-                <div class="card text-center card-clima w-50 bg-dark" style="width: 18rem;">
+                <div class="card text-center card-clima  bg-dark" style="width: 18rem;">
                     <img src="${viaje.imagen3}" class="card-img-top" alt="${data.name}">
                     <div class="card-body">
                         <div class="bg-dark border border-light mb-3">
