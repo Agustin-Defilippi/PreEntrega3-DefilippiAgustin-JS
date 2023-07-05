@@ -21,9 +21,10 @@ const viajeFiltrado = () =>{
       </div>`;
     
     document.getElementById("paqueteViajeFiltrado").innerHTML=cardViajeFiltrado;
+    return viajeFiltrado;
 }
 
-viajeFiltrado();
+const viaje = viajeFiltrado();
 
 const btnConoceMas = document.getElementById("btn-conoceMas");
 
@@ -33,7 +34,20 @@ btnConoceMas.addEventListener("click",() =>{
     const  infoDestino = viajeBusqueda;
     let informacion = infoConocerMas(infoDestino);
     containerInfoAdicional.innerHTML = informacion;
-    containerClima.innerHTML = infoClima();
+    obtenerDatosApi(viaje.destino)
+    .then(climaHTML =>{
+        containerClima.innerHTML= `<div class="cont-spinner">
+                    <div class="spinner">
+                        <strong>Cargando datos del Clima...</strong>
+                        <div class="spinner-border ms-auto" role="status" aria-hidden="true">
+                        </div>
+                    </div>
+                </div>`
+
+        setTimeout(() =>{
+            containerClima.innerHTML = climaHTML;
+        },3000);
+    });
 });
 
 informacionAdicional.addEventListener("click", (e) => {
@@ -42,50 +56,36 @@ informacionAdicional.addEventListener("click", (e) => {
 });
 
 
-const obtenerDatosApi = (ciudad,codigoPais) =>{
+const obtenerDatosApi = (ciudad) =>{
     let apiKey = "eda6c39ba9765814f39e9badb0dc9aed";
-    const api =`"https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${codigoPais}&appid=${apiKey}"`;
+    const api =`https://api.openweathermap.org/data/2.5/weather?q=${ciudad},Argentina&appid=${apiKey}`;
 
-    return api;
-}
-
-console.log(obtenerDatosApi("salta","ar"));
-
-const datosApi = obtenerDatosApi("cordoba","ar");
-
-console.log(datosApi);
-
-const infoClima = () =>{
-    return `
-            <div class="climaCiudad">
-                <div class="card card-clima w-50" style="width: 18rem;">
-                    <img src="../img/chaltten.jpg" class="card-img-top" alt="...">
+    return fetch(api)
+        .then(respuesta => respuesta.json())
+        .then(data =>{
+            console.log(data);
+            return `
+            <div id="climaCiudad" class="climaCiudad">
+                <div class="card text-center card-clima w-50 bg-dark" style="width: 18rem;">
+                    <img src="${viaje.imagen3}" class="card-img-top" alt="${data.name}">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <div class="bg-dark border border-light mb-3">
+                            <h5 class="card-title fs-4 text-light">Condiciones climaticas actuales de (${data.name})</h5>
+                        </div>
+                        <div class="border border-light">
+                            <p class="card-text text-light">TEMPERATURA: ${Math.round(data.main.temp - 273.15)}°C</p>
+                            <p class="card-text text-light">TEMPERATURA MAX: ${Math.round(data.main.temp_max - 273.15)}°C</p>
+                            <p class="card-text text-light">TEMPERATURA MIN: ${Math.round(data.main.temp_min - 273.15)}°C</p>
+                            <p class="card-text text-light">SENSACION TERMICA: ${Math.round(data.main.feels_like - 273.15)}°C</p>
+                            <p class="card-text text-light">HUMEDAD: ${data.main.humidity}%</p>
+                        </div>
                     </div>
                 </div>
             </div>`
+        })
+        .catch(error =>{
+            console.log("error al obtener los datos del clima",error);
+        })
 }
 
 
-/* const datosApiClima = "";
-
-const obtenerDatosClima = async () =>{
-
-
-    try {
-        const respuesta = await fetch("https://api.openweathermap.org/data/2.5/weather?q={city name},{country code}&appid={API key}");
-        const datosRespuesta = await respuesta.json();
-        const datosApiClima = datosApiClima;
-           
-    } catch (error) {
-        
-    }
-    
-    
-   
-}
-
-obtenerDatosClima(); */

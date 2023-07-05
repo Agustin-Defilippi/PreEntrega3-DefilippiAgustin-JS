@@ -73,20 +73,6 @@ const infoConocerMas = (objeto) =>{
             </div>`
 }
 
-const infoClima = () =>{
-    return `
-            <div class="climaCiudad">
-                <div class="card card-clima w-50" style="width: 18rem;">
-                    <img src="../img/chaltten.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>`
-}
-
 //contratarViaje.js
 const abonarViaje = (valor) =>{
     const viajePago = destinoFinal;
