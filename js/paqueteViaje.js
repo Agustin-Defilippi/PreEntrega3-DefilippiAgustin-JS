@@ -80,6 +80,7 @@ const obtenerDatosApi = (ciudad) =>{
                         </div>
                     </div>
                     ${temperatura(data.main.temp - 273.15)}
+                    <p id="horaActual" class="text-danger"></p>
                 </div>
             </div>`
         })

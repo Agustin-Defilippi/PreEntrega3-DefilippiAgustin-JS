@@ -84,6 +84,22 @@ const temperatura = (temperatura) => {
     }
 }
 
+const mostrarHora = () =>{
+    let hora = new Date();
+    let horActual = hora.getHours();
+    let minActual = hora.getMinutes();
+
+    let horaElemento = document.getElementById("horaActual");
+    horaElemento.textContent = `Hora actual: ${horActual} ${minActual}`;
+
+    setTimeout(mostrarHora,1000);
+}
+
+mostrarHora();
+
+
+
+
 //contratarViaje.js
 const abonarViaje = (valor) =>{
     const viajePago = destinoFinal;
