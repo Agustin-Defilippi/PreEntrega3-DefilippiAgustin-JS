@@ -287,7 +287,7 @@ const renderTiendaExcursiones = (excursionesTienda) =>{
             imageHeight: 400,
             imageAlt:`${items.nombre}`,
             showCancelButton: true,
-            confirmButtonText: 'Agregar (+)',
+            confirmButtonText: 'Agregar excursion',
             denyButtonText:"Cancelar",
             cancelButtonText: `cancelar`,
             }).then((result) => {
@@ -302,4 +302,13 @@ const renderTiendaExcursiones = (excursionesTienda) =>{
        })
 
     });
+}
+
+const agregarProducto = (array,elemento) =>{
+    array.push(elemento);
+    return array;
+}
+
+ const agregarProductoLS = (nombre,elemento) =>{
+     localStorage.setItem(nombre,JSON.stringify(elemento));
 }

@@ -347,6 +347,54 @@
                 }
                }
             }
+            .containerTotal{
+                border: 2px solid black;
+                border-radius: 10px;
+                background:linear-gradient(to bottom,rgb(218, 217, 217),white,rgb(218, 217, 217));
+                width: 40%;
+                height: 500px;
+                .total{
+                    display: flex;
+                    flex-direction: column;
+                    
+                    align-items: center;
+
+                    .content-h2{
+                        background-color: rgb(248, 248, 68);
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        h2{
+                            margin: 5px 0;
+                            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            font-size: 2.1em;
+                        }
+                    }
+                }
+                .productosCarrito{
+                    width: 50%;
+                    margin: 25px 0 10px 10px;
+                    border: solid 1px black;
+                    text-decoration: dotted;
+                    p{
+                        padding-bottom: 2px;
+                        text-align: center;
+                        text-decoration:underline;
+                        font-size: 1.5em;
+                        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+                    }
+                    .productoAgregados{
+                        li{
+                            list-style: none;
+                            padding: 2px 4px;
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 1em;
+                            color: rgb(247, 87, 87);
+                        }
+                    }
+                }
+               
+            }
         }
         .conoceMas{
             width: 100%;

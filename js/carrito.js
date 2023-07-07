@@ -34,6 +34,9 @@ const renderProdCarrito = () =>{
                         </div>
                     </div>
                 </div>
+                <div class="mb-3">
+                    <button class="btn btn-warning">Eliminar</button>
+                </div>
             </div>
         </div>`;
 
@@ -42,3 +45,20 @@ const renderProdCarrito = () =>{
 }
 
 renderProdCarrito();
+
+console.log(productos);
+
+
+const enlistarProductos = () =>{
+    const productosCarrito = productos;
+    const container = document.getElementById("productosCarrito");
+    
+    productosCarrito.forEach(prod =>{
+        const listaProductos = document.createElement("li");
+        listaProductos.innerHTML = `${prod.nombre}.`;
+       
+        container.appendChild(listaProductos);
+    })
+}
+
+enlistarProductos();
