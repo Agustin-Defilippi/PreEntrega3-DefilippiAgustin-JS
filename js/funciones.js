@@ -73,6 +73,17 @@ const infoConocerMas = (objeto) =>{
             </div>`
 }
 
+const temperatura = (temperatura) => {
+    if (temperatura> 20){
+        return `<div><p class="text-warning"> El día esta caluroso</p></div>`
+    }
+    else if (temperatura>= 12){
+        return `<div><p class="text-warning"> El día está calido</p></div>`
+    } else{
+        return `<div><p class="text-warning"> Está haciendo frio </p></div>`
+    }
+}
+
 //contratarViaje.js
 const abonarViaje = (valor) =>{
     const viajePago = destinoFinal;
@@ -109,19 +120,39 @@ const validarFormularioUsuario = () =>{
         ((nombreUsuario == "") || (!isNaN(nombreUsuario))) ||
         ((apellidoUsuario == "") || (!isNaN(apellidoUsuario))) ||
         ((edadUsuario == "") || (isNaN(edadUsuario))) || 
-        ((dniUsuario == "") || (isNaN(dniUsuario)))  || 
+        ((dniUsuario == "") || (isNaN(dniUsuario))) || 
         ((provinciaUsuario == "") || (!isNaN(provinciaUsuario))) || 
         ((ciudadUsuario == "") || (!isNaN(ciudadUsuario))) || 
         ((nacionalidadUsuario == "") || (!isNaN(nacionalidadUsuario))) || 
-        ((tarjeta == "") || ((tarjeta.toString().length !== 16)) || (isNaN(tarjeta))) || (formaDePago === "Abone su viaje")|| (correoUsuario == ""))
+        ((tarjeta == "")  || (isNaN(tarjeta))) || (formaDePago === "Abone su viaje")|| (correoUsuario == ""))
     {
-      completarCampos.innerHTML= "Error, por favor complete todos los campos de ingreso y revise si los datos son correspondientes hacia cada campo. Para poder avanzar.";
-      completarCampos.className= "text-danger bg-dark text-center mb-1";
+        completarCampos.innerHTML= "Error, por favor complete todos los campos de ingreso y revise si los datos son correspondientes hacia cada campo. Para poder avanzar.";
+        completarCampos.className= "text-danger bg-dark text-center mb-1";
+
+        setTimeout(() => {
+            completarCampos.innerHTML= "";
+        },4000)
       return false;
+    }else if((dniUsuario.length > 8) || (tarjeta.toString().length !== 16)){
+
+        let camposVacios= completarCampos;
+        camposVacios.innerHTML = "Error, revise la longitud de su numero de dni o el de su tarjeta de pago.";
+        camposVacios.className ="text-danger bg-dark text-center mb-1";
+        setTimeout(() =>{
+            camposVacios.innerHTML=""
+        },4000) 
+
+        return camposVacios;
     }else{
-      completarCampos.innerHTML = "";
-      return true;
+        completarCampos.innerHTML = "";
+        return true;
     }
+}
+
+const desaparecerHtml = (x) =>{
+    setTimeout(() =>{
+        x= ""
+    },4000)
 }
 
 const generandoPasaje = (nombre) =>{
@@ -217,4 +248,58 @@ const renderPasajeUsuario = (datosUsuario,destino) =>{
                     </div>
                 </div>
             </div>`    
+}
+
+//tienda.js
+const renderTiendaExcursiones = (excursionesTienda) =>{
+    const PaqueteExcursiones =  excursionesTienda;
+    
+    PaqueteExcursiones.forEach(items => {
+        const cardExcursiones = document.createElement("div");
+        cardExcursiones.innerHTML=`<div class="d-flex excursionesTienda ">
+                <div class="card  css-pFiltrado card-excursiones text-ligth" style="width: 18rem;">
+                    <img src="${items.img}" class="card-img-top" alt="${items.destino}">
+                    <div class="card-body text-center">
+                        <h4 class="mb-2"><b>${items.nombre}</b><br></h4>
+                        <p class="card-text">
+                        Con Defilippi Tourlines esto es posible, aprovecha con nosotros la posibilidad de poder hacer tu  sueño realidad.<br><br>
+                        <b>Precio</b>: <b>$${items.precio}</b>
+                        </p>
+                    </div>
+                    <div class="w-100 d-flex justify-content-center">
+                        <button id="${items.id}"type="submit" class="btn bg-btn">MÁS INFO</button>
+                    </div>
+                </div>
+        </div>`;
+
+        excursiones.appendChild(cardExcursiones); 
+        const btnMasInfo = document.getElementById(`${items.id}`);
+       
+        btnMasInfo.addEventListener("click",() =>{
+            Swal.fire({
+            title: `${items.nombre}`,
+            text: `(${items.destino})`,
+            imageUrl: `${items.img}`,
+            background:"black",
+            color:"white",
+            html:` ${items.destino}  <br><br> ${items.descripcion}`,
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt:`${items.nombre}`,
+            showCancelButton: true,
+            confirmButtonText: 'Agregar (+)',
+            denyButtonText:"Cancelar",
+            cancelButtonText: `cancelar`,
+            }).then((result) => {
+            
+                if (result.isConfirmed) {
+                    Swal.fire('Agregado al carrito!', '', 'success');
+                    const productoAgregado = agregarProducto(carrito,items);
+                    console.log(productoAgregado);
+                    agregarProductoLS("prodCarrito",productoAgregado) || [];
+                }
+            })
+       })
+
+    });
 }

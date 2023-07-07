@@ -31,7 +31,7 @@ const btnConoceMas = document.getElementById("btn-conoceMas");
 btnConoceMas.addEventListener("click",() =>{
     let containerInfoAdicional = document.getElementById("informacionAdicional");
     let containerClima = document.getElementById("infoClima");
-    const  infoDestino = viajeBusqueda;
+    const  infoDestino = viaje;
     let informacion = infoConocerMas(infoDestino);
     containerInfoAdicional.innerHTML = informacion;
     obtenerDatosApi(viaje.destino)
@@ -54,14 +54,6 @@ informacionAdicional.addEventListener("click", (e) => {
     JSON.parse(localStorage.getItem("paqueteViajeBusqueda")) || [];
     (e.target.id === "btn-contratar") && setTimeout(() => location.href = "contratarViaje.html", 1500);
 });
-
-
-
-const temperatura = (x) => {
-    if (x > 5){
-        return `<div><p class="text-warning"> esta haciendo calor </p></div>`
-    }
-}
 
 const obtenerDatosApi = (ciudad) =>{
     let apiKey = "eda6c39ba9765814f39e9badb0dc9aed";
@@ -87,7 +79,7 @@ const obtenerDatosApi = (ciudad) =>{
                             <p class="card-text text-light">HUMEDAD: ${data.main.humidity}%</p>
                         </div>
                     </div>
-                    ${temperatura(data.main.temp)}
+                    ${temperatura(data.main.temp - 273.15)}
                 </div>
             </div>`
         })
