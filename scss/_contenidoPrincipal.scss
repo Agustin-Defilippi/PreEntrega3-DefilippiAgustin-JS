@@ -123,12 +123,12 @@ main{
             }
            }
            .bg-btn{
-            width: 45%;
-            &:hover{
-                background-color: black;
-                color: white;
+                width: 45%;
+                &:hover{
+                    background-color: black;
+                    color: white;
 
-            }
+                }
             }
         }
         
@@ -169,7 +169,6 @@ main{
         }   
     }
     .cont-Viaje{
-      
         form{
             margin-top:30px;
             width: 80%;
@@ -186,18 +185,19 @@ main{
                 }
             }
         }
-        .btn-contratar{
-            background-color:  rgb(112, 179, 243);
+        
+    }
+    .btn-contratar{
+        background-color:  rgb(112, 179, 243);
+        color: white;
+        &:hover{
+            background-color: black;
             color: white;
-            &:hover{
-                background-color: black;
-                color: white;
-                border: solid 1px white;
-                transform:scale(1.1);
-                transition: 1s;
-            }
-          
+            border: solid 1px white;
+            transform:scale(1.1);
+            transition: 1s;
         }
+      
     }
 
     .contenedorBoleto{

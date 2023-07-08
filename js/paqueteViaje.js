@@ -78,9 +78,10 @@ const obtenerDatosApi = (ciudad) =>{
                             <p class="card-text text-light">SENSACION TERMICA: ${Math.round(data.main.feels_like - 273.15)}°C</p>
                             <p class="card-text text-light">HUMEDAD: ${data.main.humidity}%</p>
                         </div>
+                        <p id="horaActual" class="text-danger">${mostrarHora()}</p>
                     </div>
                     ${temperatura(data.main.temp - 273.15)}
-                    <p id="horaActual" class="text-danger"></p>
+                   
                 </div>
             </div>`
         })

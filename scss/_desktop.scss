@@ -157,6 +157,7 @@
                 }
                 .bg-btn{
                     width: 60%;
+                    
                     &:hover{
                         background-color: black; 
                         color: white;
@@ -317,12 +318,6 @@
             
             }
         }
-        .swal2-actions{
-            button{
-             background-color: white !important;
-             color: black !important;
-            }
-        }
         .carrito{
             width: 40%;
             .acordeon{
@@ -349,16 +344,14 @@
             }
             .containerTotal{
                 border: 2px solid black;
-                border-radius: 10px;
+                border-radius: 5px;
                 background:linear-gradient(to bottom,rgb(218, 217, 217),white,rgb(218, 217, 217));
                 width: 40%;
                 height: 500px;
                 .total{
                     display: flex;
                     flex-direction: column;
-                    
                     align-items: center;
-
                     .content-h2{
                         background-color: rgb(248, 248, 68);
                         width: 100%;
@@ -371,29 +364,74 @@
                         }
                     }
                 }
-                .productosCarrito{
-                    width: 50%;
-                    margin: 25px 0 10px 10px;
-                    border: solid 1px black;
-                    text-decoration: dotted;
-                    p{
-                        padding-bottom: 2px;
-                        text-align: center;
-                        text-decoration:underline;
-                        font-size: 1.5em;
-                        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+                .carro{
+                    display: flex;
+                    .productosCarrito{
+                        width: 50%;
+                        margin: 25px 0 10px 10px;
+                        border: solid 1px black;
+                        text-decoration: dotted;
+                        h3{
+                            padding-bottom: 2px;
+                            text-align: center;
+                            text-decoration:underline;
+                            font-size: 1.5em;
+                            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+                        }
+                        .productoAgregados{
+                            li{
+                                list-style: none;
+                                padding: 2px 4px;
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 1.2em;
+                                color: rgb(0, 0, 0);
+                            }
+                        }
+                        
                     }
-                    .productoAgregados{
-                        li{
-                            list-style: none;
-                            padding: 2px 4px;
-                            font-family: Arial, Helvetica, sans-serif;
-                            font-size: 1em;
-                            color: rgb(247, 87, 87);
+                    .totalProductos{
+                        width: 50%;
+                        margin: 25px 10px 10px 10px;
+                     
+                        h3{
+                            padding-bottom: 2px;
+                            text-align: center;
+                            text-decoration:underline;
+                            font-size: 1.5em;
+                            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+                        }
+                        .button-p{
+                            display: flex;
+                            flex-direction: column-reverse;
+                            align-items: center;
+                            
+                            width: 100%;
+                            margin-top: 20px;
+                            p{
+                                border: solid black 2px;
+                                border-radius: 5px;
+                                font-size: 3em;
+                                text-align: center;
+                                color: red;
+                                background-color: black;
+                            }
+                            .listaPago{
+                                margin-top: 20px;
+                                li{
+                                    list-style-position: inside;
+                                }
+                            }
+                            .cont-button-pagar-tienda{
+                                width: 40%;
+                                button{
+                                    background-color: rgb(112, 179, 243);
+                                    color: white;
+                                    width: 100%;
+                                }
+                            }
                         }
                     }
                 }
-               
             }
         }
         .conoceMas{

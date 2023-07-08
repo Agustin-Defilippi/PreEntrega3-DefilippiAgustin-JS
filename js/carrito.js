@@ -55,10 +55,33 @@ const enlistarProductos = () =>{
     
     productosCarrito.forEach(prod =>{
         const listaProductos = document.createElement("li");
-        listaProductos.innerHTML = `${prod.nombre}.`;
-       
+        listaProductos.innerHTML = `${prod.nombre} (${prod.destino}).`;
         container.appendChild(listaProductos);
     })
 }
 
 enlistarProductos();
+
+const calcularTotal = () => {
+    const productosTotal = productos;
+    const totalProductos = document.getElementById("totalProductos");
+  
+    let total = productosTotal.reduce((acumulador, elemento) => {
+      acumulador += elemento.precio;
+      return acumulador;
+    }, 0);
+  
+    const contador = document.createElement("p");
+    contador.innerHTML = `Total: $${total}`;
+    totalProductos.appendChild(contador);
+
+    return total;
+}
+  
+calcularTotal();
+
+const btnPagoExcursion = document.getElementById("btnPagoExcursion");
+
+btnPagoExcursion.addEventListener("click", () =>{
+    location.href="../pages/contratarViaje.html"
+})

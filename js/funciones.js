@@ -54,7 +54,7 @@ const busquedaSelect = (arrayViajes,valor) =>{
 
 //paqueteViaje.js
 const infoConocerMas = (objeto) =>{
-    return `<div class="card mb-4 w-100 css-infoViaje " style="width: 18rem;">
+    return `<div class="card mb-4 w-100  " style="width: 18rem;">
                 <div class=" bord-card-info">
                     <img src="${objeto.imagen2}" class="w-100" alt="...">
                     <div class="card-body color-slogan">
@@ -89,13 +89,14 @@ const mostrarHora = () =>{
     let horActual = hora.getHours();
     let minActual = hora.getMinutes();
 
-    let horaElemento = document.getElementById("horaActual");
-    horaElemento.textContent = `Hora actual: ${horActual} ${minActual}`;
-
-    setTimeout(mostrarHora,1000);
+    setTimeout(()=>{
+        mostrarHora();
+    },1000);
+    
+    return `Hora actual: ${horActual} ${minActual}`
 }
 
-mostrarHora();
+
 
 
 
