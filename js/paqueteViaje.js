@@ -2,7 +2,6 @@ const viajeBusqueda =  JSON.parse(localStorage.getItem("paqueteViajeBusqueda")) 
 
 const viajeFiltrado = () =>{
     const viajeFiltrado = viajeBusqueda;
-
     let cardViajeFiltrado =
     `<div class="d-flex justify-content-center align-items-center my-5 bg-paqueteFiltrado">
             <div class="card  css-pFiltrado text-ligth border-dark " style="width: 18rem;">
@@ -89,5 +88,3 @@ const obtenerDatosApi = (ciudad) =>{
             console.log("error al obtener los datos del clima",error);
         })
 }
-
-

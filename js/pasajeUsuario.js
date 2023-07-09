@@ -14,7 +14,6 @@ const renderPasaje = () =>{
 renderPasaje();
 
 const btnDescargar = document.getElementById("btn-Descargar");
-
 btnDescargar.addEventListener("click", () =>{
     Toastify({
 

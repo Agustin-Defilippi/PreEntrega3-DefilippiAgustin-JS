@@ -9,11 +9,7 @@ const obtenerDatosExcursiones = () =>{
     )
     
 }
-
 obtenerDatosExcursiones();
-
 let carrito = JSON.parse(localStorage.getItem("prodCarrito")) || [];
-
-
 
 btnSvgCarrito() 

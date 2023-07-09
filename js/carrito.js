@@ -53,7 +53,6 @@ renderProdCarrito();
 enlistarProductos();
 calcularTotal();
 
-
 const btnPagar = document.getElementById("btnPagoExcursion");
 
 btnPagar.addEventListener("click",() =>{
@@ -80,11 +79,8 @@ btnPagar.addEventListener("click",() =>{
     },4000);
 })
 
-
 const btnVaciar = document.getElementById("vaciarCarro");
 
 btnVaciar.addEventListener("click",() =>{
     vaciarCarrito()
 })
-
-

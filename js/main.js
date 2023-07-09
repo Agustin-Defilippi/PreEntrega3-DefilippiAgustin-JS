@@ -2,7 +2,6 @@ const formularioDestino = document.getElementById("fomularioDestino");
 const busquedaViaje = document.getElementById("busquedaViaje");
 const select =  document.getElementById("destinoFiltrado");
 
-
 const obtenerDatosViaje = async () =>{
     try {
         const datosRespuesta = await fetch("js/baseDeDatos.json");
@@ -36,6 +35,5 @@ const obtenerDatosViaje = async () =>{
         </div>`
     }
 }
-
 
 obtenerDatosViaje();
