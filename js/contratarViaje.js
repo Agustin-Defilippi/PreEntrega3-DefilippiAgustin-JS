@@ -28,13 +28,6 @@ class PasajeCliente{
         this.ciudad = ciudad;
         this.nacionalidad = nacionalidad;
     }
-      mayorEdad(numero){
-        if (this.edad < numero) {
-          return "Usted es menor de edad. Deberá presentar autorización de padre, madre y/o tutor y presentarse en la agencia de turismo.";
-        }else{
-          return `Usted es mayor de edad. Deberá presentar fotocopia a color de su DNI número ${this.dni} de ambos lados y su identificación en forma física en la agencia.`;
-        }
-      } 
     nacionalidadPasajero(){
       if(this.nacionalidad === "ARGENTINO"){
         return"Usted es argentino, ingrese a MI ARGENTINA y descargue el certificado de vacunacion contra COVID-19.";
@@ -61,10 +54,7 @@ fomularioIngresoUsuario.addEventListener("submit",(e) =>{
     const edadMinima = 17;
     menorEdad.className="text-dark bg-warning";
     nacionalidad.className="text-dark bg-warning";
-
     validarEdad(datosDeUsuario,edadMinima);
-   
-    menorEdad.innerHTML = datosDeUsuario.mayorEdad(edadMinima);
     nacionalidad.innerHTML= datosDeUsuario.nacionalidadPasajero();
     JSON.parse(localStorage.getItem("paqueteViajeBusqueda"));
     localStorage.setItem("datosUsuario", JSON.stringify(datosDeUsuario));

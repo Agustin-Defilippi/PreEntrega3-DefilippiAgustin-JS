@@ -7,16 +7,13 @@ const obtenerDatosExcursiones = () =>{
     .then(datosRespuesta => 
         renderTiendaExcursiones(datosRespuesta),
     )
+    
 }
 
 obtenerDatosExcursiones();
 
 let carrito = JSON.parse(localStorage.getItem("prodCarrito")) || [];
 
-const prodAgregados = document.getElementById("carritoProducto");
-
-prodAgregados.addEventListener("click", () =>{
-    location.href = "carrito.html";
-})
 
 
+btnSvgCarrito() 

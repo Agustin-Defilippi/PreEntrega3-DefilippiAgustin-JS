@@ -96,11 +96,6 @@ const mostrarHora = () =>{
     return `Hora actual: ${horActual} ${minActual}`
 }
 
-
-
-
-
-
 //contratarViaje.js
 const abonarViaje = (valor) =>{
     const viajePago = destinoFinal;
@@ -149,6 +144,7 @@ const validarFormularioUsuario = () =>{
         setTimeout(() => {
             completarCampos.innerHTML= "";
         },4000)
+
       return false;
     }else if((dniUsuario.length > 8) || (tarjeta.toString().length !== 16)){
 
@@ -164,12 +160,6 @@ const validarFormularioUsuario = () =>{
         completarCampos.innerHTML = "";
         return true;
     }
-}
-
-const desaparecerHtml = (x) =>{
-    setTimeout(() =>{
-        x= ""
-    },4000)
 }
 
 const generandoPasaje = (nombre) =>{
@@ -193,7 +183,8 @@ const generandoPasaje = (nombre) =>{
         imageHeight: 200,
         title:"La compra se ha realizado con EXITO!",
         text: `Muchas gracias por elegirnos ${nombre}`,
-        color:"black",
+        background:"black",
+        color:"white",
         showConfirmButton: false,
       })
     },8000);
@@ -283,7 +274,7 @@ const renderTiendaExcursiones = (excursionesTienda) =>{
                         <b>Precio</b>: <b>$${items.precio}</b>
                         </p>
                     </div>
-                    <div class="w-100 d-flex justify-content-center">
+                    <div class="d-flex justify-content-center">
                         <button id="${items.id}"type="submit" class="btn bg-btn">MÁS INFO</button>
                     </div>
                 </div>
@@ -313,11 +304,11 @@ const renderTiendaExcursiones = (excursionesTienda) =>{
                     Swal.fire('Agregado al carrito!', '', 'success');
                     const productoAgregado = agregarProducto(carrito,items);
                     console.log(productoAgregado);
-                    agregarProductoLS("prodCarrito",productoAgregado) || [];
+                    agregarProductoLS("prodCarrito",productoAgregado);
+                    btnSvgCarrito()
                 }
             })
        })
-
     });
 }
 
@@ -326,6 +317,67 @@ const agregarProducto = (array,elemento) =>{
     return array;
 }
 
- const agregarProductoLS = (nombre,elemento) =>{
-     localStorage.setItem(nombre,JSON.stringify(elemento));
+const agregarProductoLS = (nombre,elemento) =>{
+    localStorage.setItem(nombre,JSON.stringify(elemento));
+}
+
+const calcularLongitudCarrito = () => {
+    const productos = JSON.parse(localStorage.getItem("prodCarrito") || "[]");
+    if (productos !== "") {
+        return productos.length;
+    } else {
+        return 0;
+    }
+}
+
+const btnSvgCarrito = () => {
+    const prodAgregados = document.getElementById("carritoProducto");
+    const longitudCarrito = calcularLongitudCarrito();
+    const botonContenido = `<span">
+      <span class="cart-badge">${longitudCarrito}</span>
+      <img src="../img/cart.svg" alt="">
+    </span>`;
+    prodAgregados.innerHTML = botonContenido;
+}
+
+//carrito.js
+const eliminarProducto = (id) =>{
+    const producto = productos;
+    const eliminar=  producto.find(prod => prod.id == id);
+    return console.log(eliminar);
+}
+
+const vaciarCarrito = () =>{
+    localStorage.removeItem("prodCarrito");
+    const carrito = document.getElementById("carrito");
+    const total = document.getElementById("total");
+    carrito.innerHTML = "";
+    total.innerHTML = "";
+    total.className= "";
+}
+
+const enlistarProductos = () =>{
+    const productosCarrito = productos;
+    const container = document.getElementById("productosCarrito");
+    productosCarrito.forEach(prod =>{
+        const listaProductos = document.createElement("li");
+        listaProductos.innerHTML = `${prod.nombre} (${prod.destino}).`;
+        container.appendChild(listaProductos);
+    })
+}
+
+
+const calcularTotal = () => {
+    const productosTotal = productos;
+    const totalProductos = document.getElementById("totalProductos");
+    let total = productosTotal.reduce((acumulador, elemento) => {
+      acumulador += elemento.precio;
+      return acumulador;
+    }, 0);
+  
+    const contador = document.createElement("p");
+    contador.innerHTML = `Total: $${total}`;
+    totalProductos.appendChild(contador);
+
+    return total;
 }

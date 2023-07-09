@@ -202,6 +202,128 @@ main .contenedorBoleto .bg-boleto .contenedorDatos .datos-pasajeros ul li {
 main .contenedorBoleto .bg-boleto .contenedorDatos .css-white {
   color: white;
 }
+main .carritoCont .carrito {
+  width: 100%;
+  height: auto;
+}
+main .carritoCont .carrito .acordeon {
+  width: 100%;
+  height: auto;
+}
+main .carritoCont .carrito .acordeon .contenido-carrito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to left, rgb(247, 247, 157), rgb(98, 133, 156), rgb(247, 247, 157));
+  width: 100%;
+  height: auto;
+}
+main .carritoCont .carrito .acordeon .contenido-carrito .cont-h2-button {
+  width: 100%;
+}
+main .carritoCont .carrito .acordeon .contenido-carrito .cont-h2-button .container-button {
+  width: 100%;
+  height: auto;
+  padding: 15px;
+}
+main .carritoCont .carrito .acordeon .contenido-carrito .cont-h2-button .container-button .accordion-button {
+  background-color: black;
+  color: white;
+}
+main .carritoCont .containerTotal {
+  margin: 30px 0;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: linear-gradient(to bottom, rgb(218, 217, 217), white, rgb(218, 217, 217));
+  width: 100%;
+  height: auto;
+}
+main .carritoCont .containerTotal .total .content-h2 {
+  background-color: rgb(248, 248, 68);
+  width: 100%;
+}
+main .carritoCont .containerTotal .total .content-h2 h2 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.1em;
+  text-align: center;
+}
+main .carritoCont .containerTotal .carro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+}
+main .carritoCont .containerTotal .carro .productosCarrito {
+  width: 90%;
+  margin: 25px 0 10px 10px;
+  border: solid 1px black;
+  text-decoration: dotted;
+}
+main .carritoCont .containerTotal .carro .productosCarrito h3 {
+  padding-bottom: 2px;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 1.5em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+main .carritoCont .containerTotal .carro .productosCarrito .productoAgregados li {
+  list-style: none;
+  padding: 2px 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  color: rgb(0, 0, 0);
+}
+main .carritoCont .containerTotal .totalProductos {
+  width: 100%;
+  margin: 25px 10px 10px 10px;
+}
+main .carritoCont .containerTotal .totalProductos h3 {
+  padding-bottom: 2px;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 1.5em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+main .carritoCont .containerTotal .totalProductos .button-p {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+main .carritoCont .containerTotal .totalProductos .button-p p {
+  width: 95%;
+  border: solid black 2px;
+  border-radius: 5px;
+  font-size: 3em;
+  text-align: center;
+  color: red;
+  background-color: black;
+}
+main .carritoCont .containerTotal .totalProductos .button-p .listaPago {
+  margin-top: 20px;
+}
+main .carritoCont .containerTotal .totalProductos .button-p .listaPago li {
+  list-style-position: inside;
+}
+main .carritoCont .containerTotal .totalProductos .button-p .cont-button-pagar-tienda {
+  width: 31%;
+}
+main .carritoCont .containerTotal .totalProductos .button-p .cont-button-pagar-tienda button {
+  background-color: rgb(112, 179, 243);
+  color: white;
+  width: 100%;
+}
+main .carritoCont .containerTotal .totalProductos .botonEliminar {
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .carritoCont .containerTotal .totalProductos .botonEliminar .btn-vaciar {
+  background-color: rgb(226, 48, 48);
+  color: white;
+}
 
 footer {
   width: 100%;
@@ -513,7 +635,7 @@ footer .pos-svg .container-wrap .css-text {
   }
   main .cont-Viaje .container-formaPago .bg-select-pagos .cont-select-pagos {
     margin-top: 10px;
-    height: 100px;
+    height: auto;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -575,6 +697,7 @@ footer .pos-svg .container-wrap .css-text {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    height: auto;
     flex-wrap: wrap;
   }
   main .contenedorTienda .contenedor-carrito {
@@ -587,10 +710,25 @@ footer .pos-svg .container-wrap .css-text {
     font-size: 2.1em;
     margin-right: 10px;
   }
-  main .contenedorTienda .contenedor-carrito img {
+  main .contenedorTienda .contenedor-carrito a {
+    position: relative;
+    display: inline-block;
+  }
+  main .contenedorTienda .contenedor-carrito a img {
     width: 50px;
     height: 40px;
     cursor: pointer;
+  }
+  main .contenedorTienda .contenedor-carrito a .cart-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 4px 8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    content: attr(data-longitud);
   }
   main .contenedorTienda .excursionesTienda {
     margin: 50px 50px;
@@ -614,93 +752,113 @@ footer .pos-svg .container-wrap .css-text {
     box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
     cursor: pointer;
   }
-  main .carrito {
-    width: 40%;
+  main .carritoCont {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
   }
-  main .carrito .acordeon .contenido-carrito {
+  main .carritoCont .carrito {
+    flex-direction: column;
+    width: 40%;
+    height: auto;
+  }
+  main .carritoCont .carrito .acordeon {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  main .carritoCont .carrito .acordeon .contenido-carrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     background: linear-gradient(to left, rgb(247, 247, 157), rgb(98, 133, 156), rgb(247, 247, 157));
     width: 100%;
+    height: auto;
   }
-  main .carrito .acordeon .contenido-carrito .cont-h2-button {
+  main .carritoCont .carrito .acordeon .contenido-carrito .cont-h2-button {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: space-evenly;
   }
-  main .carrito .acordeon .contenido-carrito .cont-h2-button .container-button {
-    width: 25%;
+  main .carritoCont .carrito .acordeon .contenido-carrito .cont-h2-button .container-button {
+    width: 100%;
     height: auto;
     padding: 15px;
   }
-  main .carrito .acordeon .contenido-carrito .cont-h2-button .container-button .accordion-button {
+  main .carritoCont .carrito .acordeon .contenido-carrito .cont-h2-button .container-button .accordion-button {
     background-color: black;
     color: white;
   }
-  main .carrito .containerTotal {
+  main .carritoCont .containerTotal {
     border: 2px solid black;
     border-radius: 5px;
     background: linear-gradient(to bottom, rgb(218, 217, 217), white, rgb(218, 217, 217));
     width: 40%;
-    height: 500px;
+    height: 50%;
   }
-  main .carrito .containerTotal .total {
+  main .carritoCont .containerTotal .total {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
-  main .carrito .containerTotal .total .content-h2 {
+  main .carritoCont .containerTotal .total .content-h2 {
     background-color: rgb(248, 248, 68);
     width: 100%;
     display: flex;
     justify-content: center;
   }
-  main .carrito .containerTotal .total .content-h2 h2 {
+  main .carritoCont .containerTotal .total .content-h2 h2 {
     margin: 5px 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2.1em;
   }
-  main .carrito .containerTotal .carro {
+  main .carritoCont .containerTotal .carro {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
   }
-  main .carrito .containerTotal .carro .productosCarrito {
+  main .carritoCont .containerTotal .carro .productosCarrito {
     width: 50%;
     margin: 25px 0 10px 10px;
     border: solid 1px black;
     text-decoration: dotted;
   }
-  main .carrito .containerTotal .carro .productosCarrito h3 {
+  main .carritoCont .containerTotal .carro .productosCarrito h3 {
     padding-bottom: 2px;
     text-align: center;
     text-decoration: underline;
     font-size: 1.5em;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   }
-  main .carrito .containerTotal .carro .productosCarrito .productoAgregados li {
+  main .carritoCont .containerTotal .carro .productosCarrito .productoAgregados li {
     list-style: none;
     padding: 2px 4px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2em;
     color: rgb(0, 0, 0);
   }
-  main .carrito .containerTotal .carro .totalProductos {
+  main .carritoCont .containerTotal .carro .totalProductos {
     width: 50%;
     margin: 25px 10px 10px 10px;
   }
-  main .carrito .containerTotal .carro .totalProductos h3 {
+  main .carritoCont .containerTotal .carro .totalProductos h3 {
     padding-bottom: 2px;
     text-align: center;
     text-decoration: underline;
     font-size: 1.5em;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   }
-  main .carrito .containerTotal .carro .totalProductos .button-p {
+  main .carritoCont .containerTotal .carro .totalProductos .button-p {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     width: 100%;
     margin-top: 20px;
   }
-  main .carrito .containerTotal .carro .totalProductos .button-p p {
+  main .carritoCont .containerTotal .carro .totalProductos .button-p p {
     border: solid black 2px;
     border-radius: 5px;
     font-size: 3em;
@@ -708,19 +866,29 @@ footer .pos-svg .container-wrap .css-text {
     color: red;
     background-color: black;
   }
-  main .carrito .containerTotal .carro .totalProductos .button-p .listaPago {
+  main .carritoCont .containerTotal .carro .totalProductos .button-p .listaPago {
     margin-top: 20px;
   }
-  main .carrito .containerTotal .carro .totalProductos .button-p .listaPago li {
+  main .carritoCont .containerTotal .carro .totalProductos .button-p .listaPago li {
     list-style-position: inside;
   }
-  main .carrito .containerTotal .carro .totalProductos .button-p .cont-button-pagar-tienda {
+  main .carritoCont .containerTotal .carro .totalProductos .button-p .cont-button-pagar-tienda {
     width: 40%;
   }
-  main .carrito .containerTotal .carro .totalProductos .button-p .cont-button-pagar-tienda button {
+  main .carritoCont .containerTotal .carro .totalProductos .button-p .cont-button-pagar-tienda button {
     background-color: rgb(112, 179, 243);
     color: white;
     width: 100%;
+  }
+  main .carritoCont .containerTotal .carro .totalProductos .botonEliminar {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  main .carritoCont .containerTotal .carro .totalProductos .botonEliminar .btn-vaciar {
+    background-color: rgb(226, 48, 48);
+    color: white;
   }
   main .conoceMas {
     width: 100%;

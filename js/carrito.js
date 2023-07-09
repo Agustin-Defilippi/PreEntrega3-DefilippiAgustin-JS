@@ -7,7 +7,7 @@ const renderProdCarrito = () =>{
         const cardCarrito = document.createElement("div");
        
         cardCarrito.innerHTML = `
-        <div class="accordion acordeon" id="accordionPanelsStayOpenExample">
+        <div class="accordion acordeon " id="accordionPanelsStayOpenExample">
             <div class="accordion-item text-center contenido-carrito">
                 <div class="cont-h2-button">
                     <h2 class="accordion-header button-acordeon" id="panelsStayOpen-heading${productos.posicion}">
@@ -21,7 +21,7 @@ const renderProdCarrito = () =>{
                 </div>
                 <div id="panelsStayOpen-collapse${productos.posicion}" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-heading${productos.posicion}">
                     <div class="accordion-body">
-                        <strong> <div class="d-flex justify-content-center excursionesTienda ">
+                        <strong> <div class="excursionesTienda ">
                         <div class="card  css-pFiltrado card-excursiones text-ligth" style="width: 18rem;">
                             <img src="${productos.img}" class="card-img-top" alt="${productos.destino}">
                             <div class="card-body text-center">
@@ -35,53 +35,56 @@ const renderProdCarrito = () =>{
                     </div>
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-warning">Eliminar</button>
+                    <button id="${productos.id}" class="btn btn-warning">Eliminar</button>
                 </div>
             </div>
         </div>`;
-
         excursionesCarrito.appendChild(cardCarrito);
+
+        const btnEliminar = document.getElementById(`${productos.id}`);
+
+        btnEliminar.addEventListener("click", () =>{
+            eliminarProducto(productos.id);
+        })
     });
 }
 
 renderProdCarrito();
-
-console.log(productos);
-
-
-const enlistarProductos = () =>{
-    const productosCarrito = productos;
-    const container = document.getElementById("productosCarrito");
-    
-    productosCarrito.forEach(prod =>{
-        const listaProductos = document.createElement("li");
-        listaProductos.innerHTML = `${prod.nombre} (${prod.destino}).`;
-        container.appendChild(listaProductos);
-    })
-}
-
 enlistarProductos();
-
-const calcularTotal = () => {
-    const productosTotal = productos;
-    const totalProductos = document.getElementById("totalProductos");
-  
-    let total = productosTotal.reduce((acumulador, elemento) => {
-      acumulador += elemento.precio;
-      return acumulador;
-    }, 0);
-  
-    const contador = document.createElement("p");
-    contador.innerHTML = `Total: $${total}`;
-    totalProductos.appendChild(contador);
-
-    return total;
-}
-  
 calcularTotal();
 
-const btnPagoExcursion = document.getElementById("btnPagoExcursion");
 
-btnPagoExcursion.addEventListener("click", () =>{
-    location.href="../pages/contratarViaje.html"
+const btnPagar = document.getElementById("btnPagoExcursion");
+
+btnPagar.addEventListener("click",() =>{
+     
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Su compra se ha realixado con Éxito!',
+        showConfirmButton: false,
+        background:"black",
+        color:"white"
+    })
+
+    setTimeout(() =>{
+        const carrito = document.getElementById("carrito");
+        const total = document.getElementById("total");
+        const contenedor = document.getElementById("contenedorPageCarro");
+        contenedor.innerHTML= "<h1>MUCHAS GRACIAS POR ELEGIR DEFILIPPI TOURLINES</h1>";
+        contenedor.className=`bg-warning text-center`;
+        carrito.innerHTML = "";
+        total.innerHTML = "";
+        total.className= "";
+        vaciarCarrito();
+    },4000);
 })
+
+
+const btnVaciar = document.getElementById("vaciarCarro");
+
+btnVaciar.addEventListener("click",() =>{
+    vaciarCarrito()
+})
+
+
