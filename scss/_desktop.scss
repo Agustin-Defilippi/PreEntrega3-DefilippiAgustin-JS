@@ -142,7 +142,6 @@
         .viaje{
             width: 100%;
             background:linear-gradient(to bottom,rgb(218, 217, 217),white,rgb(218, 217, 217));
-          
             .viajeElegido{
                 width: 60%;
                 .css-pFiltrado {
@@ -157,13 +156,11 @@
                 }
                 .bg-btn{
                     width: 60%;
-                    
                     &:hover{
                         background-color: black; 
                         color: white;
                     }
                 }
-               
             }
         } 
         .h1-div{
@@ -254,7 +251,6 @@
         .contenedorBoleto{
             width: 30%;
         }
-
         .tienda-h1{
             h1{
                 font-size: 5em;
@@ -313,7 +309,6 @@
             .excursionesTienda{
                 margin: 50px 50px;
                 padding: 30px 10px;
-                
                 .card-excursiones{
                     background:linear-gradient(to bottom,rgb(0, 0, 0),white,rgb(47, 78, 99));
                     border-radius: 15px;
@@ -332,7 +327,6 @@
                         cursor: pointer;
                     }
                 }
-            
             }
         }
         .carritoCont{
@@ -405,11 +399,9 @@
                         width: 50%;
                         margin: 25px 0 10px 10px;
                         border: solid 1px black;
-                        text-decoration: dotted;
                         h3{
                             padding-bottom: 2px;
                             text-align: center;
-                            text-decoration:underline;
                             font-size: 1.5em;
                             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
                         }
@@ -429,7 +421,6 @@
                         h3{
                             padding-bottom: 2px;
                             text-align: center;
-                            text-decoration:underline;
                             font-size: 1.5em;
                             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
                         }
@@ -437,14 +428,15 @@
                             display: flex;
                             flex-direction: column-reverse;
                             align-items: center;
+                            justify-content: space-between;
                             width: 100%;
                             margin-top: 20px;
+                            height: auto;
                             p{
-                                border: solid black 2px;
                                 border-radius: 5px;
-                                font-size: 3em;
+                                font-size: 2em;
                                 text-align: center;
-                                color: red;
+                                color: rgb(255, 255, 255);
                                 background-color: black;
                             }
                             .listaPago{
@@ -453,26 +445,53 @@
                                     list-style-position: inside;
                                 }
                             }
-                            .cont-button-pagar-tienda{
-                                width: 40%;
-                                button{
-                                    background-color: rgb(112, 179, 243);
-                                    color: white;
+                            .container-select-pagos{
+                                width: 100%;
+                                display: flex;
+                                justify-content: center;
+                                .label-form{
                                     width: 100%;
+                                    margin: 20px;
+                                    text-align: center;
+                                    font-size: 1.1em;
+                                    .select-option{
+                                        width: 100%;
+                                        background-color:rgb(255, 255, 255)
+                                    }
                                 }
+                            }   
+                            .containerPago{
+                                width: 100%;
+                                height: auto;
+                                border: none;
+                                .containerTotal{
+                                    width: 100%;
+                                    border: none;
+                                    .totalPago{
+                                        width: 100%;
+                                        border: none;
+                                    }
+                                }
+                           
                             }
                         }
                         .botonEliminar{
                             margin-top: 25px;
                             width: 100%;
                             display: flex;
-                            justify-content: center;
+                            justify-content: space-around;
+                            .button-pagar{
+                                background-color: rgb(226, 48, 48);
+                                color: white;
+                                width: 40%;
+                            }
                             .btn-vaciar{
+                                width: 40%;
                                 background-color: rgb(226, 48, 48);
                                 color: white;
                             }
                         }
-                    }
+                    } 
                 }
             }
             
@@ -480,34 +499,41 @@
         
         .conoceMas{
             width: 100%;
-            height: 100%;
+            height: auto;
             display: flex;
+            padding: 10px;
             justify-content: space-around;
             .css-infoViaje{
                 width: 55%;
-                height: 100%;
+                height: auto;
             }
             .contenedorClima{
                 width: 40%;
                 height: auto;
+                display: flex;
+                align-items: center;
                 background:linear-gradient(to top,rgb(92, 92, 92),rgb(57, 57, 116));
                 .cont-spinner{
                     color: white;
                     font-size: 1.5em;
                     display: flex;
                     justify-content: center;
+                    align-items: center;
                     margin-top: 20px;
+                    height: auto;
                 }
                 .climaCiudad{
                     width: 100%;
                     height: 100%;
                     display: flex;
                     justify-content: center;
-                    align-items: center;
+                    align-items: center !important;
                     padding: 20px 0;
+                    height: auto;
                     .card-clima{
-                        width: 50% !important;
-                        height: 65%;
+                        width: 90% !important;
+                        height: 90%;
+                        
                     }
                 }
             }

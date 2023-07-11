@@ -122,15 +122,26 @@ main .viaje article .bg-btn:hover {
 }
 main .conoceMas {
   width: 100%;
+  background: linear-gradient(to top, rgb(92, 92, 92), rgb(57, 57, 116));
 }
 main .conoceMas .contenedorClima {
   width: 100%;
 }
 main .conoceMas .contenedorClima .cont-spinner {
   width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2em;
+  padding: 10px;
 }
 main .conoceMas .contenedorClima .climaCiudad {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 main .conoceMas .contenedorClima .climaCiudad .card-clima {
   width: 100% !important;
@@ -154,17 +165,78 @@ main .bg-viajeElegido p {
 }
 main .cont-Viaje form {
   margin-top: 30px;
-  width: 80%;
-  background-color: rgb(47, 78, 99);
+  width: 100%;
+  background-color: rgb(67, 139, 187);
   border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 main .cont-Viaje form .text-color {
   color: white;
+  width: 50%;
 }
 main .cont-Viaje form .edad p {
   background-color: white;
   color: black;
   font-size: 1em;
+}
+main .cont-Viaje form .bg-select-pagos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border: solid 1px white;
+  height: 250px;
+}
+main .cont-Viaje form .bg-select-pagos h4 {
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-decoration-line: overline;
+  margin: 30px;
+}
+main .cont-Viaje form .bg-select-pagos .cont-select-pagos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
+  height: auto;
+  width: 80%;
+}
+main .cont-Viaje form .bg-select-pagos .cont-select-pagos .select-option {
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+main .cont-Viaje form .bg-select-pagos .cont-select-pagos .pagos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+main .cont-Viaje form .bg-select-pagos .cont-select-pagos .pagos p {
+  background-color: black;
+  color: white;
+  padding: 5px 5px;
+  margin: 20 5px;
+  font-size: 1.1em;
+  width: 100%;
+}
+main .cont-Viaje form .bg-select-pagos .cont-select-pagos .svg-credito {
+  width: 100%;
+  height: 30px;
+}
+main .cont-Viaje form .bg-select-pagos .cont-select-pagos .svg-credito .input-tarjeta {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .cont-Viaje form .bg-select-pagos .cont-select-pagos .svg-credito .input-tarjeta input {
+  height: auto;
+}
+main .cont-Viaje form .bg-select-pagos .cont-select-pagos .svg-credito .input-tarjeta .button-svg {
+  background-color: rgb(0, 0, 0);
+}
+main .cont-Viaje form .bg-select-pagos .cont-select-pagos .svg-credito .input-tarjeta .button-svg img {
+  width: 30px;
 }
 main .btn-contratar {
   background-color: rgb(112, 179, 243);
@@ -292,12 +364,11 @@ main .carritoCont .containerTotal .totalProductos .button-p {
   margin-top: 20px;
 }
 main .carritoCont .containerTotal .totalProductos .button-p p {
-  width: 95%;
-  border: solid black 2px;
+  width: 90%;
   border-radius: 5px;
-  font-size: 3em;
+  font-size: 2em;
   text-align: center;
-  color: red;
+  color: rgb(255, 255, 255);
   background-color: black;
 }
 main .carritoCont .containerTotal .totalProductos .button-p .listaPago {
@@ -306,23 +377,122 @@ main .carritoCont .containerTotal .totalProductos .button-p .listaPago {
 main .carritoCont .containerTotal .totalProductos .button-p .listaPago li {
   list-style-position: inside;
 }
-main .carritoCont .containerTotal .totalProductos .button-p .cont-button-pagar-tienda {
-  width: 31%;
-}
-main .carritoCont .containerTotal .totalProductos .button-p .cont-button-pagar-tienda button {
-  background-color: rgb(112, 179, 243);
-  color: white;
+main .carritoCont .containerTotal .totalProductos .container-select-pagos {
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .carritoCont .containerTotal .totalProductos .container-select-pagos .label-form {
+  width: 100%;
+  margin: 20px;
+  text-align: center;
+  font-size: 1.4em;
+}
+main .carritoCont .containerTotal .totalProductos .container-select-pagos .label-form .select-option {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+main .carritoCont .containerTotal .totalProductos .containerPago {
+  width: 90%;
+  height: auto;
+  border: none;
+}
+main .carritoCont .containerTotal .totalProductos .containerPago .containerTotal {
+  width: 100%;
+  border: none;
+}
+main .carritoCont .containerTotal .totalProductos .containerPago .containerTotal .totalPago {
+  width: 100%;
+  border: none;
 }
 main .carritoCont .containerTotal .totalProductos .botonEliminar {
   margin-top: 25px;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+main .carritoCont .containerTotal .totalProductos .botonEliminar button {
+  background-color: rgb(226, 48, 48);
+  color: white;
+  width: 30%;
 }
 main .carritoCont .containerTotal .totalProductos .botonEliminar .btn-vaciar {
   background-color: rgb(226, 48, 48);
   color: white;
+  width: 30%;
+}
+main .tienda-h1 h1 {
+  font-size: 3em;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+main .tienda-h2 h2 {
+  color: rgb(116, 115, 115);
+  font-size: 1.5em;
+}
+main .tienda-h2 p {
+  color: rgb(165, 165, 165);
+  font-size: 2em;
+}
+main .contenedorTienda {
+  background: linear-gradient(to bottom, rgb(218, 217, 217), white, rgb(218, 217, 217));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+main .contenedorTienda .contenedor-carrito {
+  background-color: rgb(248, 248, 68);
+  display: flex;
+  align-items: center;
+}
+main .contenedorTienda .contenedor-carrito h3 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.1em;
+  margin-right: 10px;
+}
+main .contenedorTienda .contenedor-carrito a {
+  position: relative;
+  display: inline-block;
+}
+main .contenedorTienda .contenedor-carrito a img {
+  width: 50px;
+  height: 40px;
+  cursor: pointer;
+}
+main .contenedorTienda .contenedor-carrito a .cart-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 4px 8px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  content: attr(data-longitud);
+}
+main .contenedorTienda .excursionesTienda {
+  margin: 30px 30px;
+  padding: 30px 10px;
+}
+main .contenedorTienda .excursionesTienda .card-excursiones {
+  background: linear-gradient(to bottom, rgb(0, 0, 0), white, rgb(47, 78, 99));
+  border-radius: 15px;
+}
+main .contenedorTienda .excursionesTienda .card-excursiones img {
+  padding: 10px;
+  border-radius: 15px;
+}
+main .contenedorTienda .excursionesTienda .card-excursiones button {
+  width: 50%;
+  color: white;
+}
+main .contenedorTienda .excursionesTienda .card-excursiones:hover {
+  transform: scale(1.08);
+  transition: all 1s;
+  box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 footer {
@@ -383,11 +553,24 @@ footer .pos-svg .container-wrap .css-text {
   align-items: center;
   justify-content: space-between;
 }
+.navegador .container-fluid .contenedor-nav .cont .texto p {
+  font-size: 1.3em;
+  color: rgb(0, 0, 0);
+}
+.navegador .container-fluid .contenedor-nav .cont .a-tienda {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25px;
+}
+.navegador .container-fluid .contenedor-nav .cont .a-tienda button {
+  margin-left: 30px;
+}
 .navegador .container-fluid .contenedor-nav .container-ul {
   display: none;
-}
-.navegador .container-fluid .contenedor-nav a {
-  width: 20%;
 }
 .navegador .container-fluid .contenedor-nav a img {
   width: 50%;
@@ -397,13 +580,14 @@ footer .pos-svg .container-wrap .css-text {
   background-color: rgb(248, 248, 68);
 }
 .navegador .container-fluid .contenedor-nav h5 p {
-  color: black;
+  color: rgb(0, 0, 0);
   text-align: center;
 }
 .navegador .container-fluid .contenedor-nav .bord {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: linear-gradient(to left, rgb(248, 248, 68), rgb(47, 78, 99), rgb(248, 248, 68));
 }
 .navegador .container-fluid .contenedor-nav .gian {
   height: auto;
@@ -416,6 +600,9 @@ footer .pos-svg .container-wrap .css-text {
   color: black;
   border-radius: 5px;
   width: 100%;
+}
+.navegador .container-fluid .contenedor-nav .gian .contactanos h5 {
+  color: white;
 }
 .navegador .container-fluid .contenedor-nav .gian .contactanos p {
   background-color: black;
@@ -824,12 +1011,10 @@ footer .pos-svg .container-wrap .css-text {
     width: 50%;
     margin: 25px 0 10px 10px;
     border: solid 1px black;
-    text-decoration: dotted;
   }
   main .carritoCont .containerTotal .carro .productosCarrito h3 {
     padding-bottom: 2px;
     text-align: center;
-    text-decoration: underline;
     font-size: 1.5em;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   }
@@ -847,7 +1032,6 @@ footer .pos-svg .container-wrap .css-text {
   main .carritoCont .containerTotal .carro .totalProductos h3 {
     padding-bottom: 2px;
     text-align: center;
-    text-decoration: underline;
     font-size: 1.5em;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   }
@@ -855,15 +1039,16 @@ footer .pos-svg .container-wrap .css-text {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     margin-top: 20px;
+    height: auto;
   }
   main .carritoCont .containerTotal .carro .totalProductos .button-p p {
-    border: solid black 2px;
     border-radius: 5px;
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
-    color: red;
+    color: rgb(255, 255, 255);
     background-color: black;
   }
   main .carritoCont .containerTotal .carro .totalProductos .button-p .listaPago {
@@ -872,37 +1057,66 @@ footer .pos-svg .container-wrap .css-text {
   main .carritoCont .containerTotal .carro .totalProductos .button-p .listaPago li {
     list-style-position: inside;
   }
-  main .carritoCont .containerTotal .carro .totalProductos .button-p .cont-button-pagar-tienda {
-    width: 40%;
-  }
-  main .carritoCont .containerTotal .carro .totalProductos .button-p .cont-button-pagar-tienda button {
-    background-color: rgb(112, 179, 243);
-    color: white;
+  main .carritoCont .containerTotal .carro .totalProductos .button-p .container-select-pagos {
     width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  main .carritoCont .containerTotal .carro .totalProductos .button-p .container-select-pagos .label-form {
+    width: 100%;
+    margin: 20px;
+    text-align: center;
+    font-size: 1.1em;
+  }
+  main .carritoCont .containerTotal .carro .totalProductos .button-p .container-select-pagos .label-form .select-option {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+  }
+  main .carritoCont .containerTotal .carro .totalProductos .button-p .containerPago {
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+  main .carritoCont .containerTotal .carro .totalProductos .button-p .containerPago .containerTotal {
+    width: 100%;
+    border: none;
+  }
+  main .carritoCont .containerTotal .carro .totalProductos .button-p .containerPago .containerTotal .totalPago {
+    width: 100%;
+    border: none;
   }
   main .carritoCont .containerTotal .carro .totalProductos .botonEliminar {
     margin-top: 25px;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+  }
+  main .carritoCont .containerTotal .carro .totalProductos .botonEliminar .button-pagar {
+    background-color: rgb(226, 48, 48);
+    color: white;
+    width: 40%;
   }
   main .carritoCont .containerTotal .carro .totalProductos .botonEliminar .btn-vaciar {
+    width: 40%;
     background-color: rgb(226, 48, 48);
     color: white;
   }
   main .conoceMas {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: flex;
+    padding: 10px;
     justify-content: space-around;
   }
   main .conoceMas .css-infoViaje {
     width: 55%;
-    height: 100%;
+    height: auto;
   }
   main .conoceMas .contenedorClima {
     width: 40%;
     height: auto;
+    display: flex;
+    align-items: center;
     background: linear-gradient(to top, rgb(92, 92, 92), rgb(57, 57, 116));
   }
   main .conoceMas .contenedorClima .cont-spinner {
@@ -910,19 +1124,22 @@ footer .pos-svg .container-wrap .css-text {
     font-size: 1.5em;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 20px;
+    height: auto;
   }
   main .conoceMas .contenedorClima .climaCiudad {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center !important;
     padding: 20px 0;
+    height: auto;
   }
   main .conoceMas .contenedorClima .climaCiudad .card-clima {
-    width: 50% !important;
-    height: 65%;
+    width: 90% !important;
+    height: 90%;
   }
   footer {
     font-family: "Roboto Slab", serif;

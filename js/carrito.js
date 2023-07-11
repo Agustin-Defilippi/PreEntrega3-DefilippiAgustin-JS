@@ -51,36 +51,31 @@ const renderProdCarrito = () =>{
 
 renderProdCarrito();
 enlistarProductos();
-calcularTotal();
+contadorSubTotal();
 
 const btnPagar = document.getElementById("btnPagoExcursion");
 
 btnPagar.addEventListener("click",() =>{
-     
-    Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Su compra se ha realixado con Éxito!',
-        showConfirmButton: false,
-        background:"black",
-        color:"white"
-    })
-
-    setTimeout(() =>{
-        const carrito = document.getElementById("carrito");
-        const total = document.getElementById("total");
-        const contenedor = document.getElementById("contenedorPageCarro");
-        contenedor.innerHTML= "<h1>MUCHAS GRACIAS POR ELEGIR DEFILIPPI TOURLINES</h1>";
-        contenedor.className=`bg-warning text-center`;
-        carrito.innerHTML = "";
-        total.innerHTML = "";
-        total.className= "";
-        vaciarCarrito();
-    },4000);
+    const selecTienda = document.getElementById("pagosTienda");
+    if(selecTienda.value !=="" && selecTienda.value !=="-"){
+       dispararSweetAlert()
+    }
 })
 
 const btnVaciar = document.getElementById("vaciarCarro");
 
+const selecTienda = document.getElementById("pagosTienda");
+
 btnVaciar.addEventListener("click",() =>{
     vaciarCarrito()
 })
+
+
+
+selecTienda.addEventListener("input",() =>{
+    let subTotalPagos = document.getElementById("pagos");
+    subTotalPagos.innerHTML=`<p class="totalPago">Total: $${pagarExcursiones(selecTienda.value,calcularTotal()).toFixed(2)}</p>`
+})
+
+
+

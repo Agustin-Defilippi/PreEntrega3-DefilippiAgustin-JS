@@ -54,15 +54,15 @@ const busquedaSelect = (arrayViajes,valor) =>{
 
 //paqueteViaje.js
 const infoConocerMas = (objeto) =>{
-    return `<div class="card mb-4 w-100  " style="width: 18rem;">
-                <div class=" bord-card-info">
+    return `<div class="card mb-4 w-100 d-flex justify-content-center " style="width: 18rem;">
+                <div class=" bord-card-info text-center w-100">
                     <img src="${objeto.imagen2}" class="w-100" alt="...">
                     <div class="card-body color-slogan">
-                        <h5 class="card-title text-center">${objeto.nombre}</h5>
-                        <p class="card-text text-center my-2">${objeto.slogan}</p>
+                        <h5 class="card-title text-center fs-3">${objeto.nombre}</h5>
+                        <p class="card-text text-center my-2 fs-0.5">${objeto.slogan}</p>
                     </div>
-                    <ul class="list-group list-group-flush css-infoViaje">
-                        <li class="list-group-item css-infoViaje"><b>Fecha de salida</b>: ${objeto.salida}.</li>
+                    <ul class="list-group list-group-flush css-infoViaje w-100 text-center">
+                        <li class="list-group-item css-infoViaje w-100 text-center"><b>Fecha de salida</b>: ${objeto.salida}.</li>
                         <li class="list-group-item"><b>Excursiones</b>: ${objeto.excursiones}.</li>
                         <li class="list-group-item"><b>Coordinador</b>: ${objeto.coordinador}.</li>
                     </ul>
@@ -75,12 +75,12 @@ const infoConocerMas = (objeto) =>{
 
 const temperatura = (temperatura) => {
     if (temperatura> 20){
-        return `<div><p class="text-warning"> El día esta caluroso</p></div>`
+        return `<div><p class="text-warning"> El día en ${viaje.nombre} está caluroso</p></div>`
     }
     else if (temperatura>= 12){
-        return `<div><p class="text-warning"> El día está calido</p></div>`
+        return `<div><p class="text-warning"> El día en ${viaje.nombre} está cálido</p></div>`
     } else{
-        return `<div><p class="text-warning"> Está haciendo frio </p></div>`
+        return `<div><p class="text-warning"> Está haciendo frío en ${viaje.nombre}</p></div>`
     }
 }
 
@@ -92,8 +92,12 @@ const mostrarHora = () =>{
     setTimeout(()=>{
         mostrarHora();
     },1000);
-    
-    return `Hora actual: ${horActual} ${minActual}`
+
+    if((horActual > 20)){
+        return `Es de noche en ${viaje.nombre}<br>Hora actual: ${horActual}:${minActual}`
+    }else{
+        return `Es de dia en ${viaje.nombre}<br>Hora actual: ${horActual}:${minActual}`
+    }
 }
 
 //contratarViaje.js
@@ -367,7 +371,7 @@ const enlistarProductos = () =>{
 }
 
 
-const calcularTotal = () => {
+const contadorSubTotal = () => {
     const productosTotal = productos;
     const totalProductos = document.getElementById("totalProductos");
     let total = productosTotal.reduce((acumulador, elemento) => {
@@ -376,8 +380,81 @@ const calcularTotal = () => {
     }, 0);
   
     const contador = document.createElement("p");
-    contador.innerHTML = `Total: $${total}`;
+    contador.innerHTML = `SubTotal: $${total}`;
     totalProductos.appendChild(contador);
 
     return total;
+}
+
+const calcularTotal = () =>{
+    const productosTotal = productos;
+    let total = productosTotal.reduce((acumulador,elemento) =>{
+        acumulador+= elemento.precio;
+        return acumulador;
+    },0)
+    return total;
+}
+
+const dispararSweetAlert = () =>{
+    let timerInterval;
+    Swal.fire({
+      title: 'Aguarde estamos procesando su compra!',
+      timer: 7000,
+      timerProgressBar: true,
+      background:"black",
+      color:"white",
+      didOpen: () => {
+        Swal.showLoading()
+        const b = Swal.getHtmlContainer().querySelector('b')
+        timerInterval = setInterval(() => {
+          b.textContent = Swal.getTimerLeft()
+        }, 100)
+      },
+      willClose: () => {
+        clearInterval(timerInterval)
+      }
+    }).then((result) => {
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log('I was closed by the timer')
+      }
+    })
+
+    setTimeout(() =>{
+        Swal.fire({
+            title: 'Su compra se ha realixado con Éxito!',
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp',
+                
+            },
+            icon: 'success',
+            background:"black",
+            color:"white",
+        })
+    },8500)
+     
+    setTimeout(() =>{
+        const contenedor = document.getElementById("contenedorPageCarro");
+        contenedor.innerHTML= "<h1>MUCHAS GRACIAS POR ELEGIR DEFILIPPI TOURLINES</h1>";
+        contenedor.className=`text-center`;
+        localStorage.removeItem("prodCarrito");
+    },11000);
+}
+
+const pagarExcursiones = (valorPago,precio) =>{
+    if(valorPago === "debito"){
+      return (precio * 0.8);
+    }else if(valorPago === "1 pago"){
+      return (precio * 0.9);
+    }else if(valorPago === "3 pagos"){
+      return precio;
+    }else if(valorPago === "6 pagos"){
+      return (precio * 1.10);
+    }else if(valorPago === "12 pagos"){
+      return (precio * 1.20);
+    }else{
+      return "";
+    }
 }
